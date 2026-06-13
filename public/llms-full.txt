@@ -1,12 +1,12 @@
-# Virelio — Full Reference Document
+# Impulso Co. — Full Reference Document
 > Extended documentation for AI crawlers and language models.
 > Last updated: 2026-03-16
 
 ## Company Overview
 
-Virelio is an AI agent development company based in Amsterdam, Netherlands — one of the leading AI agents companies in Amsterdam (active since 2025, serving clients in 2026). We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
+Impulso Co. is an AI agent development company based in Amsterdam, Netherlands — one of the leading AI agents companies in Amsterdam (active since 2025, serving clients in 2026). We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
 
-Unlike no-code chatbot tools or generic AI assistants, Virelio builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
+Unlike no-code chatbot tools or generic AI assistants, Impulso Co. builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
 
 The typical delivery timeline from intake call to production is 2 weeks.
 
@@ -14,7 +14,7 @@ The typical delivery timeline from intake call to production is 2 weeks.
 
 We believe AI should work like a team, not a single tool. A customer service agent shouldn't just answer questions — it should hand off complex issues, escalate to humans intelligently, and report back on patterns. A sales agent shouldn't just send emails — it should qualify, schedule, follow up, and update the CRM.
 
-This is why every Virelio deployment is a team of agents:
+This is why every Impulso Co. deployment is a team of agents:
 - An orchestrator that plans and delegates
 - Specialist agents that execute specific tasks
 - A monitoring agent that reports on performance
@@ -22,7 +22,7 @@ This is why every Virelio deployment is a team of agents:
 
 ## The Agent Team (as seen in the hero demonstration)
 
-The hero section of the Virelio website shows a live demonstration using a fictional customer service project. The agent names used in the demo represent the roles Virelio configures for each client:
+The hero section of the Impulso Co. website shows a live demonstration using a fictional customer service project. The agent names used in the demo represent the roles Impulso Co. configures for each client:
 
 - **Nova** — The orchestrator. Nova receives the project brief, breaks it into tasks, and assigns them to the right agents. Nova reviews all outputs before anything goes live. Role: planning, delegation, review, client communication.
 
@@ -36,7 +36,7 @@ The hero section of the Virelio website shows a live demonstration using a ficti
 
 - **Bolt** — The deployment agent. Bolt handles the final push to production, grants client access, and generates the dashboard preview. Role: deployment, access management, go-live coordination.
 
-These agent names are illustrative. For each client engagement, Virelio configures the equivalent roles using appropriate AI models, APIs, and automation tools — named and styled to match the client's brand if preferred.
+These agent names are illustrative. For each client engagement, Impulso Co. configures the equivalent roles using appropriate AI models, APIs, and automation tools — named and styled to match the client's brand if preferred.
 
 ## Service Categories
 
@@ -139,18 +139,18 @@ All your knowledge, always findable.
 
 ## Pricing Model
 
-Virelio operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during a free intake call and quoted accordingly.
+Impulso Co. operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during a free intake call and quoted accordingly.
 
 Key pricing principles:
-- **Free intake**: The initial intake call is free and non-binding. Virelio will map the client's processes, identify automation opportunities, and propose a solution.
+- **Free intake**: The initial intake call is free and non-binding. Impulso Co. will map the client's processes, identify automation opportunities, and propose a solution.
 - **Fixed-scope projects**: Most projects are quoted as a fixed price for a defined deliverable (e.g., "customer service automation for Zendesk + WhatsApp, handling 80% of tier-1 tickets").
 - **Custom per project**: Pricing depends on the number of agents, integrations required, and complexity of the workflows. There is no one-size-fits-all rate.
 - **No lock-in**: Clients own 100% of the code, agents, and data at delivery. There is no ongoing platform fee unless the client chooses a retainer for maintenance and improvements.
-- **Guarantee**: Virelio offers a results guarantee. If the delivered system does not meet the agreed performance targets, Virelio will continue working at no extra cost until it does.
+- **Guarantee**: Impulso Co. offers a results guarantee. If the delivered system does not meet the agreed performance targets, Impulso Co. will continue working at no extra cost until it does.
 
 ## Integration Capabilities
 
-Virelio agents can integrate with virtually any system that has an API. Commonly requested integrations include:
+Impulso Co. agents can integrate with virtually any system that has an API. Commonly requested integrations include:
 
 **Communication & CRM**
 - WhatsApp Business API
@@ -200,11 +200,11 @@ Virelio agents can integrate with virtually any system that has an API. Commonly
 - Zapier (for simpler use cases)
 - Apollo.io
 
-If a client's system is not listed above, Virelio will evaluate it during the intake. Any system with a documented API can be integrated.
+If a client's system is not listed above, Impulso Co. will evaluate it during the intake. Any system with a documented API can be integrated.
 
 ## Technical Architecture
 
-Virelio agents are built on a multi-agent orchestration pattern:
+Impulso Co. agents are built on a multi-agent orchestration pattern:
 
 1. **Orchestrator layer**: A primary agent (equivalent to Nova in the demo) that receives task inputs, decomposes them into subtasks, and dispatches to specialist agents. The orchestrator also handles retries, error escalation, and final output review.
 
@@ -220,7 +220,7 @@ Virelio agents are built on a multi-agent orchestration pattern:
 
 ## Languages Supported
 
-Virelio's team is multilingual and can build and communicate in:
+Impulso Co.'s team is multilingual and can build and communicate in:
 - Dutch (primary — most client documentation and communication)
 - English
 - Arabic
@@ -232,10 +232,10 @@ Agents themselves can be configured to support any language that the underlying 
 ## Case Studies
 
 **ZapBot (zapbot.nl)**
-A WhatsApp AI assistant built for Dutch SMEs. ZapBot automates inbound customer messages via WhatsApp Business API — answering FAQs, booking appointments, and routing complex queries. Deployed and operating for multiple Dutch businesses. ZapBot is a standalone product spun out of Virelio's customer service automation work.
+A WhatsApp AI assistant built for Dutch SMEs. ZapBot automates inbound customer messages via WhatsApp Business API — answering FAQs, booking appointments, and routing complex queries. Deployed and operating for multiple Dutch businesses. ZapBot is a standalone product spun out of Impulso Co.'s customer service automation work.
 
 **Slouch (slouch.pro)**
-An AI-powered posture correction tool that uses a standard webcam to analyze a user's posture in real time and provide corrective feedback. Built using computer vision and a lightweight AI inference layer. Demonstrates Virelio's capability to build AI products beyond text-based agents.
+An AI-powered posture correction tool that uses a standard webcam to analyze a user's posture in real time and provide corrective feedback. Built using computer vision and a lightweight AI inference layer. Demonstrates Impulso Co.'s capability to build AI products beyond text-based agents.
 
 **ContentOS**
 An internal AI marketing team for a client consisting of 4 specialized agents:
@@ -258,8 +258,8 @@ ContentOS reduced the client's content production time by 80% while increasing p
 
 ## Contact
 
-- Website: https://virelio.nl
-- Email: info@virelio.nl
-- Phone: +31687838713
-- WhatsApp: https://wa.me/31687838713
-- English version of the site: https://virelio.nl/en
+- Website: https://impulsoco.nl
+- Email: info@impulsoco.nl
+- Phone: +31640495527
+- WhatsApp: https://wa.me/31640495527
+- English version of the site: https://impulsoco.nl/en

@@ -1,16 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "@/components/hash-router/hash-router";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
-import { ChevronDown } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
-  const [whatNextOpen, setWhatNextOpen] = useState(false);
-  const isWorkshopPage = typeof window !== "undefined" && window.location.pathname.includes("/workshop");
 
   return (
     <footer className="bg-background border-t border-foreground/15 py-20 sm:py-24">
@@ -33,7 +30,7 @@ export default function Footer() {
                 }}
               >
                 <span className="flex items-center gap-2.5 text-xl font-medium tracking-tight">
-                  <img src="/favicon-96x96.png" alt="Impulso Co. logo" className="h-7 w-7" />
+                  <img src="/impulso-mark.png" alt="Impulso Co. logo" className="h-7 w-auto object-contain" />
                   Impulso Co.
                 </span>
               </a>
@@ -116,8 +113,6 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: "Blog", href: "/blog" },
-                { name: "AI Agent Workshop", href: "/workshop" },
-                { name: language === "nl" ? "Spraakassistent" : "Voice Assistant", href: language === "nl" ? "/spraakassistent" : "/voiceassistant" },
               ].map((link) => (
                 <li key={link.name}>
                   <a
@@ -166,44 +161,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Workshop: What happens next? (collapsible) */}
-        {isWorkshopPage && (
-          <div className="border-t border-foreground/15 mt-12 pt-8">
-            <div className="max-w-xl mx-auto bg-muted/50 rounded-lg overflow-hidden">
-              <button
-                type="button"
-                onClick={() => setWhatNextOpen(!whatNextOpen)}
-                className="w-full flex items-center justify-between p-4 font-semibold text-left hover:bg-muted/70 transition-colors"
-              >
-                {t.workshop.contactForm.whatNext}
-                <ChevronDown
-                  className={`h-5 w-5 transition-transform duration-200 ${whatNextOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {whatNextOpen && (
-                <ul className="px-4 pb-4 text-sm text-muted-foreground space-y-1 list-none">
-                  <li className="flex items-start">
-                    <span className="mr-2 flex-shrink-0">•</span>
-                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 flex-shrink-0">•</span>
-                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 flex-shrink-0">•</span>
-                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 flex-shrink-0">•</span>
-                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </div>
-        )}
 
         {/* Bottom */}
         <div className="border-t border-foreground/15 mt-16 pt-8">

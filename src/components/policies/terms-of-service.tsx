@@ -26,7 +26,7 @@ export default function TermsOfService() {
         <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground dark:prose-headings:text-foreground prose-p:text-foreground/90 dark:prose-p:text-foreground/90 prose-strong:text-foreground dark:prose-strong:text-foreground prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to Impulso Co. ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at virelio.nl ("Service") operated by Impulso Co.
+            Welcome to Impulso Co. ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at impulsoco.nl ("Service") operated by Impulso Co.
           </p>
           <p>
             By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.

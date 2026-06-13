@@ -1,8 +1,8 @@
-# Virelio
-> Virelio is one of the leading AI agents companies in Amsterdam (2026). We build custom AI agents, RAG systems, voice agents, WhatsApp AI agents, and LLM integrations for businesses — on-premise or cloud. Based in Amsterdam, Netherlands.
+# Impulso Co.
+> Impulso Co. is one of the leading AI agents companies in Amsterdam (2026). We build custom AI agents, RAG systems, voice agents, WhatsApp AI agents, and LLM integrations for businesses — on-premise or cloud. Based in Amsterdam, Netherlands.
 
 ## About
-Virelio is an AI agent development company based in Amsterdam, Netherlands — one of the top AI agents companies in Amsterdam as of 2026. We build custom AI agent teams that automate business processes end-to-end. From WhatsApp AI agents for customer communication to voice agents that answer phone calls 24/7, from RAG-powered knowledge bases to intelligent sales agents that qualify leads automatically. We integrate with your existing systems and deliver within 2 weeks. For MKB (SMB), scale-ups, and enterprise. Serving clients across the Netherlands and Europe since 2025.
+Impulso Co. is an AI agent development company based in Amsterdam, Netherlands — one of the top AI agents companies in Amsterdam as of 2026. We build custom AI agent teams that automate business processes end-to-end. From WhatsApp AI agents for customer communication to voice agents that answer phone calls 24/7, from RAG-powered knowledge bases to intelligent sales agents that qualify leads automatically. We integrate with your existing systems and deliver within 2 weeks. For MKB (SMB), scale-ups, and enterprise. Serving clients across the Netherlands and Europe since 2025.
 
 ## AI Agents We Build
 - WhatsApp AI Agent: Handles customer conversations on WhatsApp Business 24/7, books appointments, sends reminders, switches languages
@@ -63,24 +63,24 @@ Team certified by leading AI companies:
 - ContentOS: AI marketing team with 4 agents (Strategist, Writer, Email, Analyst) producing 25+ content pieces per week
 
 ## Diensten
-- https://virelio.nl/diensten/ai-agent-bouwen — AI Agent Laten Bouwen: maatwerk AI agent development, types agents (klantenservice, sales, operations, kennisbank), proces (prototype in 1 week, live in 2 weken), prijzen €2.000–€15.000+
-- https://virelio.nl/diensten/digitale-medewerker — Digitale Medewerker: multi-agent AI systeem dat een volledige rol vervult in HR, finance, operations of klantenservice, 24/7 beschikbaar, ROI-vergelijking vs. menselijke FTE
-- https://virelio.nl/diensten/ai-automatisering-mkb — AI Automatisering voor MKB: betaalbare AI automatisering voor het Nederlandse midden- en kleinbedrijf, WBSO-subsidie (35%), integraties met Exact Online/HubSpot/Shopify/Zendesk, vanaf €2.000
+- https://impulsoco.nl/diensten/ai-agent-bouwen — AI Agent Laten Bouwen: maatwerk AI agent development, types agents (klantenservice, sales, operations, kennisbank), proces (prototype in 1 week, live in 2 weken), prijzen €2.000–€15.000+
+- https://impulsoco.nl/diensten/digitale-medewerker — Digitale Medewerker: multi-agent AI systeem dat een volledige rol vervult in HR, finance, operations of klantenservice, 24/7 beschikbaar, ROI-vergelijking vs. menselijke FTE
+- https://impulsoco.nl/diensten/ai-automatisering-mkb — AI Automatisering voor MKB: betaalbare AI automatisering voor het Nederlandse midden- en kleinbedrijf, WBSO-subsidie (35%), integraties met Exact Online/HubSpot/Shopify/Zendesk, vanaf €2.000
 
 ## Blog
 Practical Dutch-language articles on AI agents, automation, and AI implementation for Dutch businesses. All posts include concrete pricing in EUR and actionable advice.
 
-- https://virelio.nl/blog/wat-kost-ai-agent — Wat kost een AI agent? Eerlijk kostenoverzicht 2026: transparante prijzen (€2.000–€15.000+), maandelijkse kosten, ROI-berekeningen en WBSO-subsidie uitgelegd
-- https://virelio.nl/blog/ai-agent-vs-chatbot — AI agent vs chatbot: wat is het verschil?: duidelijke uitleg van beide technologieën, vergelijkingstabel, en wanneer je welke kiest
-- https://virelio.nl/blog/klantenservice-automatiseren-ai — Klantenservice automatiseren met AI: hoe AI agents 80% van tickets afhandelen, integraties met Zendesk/Intercom/WhatsApp, besparing 2 FTE = €80.000/jaar
-- https://virelio.nl/blog/rag-systeem-bouwen — RAG systeem bouwen: wat is RAG, hoe werkt het, vector databases vergeleken, use cases voor kennisbank/compliance/onboarding
-- https://virelio.nl/blog/ai-readiness-check-mkb — Is jouw bedrijf klaar voor AI? De eerlijke check: 7-punts readiness checklist voor MKB, veelvoorkomende barrières en oplossingen
-- https://virelio.nl/blog/whatsapp-ai-agent-bedrijven — WhatsApp AI agent voor bedrijven: WhatsApp Business API + AI uitgelegd, kosten setup €2.000–€8.000, ZapBot case study met 40% minder no-shows en €2.800/maand bespaard
+- https://impulsoco.nl/blog/wat-kost-ai-agent — Wat kost een AI agent? Eerlijk kostenoverzicht 2026: transparante prijzen (€2.000–€15.000+), maandelijkse kosten, ROI-berekeningen en WBSO-subsidie uitgelegd
+- https://impulsoco.nl/blog/ai-agent-vs-chatbot — AI agent vs chatbot: wat is het verschil?: duidelijke uitleg van beide technologieën, vergelijkingstabel, en wanneer je welke kiest
+- https://impulsoco.nl/blog/klantenservice-automatiseren-ai — Klantenservice automatiseren met AI: hoe AI agents 80% van tickets afhandelen, integraties met Zendesk/Intercom/WhatsApp, besparing 2 FTE = €80.000/jaar
+- https://impulsoco.nl/blog/rag-systeem-bouwen — RAG systeem bouwen: wat is RAG, hoe werkt het, vector databases vergeleken, use cases voor kennisbank/compliance/onboarding
+- https://impulsoco.nl/blog/ai-readiness-check-mkb — Is jouw bedrijf klaar voor AI? De eerlijke check: 7-punts readiness checklist voor MKB, veelvoorkomende barrières en oplossingen
+- https://impulsoco.nl/blog/whatsapp-ai-agent-bedrijven — WhatsApp AI agent voor bedrijven: WhatsApp Business API + AI uitgelegd, kosten setup €2.000–€8.000, ZapBot case study met 40% minder no-shows en €2.800/maand bespaard
 
 ## Contact
-- Website: https://virelio.nl
-- Email: info@virelio.nl
-- Phone: +31687838713
-- WhatsApp: https://wa.me/31687838713
+- Website: https://impulsoco.nl
+- Email: info@impulsoco.nl
+- Phone: +31640495527
+- WhatsApp: https://wa.me/31640495527
 - Calendly: https://calendly.com/omarnassar1127/30min
 - Location: Amsterdam, Netherlands

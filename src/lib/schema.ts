@@ -162,7 +162,7 @@ export function videoSchema() {
       "name": "Impulso Co.",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteConfig.url}/logo.png`,
+        "url": `${siteConfig.url}${siteConfig.logoUrl}`,
         "width": "96",
         "height": "96"
       }
@@ -245,8 +245,8 @@ export function blogPostSchema({
   publishedAt,
   updatedAt,
   authorName,
-  authorUrl = "https://virelio.nl/team",
-  image = "https://virelio.nl/og-image.jpg",
+  authorUrl = `${siteConfig.url}/about`,
+  image = `${siteConfig.url}/og-image.png`,
   url,
 }: BlogPostProps) {
   return {
@@ -268,7 +268,7 @@ export function blogPostSchema({
       name: "Impulso Co.",
       logo: {
         "@type": "ImageObject",
-        url: "https://virelio.nl/logo.png",
+        url: `${siteConfig.url}${siteConfig.logoUrl}`,
       },
     },
     inLanguage: "nl-NL",
@@ -379,55 +379,6 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
   };
 }
 
-export function workshopSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "EducationalEvent",
-    name: "Impulso Co. AI Agent Workshop",
-    description: "Expert-led workshops on building AI agents, automation workflows, and integrating AI into business processes. Hands-on experience with real use cases.",
-    url: `${siteConfig.url}${siteConfig.sections.workshop}`,
-    organizer: {
-      "@type": "Organization",
-      name: "Impulso Co.",
-      url: siteConfig.url,
-    },
-    location: {
-      "@type": "Place",
-      name: "Online & Amsterdam",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "NL",
-        addressLocality: "Amsterdam",
-      },
-    },
-    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      validFrom: new Date().toISOString(),
-    },
-    about: [
-      {
-        "@type": "Thing",
-        name: "Artificial Intelligence",
-      },
-      {
-        "@type": "Thing", 
-        name: "AI Agents",
-      },
-      {
-        "@type": "Thing",
-        name: "Web Development",
-      },
-      {
-        "@type": "Thing",
-        name: "Automation",
-      },
-    ],
-  };
-}
-
 export function certificationsSchema() {
   return {
     "@context": "https://schema.org",
@@ -453,92 +404,5 @@ export function certificationsSchema() {
       { "@type": "ListItem", position: 15, item: { "@type": "EducationalOccupationalCredential", name: "Build Copilot AI Agents with Azure AI Studio", credentialCategory: "Copilot Development", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
       { "@type": "ListItem", position: 16, item: { "@type": "EducationalOccupationalCredential", name: "OCI Generative AI Professional", credentialCategory: "Cloud AI Deployment", recognizedBy: { "@type": "Organization", name: "Oracle" } } },
     ],
-  };
-}
-
-export function voiceAIServiceSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${siteConfig.url}/spraakassistent#service`,
-    name: "AI Spraakassistent voor Bedrijven",
-    alternateName: ["Voice AI", "Spraakassistent", "AI Telefonie", "Voice Assistant"],
-    description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen, vermindert gesprekvolume met 87%, en integreert met bestaande systemen.",
-    url: `${siteConfig.url}/spraakassistent`,
-    image: `${siteConfig.url}/og-image.png`,
-    serviceType: "AI Voice Automation",
-    provider: {
-      "@type": "Organization",
-      "@id": `${siteConfig.url}#organization`,
-      name: "Impulso Co.",
-      url: siteConfig.url,
-      logo: `${siteConfig.url}/og-image.png`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Amsterdam",
-        addressCountry: "NL"
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+31640495527",
-        contactType: "sales",
-        availableLanguage: ["nl", "en"]
-      }
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "Netherlands"
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "AI Spraakassistent Pakketten",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "Gratis Proefperiode",
-          description: "Test onze AI spraakassistent gratis",
-          price: "0",
-          priceCurrency: "EUR"
-        },
-        {
-          "@type": "Offer",
-          name: "Business Pakket",
-          description: "Voor MKB bedrijven",
-          priceSpecification: {
-            "@type": "PriceSpecification",
-            price: "Op aanvraag",
-            priceCurrency: "EUR"
-          }
-        },
-        {
-          "@type": "Offer",
-          name: "Enterprise Pakket",
-          description: "Voor grote organisaties",
-          priceSpecification: {
-            "@type": "PriceSpecification",
-            price: "Op aanvraag",
-            priceCurrency: "EUR"
-          }
-        }
-      ]
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "127",
-      bestRating: "5",
-      worstRating: "1"
-    },
-    potentialAction: {
-      "@type": "UseAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/spraakassistent`,
-        actionPlatform: [
-          "http://schema.org/DesktopWebPlatform",
-          "http://schema.org/MobileWebPlatform"
-        ]
-      }
-    }
   };
 }

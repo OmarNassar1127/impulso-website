@@ -23,7 +23,7 @@ export default function TermsOfServicePage() {
         <div className="prose dark:prose-invert max-w-none">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to Impulso Co. ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at virelio.nl ("Service") operated by Impulso Co.
+            Welcome to Impulso Co. ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at impulsoco.nl ("Service") operated by Impulso Co.
           </p>
           <p>
             By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.

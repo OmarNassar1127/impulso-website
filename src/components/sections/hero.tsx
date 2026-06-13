@@ -5,9 +5,10 @@ import { useLanguage } from "@/lib/i18n/language-context";
 
 /**
  * Hero: a particle-flow canvas (ported from particle_flow_impulso_v9).
- * Particles float, converge into "Impulso Co." + tagline, hold, then
- * scatter and loop. The value-proposition copy + CTAs live in the
- * guarantee section below; the hero is purely the animation.
+ * Particles float, then converge into "Impulso Co." + tagline and hold
+ * there permanently (the cursor still repels nearby dots). The value-
+ * proposition copy + CTAs live in the guarantee section below; the hero
+ * is purely the animation.
  */
 function HeroContent() {
   const { language } = useLanguage();
@@ -144,7 +145,9 @@ function HeroContent() {
       if (!ctx) return;
       frame++; phaseT++;
       const dur = [FLOAT_DUR, FORM_DUR, HOLD_DUR, SCATTER_DUR][phase];
-      if (phaseT >= dur) nextPhase();
+      // Form once, then hold on the brand name forever — never advance past
+      // the HOLD phase (phase 2), so it no longer scatters and re-loops.
+      if (phaseT >= dur && phase !== 2) nextPhase();
 
       ctx.fillStyle = BG;
       ctx.fillRect(0, 0, W, H);

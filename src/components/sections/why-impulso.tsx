@@ -66,7 +66,7 @@ const getReasons = (language: string) => {
   ];
 };
 
-export default function WhyVirelio() {
+export default function WhyImpulso() {
   const { language } = useLanguage();
   const isNL = language === "nl";
   const reasons = getReasons(language);

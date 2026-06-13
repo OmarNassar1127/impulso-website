@@ -1,16 +1,16 @@
 export const siteConfig = {
   name: "Impulso Co.",
   description: "AI agent development company in Amsterdam. We build custom AI agents for businesses — from klantenservice to sales automation. Live in 2 weeks.",
-  url: "https://virelio.nl",
-  metadataBase: "https://virelio.nl",
-  logoUrl: "/logo.svg",
+  url: "https://impulsoco.nl",
+  metadataBase: "https://impulsoco.nl",
+  logoUrl: "/impulso-mark.png",
   ogImage: "/og-image.png",
   twitterHandle: "@impulsoco",
   locale: "nl",
   authors: [
     {
       name: "Impulso Co. Team",
-      url: "https://virelio.nl",
+      url: "https://impulsoco.nl",
     },
   ],
   socials: {
@@ -54,14 +54,13 @@ export const siteConfig = {
   ],
   // For language-specific URLs (better for SEO)
   alternateLanguages: {
-    nl: "https://virelio.nl",
-    en: "https://virelio.nl/en",
+    nl: "https://impulsoco.nl",
+    en: "https://impulsoco.nl/en",
   },
   // Add sections for the one-page layout
   sections: {
     projects: "#projects",
     services: "#services",
-    workshop: "#workshop",
     about: "#about",
     testimonials: "#testimonials",
     demo: "#demo",

@@ -76,9 +76,6 @@ export const metadata: Metadata = {
       "en-US": `${siteConfig.url}/en`,
     },
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
   openGraph: {
     type: "website",
     locale: "nl_NL",

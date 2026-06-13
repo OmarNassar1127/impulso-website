@@ -3,7 +3,7 @@ import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import CaseStudies from "@/components/sections/case-studies";
-import WhyVirelio from "@/components/sections/why-virelio";
+import WhyImpulso from "@/components/sections/why-impulso";
 import About from "@/components/sections/about";
 import Certifications from "@/components/sections/certifications";
 import Services from "@/components/sections/services";
@@ -16,7 +16,7 @@ import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certificationsSchema } from "@/lib/schema";
+import { faqSchema, testimonialsSchema, servicesSchema, certificationsSchema } from "@/lib/schema";
 
 // FAQ data for the landing page
 const faqData = {
@@ -100,7 +100,6 @@ export default function Home() {
       <JsonLd data={faqSchema(faqData)} />
       <JsonLd data={testimonialsSchema(testimonialsData)} />
       <JsonLd data={servicesSchema()} />
-      <JsonLd data={workshopSchema()} />
       <JsonLd data={certificationsSchema()} />
 
       <main className="min-h-screen">
@@ -113,7 +112,7 @@ export default function Home() {
         </div>
         <Pricing />
         <CaseStudies />
-        <WhyVirelio />
+        <WhyImpulso />
         <About />
         <Certifications />
         <div id={siteConfig.sections.testimonials.substring(1)}>
