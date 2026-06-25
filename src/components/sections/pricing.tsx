@@ -33,22 +33,22 @@ export default function Pricing() {
       ],
       features: isNL
         ? [
+            "Support: Mail/WhatsApp · binnen 1 werkdag",
             "Website: 1–5 pagina's, responsive, op maat ontworpen (geen template) — NL/EN",
             "1 FAQ/WhatsApp-bot, getraind op jouw bedrijfsinfo",
             "Contactformulier + e-mailnotificatie",
             "Hosting, updates, security & backups",
             "1 uur/maand content-aanpassingen inbegrepen",
             "Optioneel: AI-bot die zelf taken uitvoert (meerprijs)",
-            "Support: Mail/WhatsApp · binnen 1 werkdag",
           ]
         : [
+            "Support: Email/WhatsApp · within 1 business day",
             "Website: 1–5 pages, responsive, custom-designed (no template) — NL/EN",
             "1 FAQ/WhatsApp bot, trained on your business info",
             "Contact form + email notification",
             "Hosting, updates, security & backups",
             "1 hour/month of content changes included",
             "Optional: an AI bot that performs tasks (add-on)",
-            "Support: Email/WhatsApp · within 1 business day",
           ],
       cta: isNL ? "Plan gratis intake" : "Book free intake",
     },
@@ -69,22 +69,22 @@ export default function Pricing() {
       ],
       features: isNL
         ? [
+            "Support: Mail/WhatsApp/telefoon · binnen 4 uur",
             "Website: tot 12 pagina's met CMS — beheer zelf je content",
             "Slimme AI-agent: leadkwalificatie + WhatsApp-integratie",
             "CRM-koppeling (HubSpot/Pipedrive) + agenda-integratie",
             "Wekelijkse updates, dagelijkse backups, performance-monitoring",
             "3 uur/maand content-aanpassingen inbegrepen",
             "Maandelijks dashboard met leads & gesprekken",
-            "Support: Mail/WhatsApp/telefoon · binnen 4 uur",
           ]
         : [
+            "Support: Email/WhatsApp/phone · within 4 hours",
             "Website: up to 12 pages with CMS — manage content yourself",
             "Smart AI agent: lead qualification + WhatsApp integration",
             "CRM integration (HubSpot/Pipedrive) + calendar integration",
             "Weekly updates, daily backups, performance monitoring",
             "3 hours/month of content changes included",
             "Monthly dashboard with leads & conversations",
-            "Support: Email/WhatsApp/phone · within 4 hours",
           ],
       cta: isNL ? "Plan gratis intake" : "Book free intake",
     },
@@ -104,18 +104,18 @@ export default function Pricing() {
       ],
       features: isNL
         ? [
+            "Support: N.o.t.k.",
             "Maatwerk-integraties en koppelingen",
             "Onbeperkt pagina's en agents (in overleg)",
             "AI-agents voor complexere, zelfstandige taken",
             "SLA & dedicated support",
-            "Support: N.o.t.k.",
           ]
         : [
+            "Support: On request",
             "Custom integrations and connections",
             "Unlimited pages and agents (by arrangement)",
             "AI agents for more complex, autonomous tasks",
             "SLA & dedicated support",
-            "Support: On request",
           ],
       cta: isNL ? "Neem contact op" : "Get in touch",
     },
@@ -162,7 +162,7 @@ export default function Pricing() {
         </div>
 
         {/* Plans — hairline grid */}
-        <div className="grid md:grid-cols-3 border-t border-l border-foreground/15">
+        <div className="grid md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -170,10 +170,12 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="flex flex-col p-8 sm:p-10 border-r border-b border-foreground/15"
+              className={`flex flex-col p-8 sm:p-10 border ${
+                plan.popular ? "border-terracotta" : "border-foreground/15"
+              }`}
             >
               <div className="flex items-center justify-between mb-5">
-                <h3 className="text-lg font-medium tracking-tight text-foreground">
+                <h3 className="text-lg font-bold tracking-tight text-foreground">
                   {plan.name}
                 </h3>
                 {plan.popular && (
