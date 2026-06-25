@@ -30,12 +30,6 @@ export default function Pricing() {
           label: isNL ? "Opzegtermijn" : "Notice period",
           value: isNL ? "1 maand" : "1 month",
         },
-        {
-          label: "Support",
-          value: isNL
-            ? "Mail/WhatsApp · binnen 1 werkdag"
-            : "Email/WhatsApp · within 1 business day",
-        },
       ],
       features: isNL
         ? [
@@ -45,6 +39,7 @@ export default function Pricing() {
             "Hosting, updates, security & backups",
             "1 uur/maand content-aanpassingen inbegrepen",
             "Optioneel: AI-bot die zelf taken uitvoert (meerprijs)",
+            "Support: Mail/WhatsApp · binnen 1 werkdag",
           ]
         : [
             "Website: 1–5 pages, responsive, custom-designed (no template) — NL/EN",
@@ -53,6 +48,7 @@ export default function Pricing() {
             "Hosting, updates, security & backups",
             "1 hour/month of content changes included",
             "Optional: an AI bot that performs tasks (add-on)",
+            "Support: Email/WhatsApp · within 1 business day",
           ],
       cta: isNL ? "Plan gratis intake" : "Book free intake",
     },
@@ -70,12 +66,6 @@ export default function Pricing() {
           label: isNL ? "Opzegtermijn" : "Notice period",
           value: isNL ? "1 maand" : "1 month",
         },
-        {
-          label: "Support",
-          value: isNL
-            ? "Mail/WhatsApp/telefoon · binnen 4 uur"
-            : "Email/WhatsApp/phone · within 4 hours",
-        },
       ],
       features: isNL
         ? [
@@ -85,6 +75,7 @@ export default function Pricing() {
             "Wekelijkse updates, dagelijkse backups, performance-monitoring",
             "3 uur/maand content-aanpassingen inbegrepen",
             "Maandelijks dashboard met leads & gesprekken",
+            "Support: Mail/WhatsApp/telefoon · binnen 4 uur",
           ]
         : [
             "Website: up to 12 pages with CMS — manage content yourself",
@@ -93,6 +84,7 @@ export default function Pricing() {
             "Weekly updates, daily backups, performance monitoring",
             "3 hours/month of content changes included",
             "Monthly dashboard with leads & conversations",
+            "Support: Email/WhatsApp/phone · within 4 hours",
           ],
       cta: isNL ? "Plan gratis intake" : "Book free intake",
     },
@@ -109,10 +101,6 @@ export default function Pricing() {
           label: isNL ? "Opzegtermijn" : "Notice period",
           value: isNL ? "In overleg" : "By arrangement",
         },
-        {
-          label: "Support",
-          value: isNL ? "N.o.t.k." : "On request",
-        },
       ],
       features: isNL
         ? [
@@ -120,12 +108,14 @@ export default function Pricing() {
             "Onbeperkt pagina's en agents (in overleg)",
             "AI-agents voor complexere, zelfstandige taken",
             "SLA & dedicated support",
+            "Support: N.o.t.k.",
           ]
         : [
             "Custom integrations and connections",
             "Unlimited pages and agents (by arrangement)",
             "AI agents for more complex, autonomous tasks",
             "SLA & dedicated support",
+            "Support: On request",
           ],
       cta: isNL ? "Neem contact op" : "Get in touch",
     },
@@ -204,7 +194,7 @@ export default function Pricing() {
                     <span className="text-4xl font-medium tracking-tight text-foreground">
                       {plan.monthly}
                     </span>
-                    <span className="text-lg font-medium text-foreground leading-none">
+                    <span className="text-4xl font-medium tracking-tight text-foreground">
                       *
                     </span>
                     <span className="text-sm text-muted-foreground ml-1">
@@ -223,7 +213,7 @@ export default function Pricing() {
                     {plan.custom}
                   </span>
                   <p className="text-sm text-muted-foreground mt-2">
-                    {isNL ? "Setup & maand op aanvraag" : "Setup & monthly on request"}
+                    {isNL ? "Setup & maandbedrag op aanvraag" : "Setup & monthly fee on request"}
                   </p>
                 </div>
               )}
