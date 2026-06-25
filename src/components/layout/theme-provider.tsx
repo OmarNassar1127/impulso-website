@@ -11,9 +11,12 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     setMounted(true);
   }, []);
 
-  // Return null instead of an empty div to prevent hydration mismatch
+  // Render children on the server so pages are statically prerendered (SEO);
+  // the next-themes wrapper only kicks in after mount. Returning null here
+  // deopted the entire app to client-side rendering. Safe because the theme is
+  // forced to "light", so there is no server/client theme mismatch to hide.
   if (!mounted) {
-    return null;
+    return <>{children}</>;
   }
 
   return (
