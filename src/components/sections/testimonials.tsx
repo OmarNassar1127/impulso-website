@@ -49,8 +49,8 @@ const testimonials: Testimonial[] = [
     },
     image: "/images/references/ihor.jpeg",
     content: {
-      en: "Working with Impulso Co. showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds — truly impressive efficiency improvement.",
-      nl: "Het werken met Impulso Co. toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden — indrukwekkend.",
+      en: "Working with Impulso Co. showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds, truly impressive efficiency improvement.",
+      nl: "Het werken met Impulso Co. toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden, indrukwekkend.",
     },
     rating: 5,
   },
@@ -106,7 +106,7 @@ function TestimonialCard({
   language: string;
 }) {
   return (
-    <div className="h-full flex flex-col p-8 sm:p-10 border border-foreground/15 bg-background">
+    <div className="h-full flex flex-col p-8 sm:p-10 border border-foreground/20 bg-white card-hover">
       {/* Quote */}
       <blockquote className="flex-1 text-base sm:text-lg text-foreground/80 font-light leading-relaxed mb-8">
         &ldquo;
@@ -200,7 +200,7 @@ export default function Testimonials() {
             </motion.h2>
           </div>
 
-          {/* Navigation arrows — desktop */}
+          {/* Navigation arrows, desktop */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -228,10 +228,10 @@ export default function Testimonials() {
         <div className="relative">
           {/* Fade edges */}
           {canScrollLeft && (
-            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-r from-[#f6f1ec] to-transparent z-10 pointer-events-none" />
           )}
           {canScrollRight && (
-            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-l from-[#f6f1ec] to-transparent z-10 pointer-events-none" />
           )}
 
           <div

@@ -107,8 +107,8 @@ const getCategories = (language: string): Category[] => {
           icon: UserMinus,
           headline: isNL ? "Red klanten voordat ze vertrekken" : "Save customers before they leave",
           description: isNL
-            ? "Detecteert signalen van afhakende klanten — minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
-            : "Detects signals of churning customers — fewer logins, unanswered emails, declining usage. Automatically triggers a personalized retention offer.",
+            ? "Detecteert signalen van afhakende klanten, minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
+            : "Detects signals of churning customers, fewer logins, unanswered emails, declining usage. Automatically triggers a personalized retention offer.",
           integrations: ["HubSpot", "Mixpanel", "Intercom", "Stripe"],
           results: isNL
             ? [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Voorspelling" }, { value: "Auto", label: "Retentie" }]
@@ -117,7 +117,7 @@ const getCategories = (language: string): Category[] => {
         {
           name: isNL ? "Social Listening Agent" : "Social Listening Agent",
           icon: Globe,
-          headline: isNL ? "Weet wat mensen over je merk zeggen — overal" : "Know what people say about your brand — everywhere",
+          headline: isNL ? "Weet wat mensen over je merk zeggen, overal" : "Know what people say about your brand, everywhere",
           description: isNL
             ? "Monitort vermeldingen van je merk op Reddit, LinkedIn, X, reviews en forums. Classificeert sentiment en stuurt een dagelijkse digest met de highlights."
             : "Monitors mentions of your brand on Reddit, LinkedIn, X, reviews and forums. Classifies sentiment and sends a daily digest with highlights.",
@@ -603,10 +603,10 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Track & trace naar klant gestuurd", status: "active", time: "11:24" },
         ],
         [
-          { label: "Milestone bereikt — factuur aangemaakt", status: "done", time: "Ma 09:00" },
+          { label: "Milestone bereikt, factuur aangemaakt", status: "done", time: "Ma 09:00" },
           { label: "PDF verstuurd via Moneybird", status: "done", time: "Ma 09:01" },
-          { label: "Geen betaling na 14d — herinnering", status: "done", time: "Di 09:00" },
-          { label: "Betaling binnen — automatisch geboekt", status: "active", time: "Wo 14:12" },
+          { label: "Geen betaling na 14d, herinnering", status: "done", time: "Di 09:00" },
+          { label: "Betaling binnen, automatisch geboekt", status: "active", time: "Wo 14:12" },
         ],
         [
           { label: "Arbeidsovereenkomst digitaal getekend", status: "done", time: "Dag 1" },
@@ -615,7 +615,7 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Eerste eigen taak toegewezen", status: "active", time: "Dag 3" },
         ],
         [
-          { label: "Meeting gestart — opname actief", status: "done", time: "14:00" },
+          { label: "Meeting gestart, opname actief", status: "done", time: "14:00" },
           { label: "3 actiepunten gedetecteerd", status: "done", time: "14:32" },
           { label: "Notulen gegenereerd", status: "done", time: "14:45" },
           { label: "Verstuurd naar #team + Linear", status: "active", time: "14:46" },
@@ -629,10 +629,10 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Track & trace sent to customer", status: "active", time: "11:24" },
         ],
         [
-          { label: "Milestone hit — invoice created", status: "done", time: "Mon 09:00" },
+          { label: "Milestone hit, invoice created", status: "done", time: "Mon 09:00" },
           { label: "PDF sent via Moneybird", status: "done", time: "Mon 09:01" },
-          { label: "No payment after 14d — reminder sent", status: "done", time: "Tue 09:00" },
-          { label: "Payment received — auto-booked", status: "active", time: "Wed 14:12" },
+          { label: "No payment after 14d, reminder sent", status: "done", time: "Tue 09:00" },
+          { label: "Payment received, auto-booked", status: "active", time: "Wed 14:12" },
         ],
         [
           { label: "Employment contract signed digitally", status: "done", time: "Day 1" },
@@ -641,7 +641,7 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "First own task assigned", status: "active", time: "Day 3" },
         ],
         [
-          { label: "Meeting started — recording active", status: "done", time: "14:00" },
+          { label: "Meeting started, recording active", status: "done", time: "14:00" },
           { label: "3 action items detected", status: "done", time: "14:32" },
           { label: "Minutes generated", status: "done", time: "14:45" },
           { label: "Sent to #team + Linear", status: "active", time: "14:46" },
@@ -684,7 +684,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
           query: "Hoe werkt de garantie op maatwerkprojecten?",
           results: [
             { source: "Servicevoorwaarden 2025", page: "§7.1", match: "Maatwerkprojecten vallen onder 12 maanden garantie op..." },
-            { source: "Intern wiki — Garanties", page: "p.4", match: "Bij maatwerkoplossingen geldt een SLA van 48 uur voor..." },
+            { source: "Intern wiki, Garanties", page: "p.4", match: "Bij maatwerkoplossingen geldt een SLA van 48 uur voor..." },
             { source: "Klant-onboarding doc", page: "#22", match: "Leg bij oplevering de garantievoorwaarden vast in het..." },
           ],
         },
@@ -699,7 +699,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
         {
           query: "Maak maandoverzicht operatie maart",
           results: [
-            { source: "Exact Online", page: "live", match: "Omzet maart: €87K — 8% boven target" },
+            { source: "Exact Online", page: "live", match: "Omzet maart: €87K, 8% boven target" },
             { source: "Jira board", page: "live", match: "23 tickets opgelost, 2 open, gem. doorlooptijd 1.4 dag" },
             { source: "Google Sheets team", page: "live", match: "Overzicht verstuurd naar #management + PDF opgeslagen" },
           ],
@@ -718,7 +718,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
           query: "How does warranty work on custom projects?",
           results: [
             { source: "Service Terms 2025", page: "§7.1", match: "Custom projects are covered by 12 months warranty on..." },
-            { source: "Internal wiki — Warranties", page: "p.4", match: "For custom solutions, a 48-hour SLA applies for..." },
+            { source: "Internal wiki, Warranties", page: "p.4", match: "For custom solutions, a 48-hour SLA applies for..." },
             { source: "Client onboarding doc", page: "#22", match: "Document warranty terms at delivery in the project..." },
           ],
         },
@@ -733,7 +733,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
         {
           query: "Generate monthly ops overview March",
           results: [
-            { source: "Exact Online", page: "live", match: "Revenue March: €87K — 8% above target" },
+            { source: "Exact Online", page: "live", match: "Revenue March: €87K, 8% above target" },
             { source: "Jira board", page: "live", match: "23 tickets resolved, 2 open, avg lead time 1.4 days" },
             { source: "Google Sheets team", page: "live", match: "Overview sent to #management + PDF saved" },
           ],
@@ -861,12 +861,12 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
   const allData = isNL
     ? [
         { doc: "Leverancierscontract_2025.pdf", findings: [
-          { type: "risk", text: "Betalingstermijn 90 dagen — standaard is 30" },
+          { type: "risk", text: "Betalingstermijn 90 dagen, standaard is 30" },
           { type: "missing", text: "Verwerkersovereenkomst ontbreekt" },
           { type: "ok", text: "Aansprakelijkheidsclausule conform" },
         ]},
         { doc: "Maandrapport_uitgaven_maart.xlsx", findings: [
-          { type: "alert", text: "Dubbele factuur #4421 gedetecteerd — €1.240" },
+          { type: "alert", text: "Dubbele factuur #4421 gedetecteerd, €1.240" },
           { type: "info", text: "Marketing budget 12% boven limiet" },
           { type: "ok", text: "Alle overige categorieën binnen budget" },
         ]},
@@ -877,18 +877,18 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
         ]},
         { doc: "Cashflow_forecast_Q2_2026.pdf", findings: [
           { type: "info", text: "Verwachte inkomsten Q2: €142K (+8% vs Q1)" },
-          { type: "alert", text: "Tekort verwacht week 22 — €4.200 onder minimum" },
+          { type: "alert", text: "Tekort verwacht week 22-€4.200 onder minimum" },
           { type: "ok", text: "Aanbeveling: vervroeg factuur #912 of stel investering uit" },
         ]},
       ]
     : [
         { doc: "Supplier_Contract_2025.pdf", findings: [
-          { type: "risk", text: "Payment term 90 days — standard is 30" },
+          { type: "risk", text: "Payment term 90 days, standard is 30" },
           { type: "missing", text: "Data processing agreement missing" },
           { type: "ok", text: "Liability clause compliant" },
         ]},
         { doc: "Monthly_Expenses_March.xlsx", findings: [
-          { type: "alert", text: "Duplicate invoice #4421 detected — €1,240" },
+          { type: "alert", text: "Duplicate invoice #4421 detected, €1,240" },
           { type: "info", text: "Marketing budget 12% over limit" },
           { type: "ok", text: "All other categories within budget" },
         ]},
@@ -899,7 +899,7 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
         ]},
         { doc: "Cashflow_Forecast_Q2_2026.pdf", findings: [
           { type: "info", text: "Expected revenue Q2: €142K (+8% vs Q1)" },
-          { type: "alert", text: "Shortfall expected week 22 — €4,200 below minimum" },
+          { type: "alert", text: "Shortfall expected week 22-€4,200 below minimum" },
           { type: "ok", text: "Recommendation: expedite invoice #912 or defer investment" },
         ]},
       ];
@@ -1056,7 +1056,7 @@ function CategoryDetail({
                 </p>
               </div>
 
-              {/* Results — hairline cells */}
+              {/* Results, hairline cells */}
               <div className="flex border-t border-l border-foreground/15">
                 {agent.results.map((r, i) => (
                   <motion.div
@@ -1066,7 +1066,7 @@ function CategoryDetail({
                     transition={{ delay: 0.1 + i * 0.08 }}
                     className="flex-1 min-w-[100px] p-4 border-r border-b border-foreground/15"
                   >
-                    <div className="text-2xl font-medium text-foreground">
+                    <div className="text-2xl font-medium text-terracotta">
                       {r.value}
                     </div>
                     <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-1">
@@ -1161,7 +1161,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Category cards — hairline cells, monochrome */}
+        {/* Category cards, hairline cells, monochrome */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-foreground/15">
           {categories.map((cat, i) => {
             const CatIcon = cat.icon;
@@ -1173,11 +1173,11 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06, duration: 0.4, ease: "easeOut" }}
                 onClick={() => setSelectedCategory(cat)}
-                className="text-left group relative p-8 sm:p-10 border-r border-b border-foreground/15 hover:bg-foreground/[0.02] transition-colors duration-300"
+                className="text-left group relative p-8 sm:p-10 border-r border-b border-foreground/15 hover:bg-terracotta/[0.03] transition-colors duration-300"
               >
                 {/* Icon + explore CTA */}
                 <div className="flex items-center justify-between mb-6">
-                  <CatIcon className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                  <CatIcon className="w-6 h-6 text-terracotta" strokeWidth={1.5} />
                   <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                     <span className="text-xs text-muted-foreground">{isNL ? "Ontdek" : "Explore"}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-muted-foreground" />
@@ -1207,7 +1207,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mt-12 border border-foreground/15 bg-muted/30 dark:bg-muted/10 p-10 sm:p-14 flex flex-col lg:flex-row lg:items-center gap-8"
+          className="mt-12 border border-foreground/15 surface-warm p-10 sm:p-14 flex flex-col lg:flex-row lg:items-center gap-8"
         >
           <div className="lg:flex-1">
             <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-foreground mb-3">
@@ -1217,8 +1217,8 @@ const Services = () => {
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground font-light max-w-xl leading-relaxed">
               {isNL
-                ? "Geen probleem. Wij bouwen agents volledig op maat — afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
-                : "No problem. We build fully custom agents — tailored to your processes, systems and needs. Tell us what you're looking for."}
+                ? "Geen probleem. Wij bouwen agents volledig op maat, afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
+                : "No problem. We build fully custom agents, tailored to your processes, systems and needs. Tell us what you're looking for."}
             </p>
           </div>
           <button

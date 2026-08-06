@@ -19,19 +19,23 @@ export function generateMetadata({
   keywords,
   pathname = "",
   imageUrl = siteConfig.ogImage,
-  imageAlt = "Impulso Co. — AI Agents op Maat voor Bedrijven",
+  imageAlt = "Impulso Co. AI Agents op Maat voor Bedrijven",
   locale = "nl_NL",
   type = "website",
   noIndex = false,
 }: MetadataProps): Metadata {
   const url = `${siteConfig.url}${pathname}`;
+  // fullTitle carries the brand and is used for OG/Twitter, which do NOT run
+  // through the root layout's title template. The <title> tag itself gets the
+  // bare title, because that template ("%s | Impulso Co.") appends the brand,
+  // appending it here too produced "... | Impulso Co. | Impulso Co.".
   const fullTitle = title
     ? `${title} | ${siteConfig.name}`
     : `${siteConfig.name} - ${siteConfig.description}`;
   const metaDescription = description || siteConfig.description;
 
   return {
-    title: fullTitle,
+    title: title || `${siteConfig.name} - ${siteConfig.description}`,
     description: metaDescription,
     keywords: keywords,
     metadataBase: new URL(siteConfig.url),

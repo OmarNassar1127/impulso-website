@@ -1,14 +1,15 @@
 import { generateMetadata as genMeta } from "@/lib/metadata";
-import { faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
+import StickyIntakeCTA from "@/components/sticky-intake-cta";
 import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, MessageSquare } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "AI Agent Laten Bouwen — Maatwerk AI Agents",
+  title: "AI Agent Laten Bouwen, Maatwerk AI Agents",
   description:
-    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Prijzen vanaf €2.000. GDPR-compliant, Amsterdam.",
+    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Vanaf €595 setup + €24,95/maand. GDPR-compliant, Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -19,12 +20,12 @@ const faqItems = [
   {
     question: "Wat kost een AI agent laten bouwen?",
     answer:
-      "Een eenvoudige AI agent kost vanaf €2.000 (eenmalig). Een complete bedrijfsoplossing met meerdere geïntegreerde agents ligt tussen de €5.000 en €15.000+. Daarbovenop zijn er maandelijkse kosten voor API-gebruik en hosting, doorgaans €200–€800 per maand afhankelijk van het volume.",
+      "Starten kan vanaf €595 eenmalige setup plus €24,95 per maand (ZZP-pakket). Voor groeiende bedrijven met meerdere samenwerkende agents is dat €1.395 setup plus €149,95 per maand (MKB-pakket). Volledige maatwerkoplossingen, bijvoorbeeld een complete afdeling, worden op maat geprijsd. Het maandbedrag dekt hosting, updates, security en support; API-gebruik loopt via je eigen keys, dus zonder opslag.",
   },
   {
     question: "Hoe lang duurt het om een AI agent te bouwen?",
     answer:
-      "Wij leveren een werkende prototype binnen 1 week na de intake. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3–4 weken in beslag nemen.",
+      "Wij leveren een werkende prototype binnen 1 week na de intake. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3-4 weken in beslag nemen.",
   },
   {
     question: "Wat is het verschil tussen een AI agent en een chatbot?",
@@ -39,7 +40,7 @@ const faqItems = [
   {
     question: "Is mijn data veilig bij een AI agent van Impulso Co.?",
     answer:
-      "Absoluut. Wij werken GDPR-compliant en al uw data wordt verwerkt binnen de EU. On-premise deployment is mogelijk als u data uw bedrijfsnetwerk niet wilt verlaten. U behoudt altijd 100% eigenaarschap van uw data — geen vendor lock-in.",
+      "Absoluut. Wij werken GDPR-compliant en al uw data wordt verwerkt binnen de EU. On-premise deployment is mogelijk als u data uw bedrijfsnetwerk niet wilt verlaten. U behoudt altijd 100% eigenaarschap van uw data, geen vendor lock-in.",
   },
 ];
 
@@ -62,7 +63,7 @@ const agentTypes = [
     icon: Zap,
     title: "Operations Agent",
     description:
-      "Verwerkt orders, maakt facturen aan, koppelt met Exact Online of Moneybird — volledig automatisch.",
+      "Verwerkt orders, maakt facturen aan, koppelt met Exact Online of Moneybird, volledig automatisch.",
     saving: "90% minder handwerk",
   },
   {
@@ -107,40 +108,40 @@ const processSteps = [
 
 const pricingTiers = [
   {
-    name: "Starter",
-    price: "€2.000",
-    description: "Eén gerichte agent voor een specifieke taak",
+    name: "ZZP",
+    price: "€595",
+    description: "Eenmalige setup, daarna €24,95/mnd, voor zelfstandigen",
     features: [
-      "1 AI agent",
-      "1 integratie (bijv. Slack of e-mail)",
+      "Support via mail/WhatsApp · binnen 1 werkdag",
+      "1 AI agent, getraind op jouw bedrijfsinfo",
+      "1 integratie (bijv. WhatsApp of e-mail)",
       "Standaard LLM (GPT-4o of Claude)",
-      "2 weken oplevering",
-      "1 maand support",
-    ],
-  },
-  {
-    name: "Business",
-    price: "€5.000 – €8.000",
-    description: "Meerdere agents die samenwerken",
-    features: [
-      "2–4 samenwerkende agents",
-      "Tot 3 integraties (CRM, ERP, support)",
-      "Fijn afgestemd op uw tone-of-voice",
-      "Dashboard met analytics",
-      "3 maanden support",
+      "Live binnen 2 weken",
     ],
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    price: "€15.000+",
-    description: "Volledige AI-transformatie van een afdeling",
+    name: "MKB",
+    price: "€1.395",
+    description: "Eenmalige setup, daarna €149,95/mnd, voor groeiende bedrijven",
     features: [
+      "Support via mail/WhatsApp/telefoon · binnen 4 uur",
+      "Meerdere samenwerkende agents",
+      "Tot 3 integraties (CRM, agenda, support)",
+      "Leadkwalificatie + WhatsApp-integratie",
+      "Maandelijks dashboard met leads & gesprekken",
+    ],
+  },
+  {
+    name: "Op maat",
+    price: "Op maat",
+    description: "Prijs in overleg, volledige afdeling of custom rol",
+    features: [
+      "SLA + dedicated support",
       "Onbeperkt agents",
       "On-premise deployment mogelijk",
       "Fine-tuned modellen",
       "Volledige systeem-integraties",
-      "SLA + dedicated support",
     ],
   },
 ];
@@ -160,6 +161,14 @@ export default function AIAgentBouwenPage() {
     ],
   });
 
+  const serviceSchemaData = serviceSchema({
+    name: "AI Agent Laten Bouwen",
+    description:
+      "Maatwerk AI agents voor klantenservice, sales, operations en kennisbanken. Prototype in 1 week, live in 2 weken.",
+    serviceType: "AI Agent Development",
+    url: `${siteConfig.url}/diensten/ai-agent-bouwen`,
+  });
+
   return (
     <>
       <script
@@ -169,6 +178,10 @@ export default function AIAgentBouwenPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemaData) }}
       />
 
       <main className="min-h-screen bg-background">
@@ -185,7 +198,7 @@ export default function AIAgentBouwenPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted/60 border border-border/60 px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-6">
               <Bot className="h-3.5 w-3.5 text-primary" />
-              Maatwerk AI Agent Development — Amsterdam
+              Maatwerk AI Agent Development, Amsterdam
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-5 sm:mb-6">
               AI Agent Laten Bouwen
@@ -194,7 +207,8 @@ export default function AIAgentBouwenPage() {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Impulso Co. bouwt maatwerk AI agents die zelfstandig taken uitvoeren,
               beslissingen nemen en integreren met uw bestaande software.
-              Prototype in 1 week. Live in 2 weken. Vanaf €2.000.
+              Prototype in 1 week. Live in 2 weken. Vanaf{" "}
+              <strong className="font-semibold text-foreground">€24,95 per maand</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -213,6 +227,17 @@ export default function AIAgentBouwenPage() {
                 Stel een vraag
               </a>
             </div>
+
+            <p className="mt-6 text-xs sm:text-sm text-muted-foreground">
+              Zoek je vooral een nieuwe of vernieuwde website?{" "}
+              <a
+                href="/diensten/website-laten-maken"
+                className="font-semibold text-primary hover:underline"
+              >
+                Bekijk website laten maken
+              </a>
+              .
+            </p>
 
             {/* Social proof strip */}
             <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs sm:text-sm text-muted-foreground">
@@ -240,14 +265,14 @@ export default function AIAgentBouwenPage() {
         <section id="wat-is-ai-agent" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              Wat is een AI agent — en waarom is het geen chatbot?
+              Wat is een AI agent, en waarom is het geen chatbot?
             </h2>
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                   Een AI agent is software die zelfstandig een doel nastreeft.
                   Het systeem percipieert informatie uit zijn omgeving (e-mail,
-                  CRM, documenten), neemt beslissingen en voert acties uit —
+                  CRM, documenten), neemt beslissingen en voert acties uit, 
                   zonder dat een mens elke stap hoeft te bevestigen.
                 </p>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -302,7 +327,7 @@ export default function AIAgentBouwenPage() {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Wij hebben gespecialiseerde agents gebouwd voor elk type
-                bedrijfstaak — elk volledig maatwerk op uw proces.
+                bedrijfstaak, elk volledig maatwerk op uw proces.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
@@ -342,7 +367,7 @@ export default function AIAgentBouwenPage() {
               >
                 Vertel ons uw situatie
               </a>{" "}
-              — wij denken graag mee.
+, wij denken graag mee.
             </p>
           </div>
         </section>
@@ -355,7 +380,7 @@ export default function AIAgentBouwenPage() {
                 Van intake naar live in 2 weken
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Ons proces is snel, transparant en gericht op resultaat — niet
+                Ons proces is snel, transparant en gericht op resultaat, niet
                 op eindeloze analysefases.
               </p>
             </div>
@@ -399,9 +424,9 @@ export default function AIAgentBouwenPage() {
                 Transparante prijzen
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Geen verrassingen achteraf. Alle prijzen zijn eenmalige
-                ontwikkelkosten. Maandelijkse API- en hostingkosten zijn
-                doorgaans €200–€800.
+                Geen verrassingen achteraf. Een eenmalige setup plus een vast
+                maandbedrag voor hosting, updates, security & support.
+                API-gebruik loopt via je eigen keys, dus zonder opslag.
               </p>
             </div>
             <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
@@ -476,7 +501,11 @@ export default function AIAgentBouwenPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-center text-xs sm:text-sm text-muted-foreground">
+            <p className="mt-6 text-center text-sm font-medium text-foreground">
+              Maandelijks opzegbaar · geen lange contracten. Niet tevreden? We
+              werken door tot het werkt.
+            </p>
+            <p className="mt-2 text-center text-xs sm:text-sm text-muted-foreground">
               WBSO-subsidie van toepassing? U kunt tot 35% van de R&D-kosten
               terugkrijgen via de WBSO-regeling. Wij helpen u daarbij.
             </p>
@@ -514,7 +543,7 @@ export default function AIAgentBouwenPage() {
               Klaar om uw eerste AI agent te bouwen?
             </h2>
             <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
-              Plan een gratis intake van 30 minuten. Geen verkoopverhaal — wij
+              Plan een gratis intake van 30 minuten. Geen verkoopverhaal, wij
               luisteren naar uw situatie en vertellen u eerlijk wat mogelijk is.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -535,7 +564,7 @@ export default function AIAgentBouwenPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31640495527"
                 className="hover:text-foreground transition-colors"
@@ -546,6 +575,7 @@ export default function AIAgentBouwenPage() {
           </div>
         </section>
 
+        <StickyIntakeCTA />
         <Footer />
       </main>
     </>

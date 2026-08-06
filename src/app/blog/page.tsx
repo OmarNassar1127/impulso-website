@@ -2,13 +2,15 @@ import Link from "next/link";
 import { ArrowRight, Clock, Calendar, BookOpen } from "lucide-react";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 import { blogPosts, formatDate } from "@/lib/blog-data";
+import { siteConfig } from "@/lib/config";
+import { breadcrumbSchema } from "@/lib/schema";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 
 export const metadata = genMeta({
-  title: "Blog — AI Agents & Automatisering voor Bedrijven",
+  title: "Blog, AI Agents & Automatisering voor Bedrijven",
   description:
-    "Praktische artikelen over AI agents, automatisering, RAG-systemen en WhatsApp bots voor het Nederlandse MKB. Concrete adviezen, eerlijke prijzen en bewezen strategieën van Impulso Co.",
+    "Praktische artikelen over AI agents, automatisering, RAG-systemen en WhatsApp-agents voor het Nederlandse MKB. Concrete adviezen, eerlijke prijzen en bewezen strategieën van Impulso Co.",
   keywords:
     "AI blog Nederland, AI agents artikelen, automatisering MKB blog, RAG systeem gids, WhatsApp AI bedrijven, klantenservice automatisering gids",
   pathname: "/blog",
@@ -24,9 +26,45 @@ export default function BlogPage() {
 
   const [featured, ...rest] = sortedPosts;
 
+  const blogListSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${siteConfig.url}/blog#blog`,
+    name: "Impulso Co. Blog",
+    description:
+      "Praktische artikelen over AI agents, automatisering en RAG voor Nederlandse bedrijven.",
+    url: `${siteConfig.url}/blog`,
+    inLanguage: "nl-NL",
+    publisher: { "@id": `${siteConfig.url}#organization` },
+    blogPost: sortedPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      datePublished: post.publishedAt,
+      author: { "@type": "Organization", name: siteConfig.name },
+    })),
+  };
+
+  const breadcrumbData = breadcrumbSchema({
+    items: [
+      { position: 1, name: "Home", item: siteConfig.url },
+      { position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+    ],
+  });
+
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <main className="min-h-screen">
+        <Navbar />
 
       {/* Hero */}
       <section className="pt-28 sm:pt-36 md:pt-44 pb-12 sm:pb-16 md:pb-20">
@@ -148,6 +186,7 @@ export default function BlogPage() {
       </div>
 
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }

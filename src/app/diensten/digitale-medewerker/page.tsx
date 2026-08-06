@@ -1,8 +1,9 @@
 import { generateMetadata as genMeta } from "@/lib/metadata";
-import { faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
+import StickyIntakeCTA from "@/components/sticky-intake-cta";
 import {
   ArrowRight,
   Users,
@@ -17,7 +18,7 @@ import {
 } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "Digitale Medewerker — AI die Zelfstandig Werk Overneemt",
+  title: "Digitale Medewerker, AI die Zelfstandig Werk Overneemt",
   description:
     "Een digitale medewerker van Impulso Co. werkt 24/7, maakt geen fouten en kost een fractie van een menselijke FTE. Multi-agent AI die taken overneemt in HR, finance, operations en klantenservice. Amsterdam.",
   keywords:
@@ -30,12 +31,12 @@ const faqItems = [
   {
     question: "Wat is een digitale medewerker precies?",
     answer:
-      "Een digitale medewerker is een AI-systeem dat zelfstandig een rol vervult binnen uw organisatie — net zoals een menselijke medewerker, maar dan 24/7, foutloos en zonder ziekteverlof. Het systeem bestaat uit meerdere samenwerkende AI agents die samen een takenpakket beheren: van het beantwoorden van klantvragen tot het verwerken van facturen.",
+      "Een digitale medewerker is een AI-systeem dat zelfstandig een rol vervult binnen uw organisatie, net zoals een menselijke medewerker, maar dan 24/7, foutloos en zonder ziekteverlof. Het systeem bestaat uit meerdere samenwerkende AI agents die samen een takenpakket beheren: van het beantwoorden van klantvragen tot het verwerken van facturen.",
   },
   {
     question: "Hoe verschilt een digitale medewerker van gewone automatisering?",
     answer:
-      "Traditionele automatisering (RPA, scripts) volgt vaste regels en faalt bij uitzonderingen. Een digitale medewerker begrijpt context, past zich aan op nieuwe situaties en kan complexe beslissingen nemen. Hij leest e-mails, begrijpt de intentie en kiest de juiste actie — ook als het bericht onverwacht is.",
+      "Traditionele automatisering (RPA, scripts) volgt vaste regels en faalt bij uitzonderingen. Een digitale medewerker begrijpt context, past zich aan op nieuwe situaties en kan complexe beslissingen nemen. Hij leest e-mails, begrijpt de intentie en kiest de juiste actie, ook als het bericht onverwacht is.",
   },
   {
     question: "Voor welke afdelingen is een digitale medewerker geschikt?",
@@ -45,7 +46,7 @@ const faqItems = [
   {
     question: "Wat zijn de kosten van een digitale medewerker?",
     answer:
-      "De eenmalige implementatiekosten liggen tussen €5.000 en €15.000 afhankelijk van complexiteit. De maandelijkse operationele kosten zijn €300–€1.000 voor API-gebruik en hosting. Ter vergelijking: een menselijke FTE kost gemiddeld €40.000–€60.000 per jaar inclusief overhead.",
+      "Een digitale medewerker is altijd maatwerk, dus de prijs bepalen we in overleg op basis van de rol, de complexiteit en de integraties. Het werkt met een eenmalige setup plus een vast maandbedrag voor hosting, updates en support, API-gebruik loopt via je eigen keys, dus zonder opslag. Ter vergelijking: een menselijke FTE kost gemiddeld €40.000-€60.000 per jaar inclusief overhead, en een digitale medewerker is daar doorgaans een fractie van.",
   },
   {
     question: "Kan een digitale medewerker complexe vragen of uitzonderingen aan?",
@@ -120,13 +121,13 @@ const roiItems = [
   },
   {
     label: "Foutpercentage",
-    human: "5–15%",
+    human: "5-15%",
     digital: "<1%",
     highlight: false,
   },
   {
     label: "Opstarttijd",
-    human: "3–6 maanden",
+    human: "3-6 maanden",
     digital: "2 weken",
     highlight: true,
   },
@@ -149,7 +150,7 @@ const howItWorks = [
     step: "02",
     title: "Integraties met uw systemen",
     description:
-      "De digitale medewerker heeft toegang tot uw tools: CRM, ERP, e-mail, agenda, klantenservice platform. Hij leest, schrijft en triggert acties — precies zoals een menselijke medewerker zou doen.",
+      "De digitale medewerker heeft toegang tot uw tools: CRM, ERP, e-mail, agenda, klantenservice platform. Hij leest, schrijft en triggert acties, precies zoals een menselijke medewerker zou doen.",
   },
   {
     step: "03",
@@ -180,6 +181,14 @@ export default function DigitaleMedewerkerPage() {
     ],
   });
 
+  const serviceSchemaData = serviceSchema({
+    name: "Digitale Medewerker",
+    description:
+      "Een multi-agent AI-systeem dat een volledige rol overneemt in HR, finance, operations of klantenservice, 24/7 beschikbaar.",
+    serviceType: "AI Automation",
+    url: `${siteConfig.url}/diensten/digitale-medewerker`,
+  });
+
   return (
     <>
       <script
@@ -189,6 +198,10 @@ export default function DigitaleMedewerkerPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemaData) }}
       />
 
       <main className="min-h-screen bg-background">
@@ -204,7 +217,7 @@ export default function DigitaleMedewerkerPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted/60 border border-border/60 px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-6">
               <Users className="h-3.5 w-3.5 text-primary" />
-              Multi-agent AI — werkt als een volwaardige medewerker
+              Multi-agent AI, werkt als een volwaardige medewerker
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-5 sm:mb-6">
               Digitale Medewerker
@@ -400,9 +413,9 @@ export default function DigitaleMedewerkerPage() {
                     Terugverdientijd: gemiddeld 8 weken
                   </p>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                    Bij een implementatie van €8.000 en een maandelijkse besparing
-                    van €3.000 verdient u de investering in minder dan 3 maanden
-                    terug. Over een jaar: <strong className="text-foreground">€36.000 netto bespaard</strong>.
+                    Bij een maatwerk-implementatie van bijvoorbeeld €8.000 en een
+                    maandelijkse besparing van €3.000 verdient u de investering in
+                    minder dan 3 maanden terug. Over een jaar: <strong className="text-foreground">€36.000 netto bespaard</strong>.
                   </p>
                 </div>
               </div>
@@ -463,7 +476,7 @@ export default function DigitaleMedewerkerPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31640495527"
                 className="hover:text-foreground transition-colors"
@@ -474,6 +487,7 @@ export default function DigitaleMedewerkerPage() {
           </div>
         </section>
 
+        <StickyIntakeCTA />
         <Footer />
       </main>
     </>

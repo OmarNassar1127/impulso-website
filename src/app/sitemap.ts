@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/diensten/website-laten-maken/`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/diensten/ai-agent-bouwen/`,
       lastModified,
       changeFrequency: 'monthly' as const,

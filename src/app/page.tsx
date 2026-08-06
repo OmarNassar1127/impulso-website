@@ -10,7 +10,6 @@ import Services from "@/components/sections/services";
 import Pricing from "@/components/sections/pricing";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
-import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
 import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
@@ -85,12 +84,12 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
-    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
+    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Impulso Co., Nederland",
+    "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Impulso Co. Nederland",
   pathname: "/",
   imageUrl: "/og-image.png",
-  imageAlt: "Impulso Co. — AI Agents op Maat voor Bedrijven",
+  imageAlt: "Impulso Co. AI Agents op Maat voor Bedrijven",
 });
 
 export default function Home() {
@@ -103,6 +102,18 @@ export default function Home() {
       <JsonLd data={certificationsSchema()} />
 
       <main className="min-h-screen">
+        {/* Crawlable H1 + summary. The hero is a particle canvas with no real
+            text, so this carries the page's primary keywords for Google and AI
+            crawlers. Visually hidden, fully read by screen readers and bots. */}
+        <section className="sr-only">
+          <h1>AI Agents &amp; Digitale Medewerkers op maat voor bedrijven</h1>
+          <p>
+            Impulso Co. is een AI-bureau in Amsterdam dat custom AI-agents bouwt
+            voor klantenservice, sales en bedrijfsprocessen, van WhatsApp- en
+            voice-agents tot RAG-kennisbanken en automatiseringen. Live in 2
+            weken, volledig AVG-proof, en jouw data blijft van jou.
+          </p>
+        </section>
         <Navbar />
         <Hero />
         <CompanySlider />
@@ -122,7 +133,6 @@ export default function Home() {
 
 
         <Footer />
-        <FloatingWhatsAppButton />
       </main>
     </>
   );

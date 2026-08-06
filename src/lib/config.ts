@@ -1,11 +1,13 @@
 export const siteConfig = {
   name: "Impulso Co.",
-  description: "AI agent development company in Amsterdam. We build custom AI agents for businesses — from klantenservice to sales automation. Live in 2 weeks.",
+  description: "AI agent development company in Amsterdam. We build custom AI agents for businesses, from klantenservice to sales automation. Live in 2 weeks.",
   url: "https://impulsoco.nl",
   metadataBase: "https://impulsoco.nl",
-  logoUrl: "/impulso-mark.png",
+  logoUrl: "/impulso-logo.png",
   ogImage: "/og-image.png",
   twitterHandle: "@impulsoco",
+  // Google Analytics 4 measurement ID (Impulso Co. property)
+  gaMeasurementId: "G-T6W2C9DVC0",
   locale: "nl",
   authors: [
     {

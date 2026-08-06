@@ -72,7 +72,7 @@ export default function WhyImpulso() {
   const reasons = getReasons(language);
 
   return (
-    <section className="py-24 sm:py-32 bg-background border-t border-foreground/10">
+    <section className="py-24 sm:py-32 surface-warm border-t border-foreground/10">
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
@@ -106,8 +106,8 @@ export default function WhyImpulso() {
           </motion.p>
         </div>
 
-        {/* Grid — hairline cells, no rounding/shadows */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-foreground/15">
+        {/* White cards on the warm surface, terracotta icon accent */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {reasons.map((reason, i) => {
             const ReasonIcon = reason.icon;
             return (
@@ -117,9 +117,9 @@ export default function WhyImpulso() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="p-8 sm:p-10 border-r border-b border-foreground/15 h-full flex flex-col"
+                className="p-8 sm:p-10 border border-foreground/15 bg-white h-full flex flex-col card-hover"
               >
-                <ReasonIcon className="w-6 h-6 text-foreground mb-6" strokeWidth={1.5} />
+                <ReasonIcon className="w-6 h-6 text-terracotta mb-6" strokeWidth={1.5} />
 
                 <h3 className="text-lg font-medium tracking-tight text-foreground mb-3">
                   {reason.title}

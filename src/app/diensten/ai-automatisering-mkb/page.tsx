@@ -1,8 +1,9 @@
 import { generateMetadata as genMeta } from "@/lib/metadata";
-import { faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
+import StickyIntakeCTA from "@/components/sticky-intake-cta";
 import {
   ArrowRight,
   Zap,
@@ -16,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "AI Automatisering voor MKB — Betaalbaar & Schaalbaar",
+  title: "AI Automatisering voor MKB, Betaalbaar & Schaalbaar",
   description:
-    "AI automatisering speciaal voor het Nederlandse MKB. Betaalbaar vanaf €2.000, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co., Amsterdam.",
+    "AI automatisering speciaal voor het Nederlandse MKB. Vanaf €1.395 setup + €149,95/maand, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co. Amsterdam.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
@@ -29,17 +30,17 @@ const faqItems = [
   {
     question: "Is AI automatisering ook betaalbaar voor kleine bedrijven?",
     answer:
-      "Absoluut. Onze eenvoudige AI agents starten vanaf €2.000 eenmalig. Maandelijkse kosten liggen doorgaans tussen €200 en €500. Bij een besparing van €2.000 per maand is de ROI al in de eerste maand positief. We bouwen bewust schaalbaar: u begint klein en breidt uit zodra de ROI bewezen is.",
+      "Absoluut. Je start vanaf €595 eenmalige setup plus €24,95 per maand (ZZP-pakket). Voor groeiende MKB-bedrijven is dat €1.395 setup plus €149,95 per maand (MKB-pakket). Bij een besparing van €2.000 per maand is de ROI al in de eerste maand positief. We bouwen bewust schaalbaar: u begint klein en breidt uit zodra de ROI bewezen is.",
   },
   {
     question: "Heb ik een IT-afdeling nodig voor AI automatisering?",
     answer:
-      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheer u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? U belt ons — geen IT-kennis vereist.",
+      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheer u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? U belt ons, geen IT-kennis vereist.",
   },
   {
     question: "Wat is de WBSO-subsidie en hoe werkt dat?",
     answer:
-      "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse subsidieregeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32–40% van uw R&D-loonkosten terug. Wij helpen u bij de aanvraag en zorgen voor de juiste documentatie. Dit kan de effectieve kosten van een AI-project aanzienlijk verlagen.",
+      "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse subsidieregeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32-40% van uw R&D-loonkosten terug. Wij helpen u bij de aanvraag en zorgen voor de juiste documentatie. Dit kan de effectieve kosten van een AI-project aanzienlijk verlagen.",
   },
   {
     question: "Welke software integreert u met?",
@@ -63,7 +64,7 @@ const scenarios = [
       "Een AI klantenservice agent beantwoordt 80% van inkomende tickets automatisch via e-mail, WhatsApp en chat. De resterende 20% wordt slim doorgestuurd naar de juiste collega.",
     monthly: "€3.500/maand",
     yearly: "€42.000/jaar",
-    investment: "Investering: €4.000 eenmalig",
+    investment: "Investering: €1.395 setup + €149,95/mnd",
   },
   {
     icon: CreditCard,
@@ -74,7 +75,7 @@ const scenarios = [
       "Een finance agent koppelt met Exact Online of Moneybird, maakt facturen automatisch aan na een order, verstuurt herinneringen op dag 14 en 30, en matcht inkomende betalingen.",
     monthly: "€1.800/maand",
     yearly: "€21.600/jaar",
-    investment: "Investering: €2.500 eenmalig",
+    investment: "Investering: €1.395 setup + €149,95/mnd",
   },
   {
     icon: Package,
@@ -85,16 +86,16 @@ const scenarios = [
       "Een operations agent pakt orders op uit alle kanalen, controleert voorraad, maakt verzenddocumenten aan via Sendcloud, en stuurt de klant automatisch een track & trace-link.",
     monthly: "€2.200/maand",
     yearly: "€26.400/jaar",
-    investment: "Investering: €3.500 eenmalig",
+    investment: "Investering: €1.395 setup + €149,95/mnd",
   },
 ];
 
 const whyMKB = [
   {
     icon: CreditCard,
-    title: "Betaalbaar vanaf €2.000",
+    title: "Betaalbaar vanaf €1.395",
     description:
-      "Geen enterprise-prijzen. Wij bouwen gerichte oplossingen die snel rendement opleveren — niet overengineered.",
+      "Geen enterprise-prijzen. Wij bouwen gerichte oplossingen die snel rendement opleveren, niet overengineered.",
   },
   {
     icon: Zap,
@@ -112,7 +113,7 @@ const whyMKB = [
     icon: TrendingUp,
     title: "Schaalbaar met uw groei",
     description:
-      "Begin met één agent voor één taak. Voeg agents toe zodra de ROI bewezen is — zonder dure herimplementaties.",
+      "Begin met één agent voor één taak. Voeg agents toe zodra de ROI bewezen is, zonder dure herimplementaties.",
   },
 ];
 
@@ -140,6 +141,14 @@ export default function AIAutomatiseringMKBPage() {
     ],
   });
 
+  const serviceSchemaData = serviceSchema({
+    name: "AI Automatisering voor MKB",
+    description:
+      "Betaalbare AI-automatisering voor het Nederlandse MKB. Integraties met Exact Online, HubSpot, Shopify en Zendesk, vanaf €1.395 setup + €149,95/maand.",
+    serviceType: "AI Automation",
+    url: `${siteConfig.url}/diensten/ai-automatisering-mkb`,
+  });
+
   return (
     <>
       <script
@@ -149,6 +158,10 @@ export default function AIAutomatiseringMKBPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemaData) }}
       />
 
       <main className="min-h-screen bg-background">
@@ -175,7 +188,7 @@ export default function AIAutomatiseringMKBPage() {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Klaar met handmatig facturen versturen, dezelfde e-mails
               beantwoorden en orders nakijken? Impulso Co. bouwt AI agents die deze
-              taken volledig overnemen — betaalbaar, snel en zonder IT-afdeling.
+              taken volledig overnemen, betaalbaar, snel en zonder IT-afdeling.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -199,7 +212,7 @@ export default function AIAutomatiseringMKBPage() {
             <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs sm:text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                Vanaf €2.000 eenmalig
+                Vanaf €1.395 setup
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
@@ -226,7 +239,7 @@ export default function AIAutomatiseringMKBPage() {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
                 Grote bedrijven hebben IT-teams, budgetten en consultants.
-                Het MKB heeft dat niet — maar heeft wel dezelfde repetitieve
+                Het MKB heeft dat niet, maar heeft wel dezelfde repetitieve
                 processen. Wij bouwen AI die werkt zonder enterprise-overhead.
               </p>
             </div>
@@ -260,7 +273,7 @@ export default function AIAutomatiseringMKBPage() {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Elke berekening is gebaseerd op gemiddeld MKB-bedrijf met
-                5–50 medewerkers. Uw situatie kan gunstiger zijn.
+                5-50 medewerkers. Uw situatie kan gunstiger zijn.
               </p>
             </div>
             <div className="space-y-5 sm:space-y-6">
@@ -345,8 +358,8 @@ export default function AIAutomatiseringMKBPage() {
                   doorgaans onder deze regeling.
                 </p>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Dit betekent dat een project van €8.000 effectief nog maar
-                  <strong className="text-foreground"> €5.200 kost</strong> na
+                  Dit betekent dat een maatwerk-project van bijvoorbeeld €8.000
+                  effectief nog maar <strong className="text-foreground"> €5.200 kost</strong> na
                   WBSO-teruggave. Wij helpen u bij de aanvraag en documentatie.
                 </p>
               </div>
@@ -356,8 +369,8 @@ export default function AIAutomatiseringMKBPage() {
                 </h3>
                 <div className="space-y-3">
                   {[
-                    ["Projectkosten", "€8.000"],
-                    ["WBSO-teruggave (35%)", "– €2.800"],
+                    ["Maatwerk-project", "€8.000"],
+                    ["WBSO-teruggave (35%)", ", €2.800"],
                     ["Effectieve investering", "€5.200"],
                     ["Maandelijkse besparing", "€3.000"],
                     ["Terugverdientijd", "< 2 maanden"],
@@ -395,7 +408,7 @@ export default function AIAutomatiseringMKBPage() {
                 Integreert met uw bestaande software
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Geen vervanging van uw huidige systemen — wij bouwen er
+                Geen vervanging van uw huidige systemen, wij bouwen er
                 bovenop. De AI agent werkt samen met de tools die u al gebruikt.
               </p>
             </div>
@@ -433,7 +446,7 @@ export default function AIAutomatiseringMKBPage() {
               >
                 Vraag het ons
               </a>{" "}
-              — als er een API is, kunnen wij koppelen.
+, als er een API is, kunnen wij koppelen.
             </p>
           </div>
         </section>
@@ -491,7 +504,7 @@ export default function AIAutomatiseringMKBPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31640495527"
                 className="hover:text-foreground transition-colors"
@@ -502,6 +515,7 @@ export default function AIAutomatiseringMKBPage() {
           </div>
         </section>
 
+        <StickyIntakeCTA />
         <Footer />
       </main>
     </>

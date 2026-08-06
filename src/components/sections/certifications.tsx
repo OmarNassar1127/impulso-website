@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -204,7 +204,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 function CertCard({ cert }: { cert: Certification }) {
   return (
     <div className="w-[260px] sm:w-[280px] flex-shrink-0">
-      <div className="h-full p-6 border border-foreground/15 bg-background">
+      <div className="h-full p-6 border border-foreground/20 bg-white card-hover">
         <div className="flex items-start justify-between mb-4">
           <div className={`w-10 h-10 ${cert.color} border border-foreground/10 flex items-center justify-center`}>
             {cert.logo}
@@ -233,10 +233,15 @@ function CertCard({ cert }: { cert: Certification }) {
 export default function Certifications() {
   const { language } = useLanguage();
   const isNL = language === "nl";
-  const shuffledCerts = useMemo(() => shuffleArray(certifications), []);
+  // Render the fixed order on the server and the first client render so
+  // hydration matches; shuffle only after mount so each visit still varies.
+  const [shuffledCerts, setShuffledCerts] = useState(certifications);
+  useEffect(() => {
+    setShuffledCerts(shuffleArray(certifications));
+  }, []);
 
   return (
-    <section className="py-20 sm:py-24 overflow-hidden border-t border-foreground/10">
+    <section className="py-20 sm:py-24 overflow-hidden border-t border-foreground/10 surface-warm">
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="mb-12">
@@ -263,8 +268,8 @@ export default function Certifications() {
 
         {/* Infinite marquee */}
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#f6f1ec] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#f6f1ec] to-transparent z-10 pointer-events-none" />
 
           <div className="flex overflow-hidden">
             <div className="flex gap-4 items-stretch animate-cert-scroll">

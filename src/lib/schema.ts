@@ -86,7 +86,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "AI Agent Development",
         description:
-          "Custom AI agent teams built for your business — handling tasks autonomously, collaborating with each other, and integrating with your existing tools.",
+          "Custom AI agent teams built for your business, handling tasks autonomously, collaborating with each other, and integrating with your existing tools.",
         provider: {
           "@type": "Organization",
           name: "Impulso Co.",
@@ -97,7 +97,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Sales Automation",
         description:
-          "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7 — so your team closes more deals with less effort.",
+          "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7, so your team closes more deals with less effort.",
         provider: {
           "@type": "Organization",
           name: "Impulso Co.",
@@ -108,7 +108,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Customer Service Automation",
         description:
-          "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases — delivering instant, consistent support around the clock.",
+          "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases, delivering instant, consistent support around the clock.",
         provider: {
           "@type": "Organization",
           name: "Impulso Co.",
@@ -119,7 +119,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Knowledge Base Systems",
         description:
-          "AI-powered knowledge management agents that capture, organise and surface institutional knowledge — making information instantly accessible across your team.",
+          "AI-powered knowledge management agents that capture, organise and surface institutional knowledge, making information instantly accessible across your team.",
         provider: {
           "@type": "Organization",
           name: "Impulso Co.",
@@ -130,7 +130,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Operations Automation",
         description:
-          "AI agents that automate repetitive back-office processes — from data entry and reporting to scheduling and workflow coordination.",
+          "AI agents that automate repetitive back-office processes, from data entry and reporting to scheduling and workflow coordination.",
         provider: {
           "@type": "Organization",
           name: "Impulso Co.",
@@ -140,6 +140,39 @@ export const servicesSchema = () => {
     ],
   };
 };
+
+type ServicePageProps = {
+  name: string;
+  description: string;
+  url: string;
+  serviceType: string;
+};
+
+export function serviceSchema({ name, description, url, serviceType }: ServicePageProps) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType,
+    url,
+    provider: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: [
+      { "@type": "Country", name: "Netherlands" },
+      { "@type": "Place", name: "Europe" },
+    ],
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: url,
+      availableLanguage: ["nl", "en"],
+    },
+  };
+}
 
 export function videoSchema() {
   return {
@@ -183,16 +216,47 @@ export function organizationSchema({
 }: OrganizationProps = {}) {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     "@id": `${url}#organization`,
     name,
+    legalName: "Impulso Co.",
     url,
-    logo,
+    logo: {
+      "@type": "ImageObject",
+      url: logo,
+    },
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
     description,
+    slogan: "Wij creëren structuur in chaos.",
+    foundingDate: "2025",
     sameAs,
+    knowsAbout: [
+      "AI agents",
+      "Custom AI agent development",
+      "RAG (Retrieval Augmented Generation)",
+      "LLM integration",
+      "WhatsApp AI agents",
+      "Voice AI agents",
+      "Customer service automation",
+      "Sales automation",
+      "Business process automation",
+      "On-premise AI",
+      "Knowledge base systems",
+    ],
+    knowsLanguage: ["nl", "en", "ar", "es", "fr"],
+    areaServed: [
+      { "@type": "Country", name: "Netherlands" },
+      { "@type": "Place", name: "Europe" },
+    ],
+    priceRange: "€€",
+    founder: [
+      { "@type": "Person", name: "Omar Nassar", jobTitle: "Co-founder" },
+      { "@type": "Person", name: "Pieter de Haer", jobTitle: "Co-founder" },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Amsterdam",
+      addressRegion: "Noord-Holland",
       addressCountry: "NL",
     },
     contactPoint: {
@@ -200,7 +264,17 @@ export function organizationSchema({
       telephone: "+31640495527",
       email: "info@impulsoco.nl",
       contactType: "sales",
+      areaServed: ["NL", "EU"],
       availableLanguage: ["nl", "en"],
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Agent Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Agent Laten Bouwen", url: `${url}/diensten/ai-agent-bouwen` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Medewerker", url: `${url}/diensten/digitale-medewerker` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Automatisering voor MKB", url: `${url}/diensten/ai-automatisering-mkb` } },
+      ],
     },
   };
 }
@@ -209,20 +283,17 @@ export function websiteSchema({
   url = siteConfig.url,
   name = siteConfig.name,
   description = siteConfig.description,
-  language = `${siteConfig.locale}-US`,
+  language = "nl-NL",
 }: WebsiteProps = {}) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${url}#website`,
     url,
     name,
     description,
     inLanguage: language,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${url}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
+    publisher: { "@id": `${url}#organization` },
   };
 }
 
@@ -360,7 +431,7 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
           "@type": "Organization",
           name: siteConfig.name,
           url: siteConfig.url,
-          description: "AI agency that builds custom AI agent teams for businesses — based in Amsterdam, Netherlands.",
+          description: "AI agency that builds custom AI agent teams for businesses, based in Amsterdam, Netherlands.",
           address: {
             "@type": "PostalAddress",
             addressCountry: "NL",

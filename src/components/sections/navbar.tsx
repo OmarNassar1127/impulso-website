@@ -47,27 +47,39 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
 
-      const isHomePage = window.location.pathname === '/' || window.location.pathname.startsWith('/en');
-      if (!isHomePage) { setActiveSection(""); return; }
+      // Scroll spy runs on every page that has in-page sections, not just the
+      // homepage: the service pages pass their own customNavLinks.
+      const hashLinks = navLinks.filter(
+        (link) => link.href.startsWith("#") && link.href !== "#"
+      );
+      if (hashLinks.length === 0) { setActiveSection(""); return; }
 
       const scrollPosition = window.scrollY + 100;
       if (scrollPosition < 200) { setActiveSection(""); return; }
 
-      const sections = navLinks
-        .filter(link => link.href !== "#")
-        .map(link => ({
-          id: link.href.replace("#", ""),
-          position: document.getElementById(link.href.replace("#", ""))?.offsetTop || 0
-        }));
+      // getBoundingClientRect + scrollY rather than offsetTop: offsetTop is
+      // relative to the nearest positioned ancestor, which gives wrong values
+      // for sections nested inside a positioned wrapper.
+      const sections = hashLinks
+        .map((link) => {
+          const id = link.href.replace("#", "");
+          const el = document.getElementById(id);
+          return el
+            ? { id, position: el.getBoundingClientRect().top + window.scrollY }
+            : null;
+        })
+        .filter((s): s is { id: string; position: number } => s !== null);
 
       sections.sort((a, b) => a.position - b.position);
 
+      let current = "";
       for (let i = sections.length - 1; i >= 0; i--) {
         if (scrollPosition >= sections[i].position) {
-          setActiveSection(sections[i].id);
+          current = sections[i].id;
           break;
         }
       }
+      setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -121,10 +133,13 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
     <>
       <header
         className={cn(
-          "fixed top-0 z-50 w-full transition-all duration-300",
+          // Always solid: a transparent bar let page content scroll through the
+          // nav links and made them unreadable. The border only appears once
+          // you scroll, so the bar still feels flush at the top.
+          "fixed top-0 z-50 w-full transition-all duration-300 bg-background/95 backdrop-blur-xl",
           isScrolled || mobileMenuOpen
-            ? "bg-background/95 backdrop-blur-xl border-b border-foreground/10"
-            : "bg-transparent"
+            ? "border-b border-foreground/10"
+            : ""
         )}
       >
         <div className="max-w-[1400px] mx-auto flex h-16 items-center justify-between px-6 sm:px-10 lg:px-16">
@@ -150,7 +165,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                   activeSection === link.href.replace("#", "") ||
                   (link.href === "#" && activeSection === "");
                 return (
-                  <li key={link.name}>
+                  <li key={link.name} className="relative">
                     <a
                       href={link.href}
                       className={cn(
@@ -163,6 +178,15 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                     >
                       {link.name}
                     </a>
+                    {/* Shared layoutId, so the bar slides from the previous
+                        active item to this one instead of popping. */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="navbar-active-underline"
+                        className="absolute -bottom-1.5 left-0 right-0 h-[2px] rounded-full bg-terracotta"
+                        transition={{ type: "spring", stiffness: 420, damping: 36 }}
+                      />
+                    )}
                   </li>
                 );
               })}
@@ -231,7 +255,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
             {/* Content */}
             <div className="relative h-full flex flex-col pt-20 pb-24 px-6">
-              {/* Nav links — large, centered feel */}
+              {/* Nav links, large, centered feel */}
               <nav className="flex-1 flex flex-col justify-center -mt-16">
                 <ul className="space-y-2">
                   {navLinks.map((link, index) => {
@@ -302,7 +326,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
                 {/* Subtle branding */}
                 <p className="text-center text-xs text-muted-foreground/40 pt-2">
-                  Impulso Co. — Amsterdam, NL
+                  Impulso Co. Amsterdam, NL
                 </p>
               </motion.div>
             </div>

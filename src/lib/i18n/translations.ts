@@ -31,7 +31,7 @@ export const translations = {
         trustSignal: "Geen opstartkosten",
         primaryCta: "Start gratis proef",
         secondaryCta: "Vraag gratis demo aan",
-        socialProof: "100+ bedrijven – 87 % minder inkomende telefoontjes",
+        socialProof: "100+ bedrijven, 87 % minder inkomende telefoontjes",
       },
       problem: {
         title:
@@ -274,7 +274,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
+        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
       quickLinks: "Snelle links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
@@ -367,13 +367,13 @@ export const translations = {
         techStack: ["Python", "API Integratie", "LangChain", "Prompt Logic"],
       },
       capgeminiAi: {
-        title: "AI Assistent – Capgemini",
+        title: "AI Assistent, Capgemini",
         description:
-          "Op maat gemaakte AI-chatoplossing die consultants helpt interne documenten en projectinformatie snel te doorzoeken – volledig privacyproof binnen de organisatie.",
+          "Op maat gemaakte AI-chatoplossing die consultants helpt interne documenten en projectinformatie snel te doorzoeken, volledig privacyproof binnen de organisatie.",
         techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
       },
       klmCatering: {
-        title: "KLM Catering – Supply Chain Optimalisatie",
+        title: "KLM Catering, Supply Chain Optimalisatie",
         description:
           "Optimalisatie van logistieke processen binnen KLM Catering. Inclusief ophalen van vereisten, procesanalyse en herontwerp van ketenactiviteiten.",
         techStack: [
@@ -390,7 +390,7 @@ export const translations = {
       subtitle: "Ons team en onze missie",
       theTeam: "Het Impulso Co. team",
       description:
-        "Twee gedreven jongens die graag bedrijven helpen automatiseren, efficiënter werken en AI integreren. We bouwen en testen snel. Nieuw idee of verzoek? Dezelfde dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
+        "Eén impuls is genoeg om een bedrijf blijvend te veranderen.\nWij zijn twee gedreven jongens met een passie voor automatisering, efficiëntie en AI. Tijdens ons werk bij verschillende bedrijven zagen we steeds hetzelfde gebeuren: goede ideeën verdwenen ergens op de mail, processen bleven inefficiënt en innovatie duurde maanden.\n*\"We zetten het op de backlog.\"* Die zin hoorden we te vaak.\nWij geloven dat het anders kan. Niet nóg een AI-bureau dat belooft je bedrijf te laten groeien, maar een partner die direct kijkt waar tijd verloren gaat, waar processen slimmer kunnen en hoe technologie écht waarde toevoegt.\nJij komt met een uitdaging. Wij vertalen die naar een werkende oplossing.\nWe bouwen snel, testen direct en verbeteren continu. Heb je een nieuw idee, een verzoek of een proces dat beter kan? Dan staat er vaak dezelfde dag nog een prototype klaar.\nGeen eindeloze vergaderingen. Geen maandenlange trajecten. Gewoon snel van idee naar resultaat.\nSlimmer werken begint altijd met één goed idee. Wij zorgen ervoor dat het werkelijkheid wordt.\nVan impuls naar werkend prototype. Binnen één dag. Dat is hoe innovatie hoort te werken. Impulso Co.",
       missionTitle: "Onze Missie",
       teamTitle: "Over Impulso Co.",
       missionDescription:
@@ -502,7 +502,7 @@ export const translations = {
         description:
           "Een professionele website of platform, volledig ingericht op jouw doel en doelgroep.",
         feature1: "Binnen 7 dagen live met een strak en snel ontwerp",
-        feature2: "Gebouwd om te converteren – van eerste indruk tot actie",
+        feature2: "Gebouwd om te converteren, van eerste indruk tot actie",
         feature3: "SEO integratie",
       },
       dataAnalytics: {
@@ -510,7 +510,7 @@ export const translations = {
         description: "Altijd direct antwoord op je cijfers, zonder zoeken.",
         feature1: "Gekoppeld aan je database of backend",
         feature2: "Vraag omzet, trends of teamdata op via Slack of Teams",
-        feature3: "Antwoorden in gewone taal – binnen 3 seconden",
+        feature3: "Antwoorden in gewone taal, binnen 3 seconden",
       },
     },
 
@@ -787,7 +787,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Custom-built for your business.",
+        "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Custom-built for your business.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
@@ -880,13 +880,13 @@ export const translations = {
         techStack: ["Python", "API Integration", "LangChain", "Prompt Logic"],
       },
       capgeminiAi: {
-        title: "AI Assistant – Capgemini (internal)",
+        title: "AI Assistant, Capgemini (internal)",
         description:
-          "Custom AI chat solution helping consultants quickly search internal documents and project information – completely privacy-proof within the organization.",
+          "Custom AI chat solution helping consultants quickly search internal documents and project information, completely privacy-proof within the organization.",
         techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
       },
       klmCatering: {
-        title: "KLM Catering – Supply Chain Optimization",
+        title: "KLM Catering, Supply Chain Optimization",
         description:
           "Optimization of logistics processes within KLM Catering. Including requirements gathering, process analysis, and redesign of chain activities.",
         techStack: [
@@ -903,7 +903,7 @@ export const translations = {
       subtitle: "Learn more about our team and mission.",
       theTeam: "The Impulso Co. team",
       description:
-        "Two driven guys who love helping companies automate, work more efficiently and integrate AI. We build and test fast. New idea or request? A working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
+        "One impulse is enough to change a company for good.\nWe're two driven guys with a passion for automation, efficiency and AI. Working at different companies, we kept seeing the same thing: good ideas got lost somewhere in an inbox, processes stayed inefficient, and innovation took months.\n*\"We'll put it on the backlog.\"* We heard that sentence far too often.\nWe believe it can be done differently. Not yet another AI agency promising to grow your business, but a partner who looks right away at where time is lost, where processes can be smarter, and how technology actually adds value.\nYou bring a challenge. We turn it into a working solution.\nWe build fast, test immediately and improve continuously. Got a new idea, a request or a process that could be better? Often there's a working prototype the same day.\nNo endless meetings. No months-long projects. Just fast from idea to result.\nWorking smarter always starts with one good idea. We make sure it becomes reality.\nFrom impulse to working prototype. Within one day. That's how innovation should work. Impulso Co.",
       missionTitle: "Our Mission",
       teamTitle: "About Impulso Co.",
       missionDescription:
@@ -978,7 +978,7 @@ export const translations = {
     services: {
       title: "What We Build",
       subtitle:
-        "Smart solutions that speed up processes, improve collaboration, and save time—starting day one.",
+        "Smart solutions that speed up processes, improve collaboration, and save time, starting day one.",
       ctaButton: "Let's talk",
       aiDevelopment: {
         title: "AI Integration",
@@ -991,7 +991,7 @@ export const translations = {
       saasDevelopment: {
         title: "Custom Software",
         description:
-          "Solutions built around how you actually work—not the other way around.",
+          "Solutions built around how you actually work, not the other way around.",
         feature1: "Dashboards, portals, and tools designed for your team",
         feature2: "Integrates with your existing systems and accounts",
         feature3: "Scales with your business as you grow",
@@ -1022,7 +1022,7 @@ export const translations = {
       dataAnalytics: {
         title: "Data & Insights",
         description:
-          "Get instant answers to your questions—no searching required.",
+          "Get instant answers to your questions, no searching required.",
         feature1: "Connected directly to your database or backend",
         feature2: "Ask for revenue, trends, or team data via Slack or Teams",
         feature3: "Answers in plain English within 3 seconds",

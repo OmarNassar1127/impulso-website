@@ -27,12 +27,16 @@ export function useLanguage() {
 
 interface LanguageProviderProps {
   children: ReactNode;
+  // Language to render on the server / first client render. The /en subtree
+  // passes "en" so that route prerenders English (no Dutch flash, and crawlers
+  // see English content). Defaults to Dutch for every other route.
+  initialLanguage?: Language;
 }
 
-export function LanguageProvider({ children }: LanguageProviderProps) {
+export function LanguageProvider({ children, initialLanguage = "nl" }: LanguageProviderProps) {
   const router = useRouter();
-  const [language, setLanguage] = useState<Language>("nl");
-  const [translations_copy, setTranslations] = useState<TranslationType>(translations.nl);
+  const [language, setLanguage] = useState<Language>(initialLanguage);
+  const [translations_copy, setTranslations] = useState<TranslationType>(translations[initialLanguage]);
 
   useEffect(() => {
     // Get the saved language preference from localStorage if available

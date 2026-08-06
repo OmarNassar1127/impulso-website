@@ -35,26 +35,44 @@ export default function About() {
   };
 
   const paragraphs = t.about.description.split("\n");
+  // First line is the big lead statement; the rest is the story, split into
+  // two balanced columns so the layout fills the full width.
+  const [lead, ...body] = paragraphs;
+  const splitAt = Math.ceil(body.length / 2);
+  const bodyLeft = body.slice(0, splitAt);
+  const bodyRight = body.slice(splitAt);
+
+  // Inline emphasis: text wrapped in *asterisks* renders bold + italic.
+  const renderRich = (text: string) =>
+    text.split(/(\*[^*]+\*)/g).map((part, i) =>
+      /^\*[^*]+\*$/.test(part) ? (
+        <strong key={i} className="font-semibold italic text-foreground">
+          {part.slice(1, -1)}
+        </strong>
+      ) : (
+        part
+      )
+    );
 
   const owners = [
     {
       name: "Omar Nassar",
       initials: "ON",
-      image: "/images/team/omar-nassar.png",
+      image: "/images/team/omar-nassar.jpeg",
       role: isNL
-        ? "AI-developer — jouw alleskunner"
-        : "AI developer — your all-rounder",
+        ? "AI-developer, jouw alleskunner"
+        : "AI developer, your all-rounder",
       bio: isNL
-        ? "Bouwt de AI-oplossingen. Van prototype tot stabiel productiesysteem — nieuw idee vandaag, werkende demo binnen 2 dagen."
-        : "Builds the AI solutions. From prototype to stable production system — new idea today, working demo within 2 days.",
+        ? "Bouwt de AI-oplossingen. Van prototype tot stabiel productiesysteem, nieuw idee vandaag, werkende demo binnen 2 dagen."
+        : "Builds the AI solutions. From prototype to stable production system, new idea today, working demo within 2 days.",
     },
     {
       name: "Pieter de Haer",
       initials: "PdH",
       image: "/images/team/pieter-de-haer.jpeg",
       role: isNL
-        ? "Sales & klantrelaties — jouw aanspreekpunt"
-        : "Sales & customer relations — your point of contact",
+        ? "Sales & klantrelaties, jouw aanspreekpunt"
+        : "Sales & customer relations, your point of contact",
       bio: isNL
         ? "Jouw vaste aanspreekpunt. Vertaalt jouw processen en wensen naar een concrete oplossing en blijft betrokken na de livegang."
         : "Your main point of contact. Translates your processes and needs into a concrete solution and stays involved after launch.",
@@ -84,8 +102,8 @@ export default function About() {
           className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] text-foreground max-w-4xl mb-12"
         >
           {isNL
-            ? "Nuchtere bouwers. Gericht, efficiënt, praktisch."
-            : "Down-to-earth builders. Focused, efficient, practical."}
+            ? "De gezichten achter Impulso Co."
+            : "The faces behind Impulso Co."}
         </motion.h2>
 
         {/* Company story */}
@@ -94,35 +112,50 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
-          className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-20 sm:mb-28"
+          className="mb-20 sm:mb-28"
         >
-          <p className="text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
-            {paragraphs[0]}
+          {/* Lead statement, large, full width */}
+          <p className="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.25] tracking-tight text-foreground max-w-4xl mb-10 sm:mb-16">
+            {lead}
           </p>
-          <div className="space-y-6">
-            {paragraphs.slice(1).map((paragraph, idx) => (
-              <p
-                key={idx}
-                className="text-base text-muted-foreground font-light leading-relaxed"
+
+          {/* Story, two balanced columns that fill the width */}
+          <div className="grid lg:grid-cols-2 gap-x-16 gap-y-6">
+            <div className="space-y-6">
+              {bodyLeft.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-base text-muted-foreground font-light leading-relaxed"
+                >
+                  {renderRich(paragraph)}
+                </p>
+              ))}
+            </div>
+            <div className="space-y-6">
+              {bodyRight.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-base text-muted-foreground font-light leading-relaxed"
+                >
+                  {renderRich(paragraph)}
+                </p>
+              ))}
+              <a
+                href="#ready-to-start"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("ready-to-start");
+                }}
+                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-terracotta"
               >
-                {paragraph}
-              </p>
-            ))}
-            <a
-              href="#ready-to-start"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("ready-to-start");
-              }}
-              className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-terracotta"
-            >
-              {isNL ? "Plan een kennismaking" : "Book an introduction"}
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
+                {isNL ? "Plan een kennismaking" : "Book an introduction"}
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
         </motion.div>
 
-        {/* Owners — hairline-separated grid */}
+        {/* Owners, hairline-separated grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -135,7 +168,7 @@ export default function About() {
                 key={idx}
                 className="pt-8 sm:pr-12 sm:border-r sm:border-foreground/15 sm:last:border-r-0 sm:last:pl-12 sm:last:pr-0"
               >
-                {/* Portrait — photo if available, else initials placeholder */}
+                {/* Portrait, photo if available, else initials placeholder */}
                 <div className="aspect-[4/5] max-w-[320px] bg-muted overflow-hidden mb-6">
                   {owner.image ? (
                     <img

@@ -11,16 +11,16 @@ import {
   TrendingUp,
   Zap,
   Globe,
-  Activity,
   Clock,
   BarChart3,
   Sparkles,
-  Shield,
-  Eye,
   PenTool,
   Target,
   Mail,
   Calendar,
+  Check,
+  Plus,
+  HelpCircle,
 } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 
@@ -45,22 +45,22 @@ const getCaseStudies = (language: string): CaseStudy[] => {
   const isNL = language === "nl";
   return [
     {
-      name: "ZapBot",
-      url: "https://zapbot.nl",
+      name: "Impulso Assist",
+      url: "",
       logo: "/images/clients/whatsapp.svg",
       logoBg: "",
       tagline: isNL
         ? "WhatsApp AI-assistent voor bedrijven"
         : "WhatsApp AI assistant for businesses",
       description: isNL
-        ? "ZapBot beantwoordt klantvragen via WhatsApp, plant afspraken in via Google Calendar en stuurt automatische herinneringen — 24/7, in de stijl van het bedrijf."
-        : "ZapBot answers customer questions via WhatsApp, schedules appointments through Google Calendar and sends automatic reminders — 24/7, in the business's own voice.",
+        ? "Impulso Assist beantwoordt klantvragen via WhatsApp, plant afspraken in via Google Calendar en stuurt automatische herinneringen, 24/7, in de stijl van het bedrijf."
+        : "Impulso Assist answers customer questions via WhatsApp, schedules appointments through Google Calendar and sends automatic reminders, 24/7, in the business's own voice.",
       challenge: isNL
         ? "Bedrijven misten berichten buiten kantooruren. Afspraken werden handmatig ingepland en no-shows kostten omzet. 's Avonds en in het weekend was niemand bereikbaar."
         : "Businesses were missing messages outside office hours. Appointments were manually scheduled and no-shows were costing revenue. Evenings and weekends were unreachable.",
       solution: isNL
-        ? "We bouwden een AI-assistent die naadloos integreert met WhatsApp Business en Google Calendar. De bot plant automatisch afspraken in, stuurt herinneringen en schakelt moeiteloos tussen talen."
-        : "We built an AI assistant that seamlessly integrates with WhatsApp Business and Google Calendar. The bot auto-schedules appointments, sends reminders and switches between languages effortlessly.",
+        ? "We bouwden een AI-agent die naadloos integreert met WhatsApp Business en Google Calendar. De agent plant automatisch afspraken in, stuurt herinneringen en schakelt moeiteloos tussen talen."
+        : "We built an AI agent that seamlessly integrates with WhatsApp Business and Google Calendar. The agent auto-schedules appointments, sends reminders and switches between languages effortlessly.",
       results: isNL
         ? [
             { label: "Reactietijd", value: "<10 sec" },
@@ -81,43 +81,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       screenshotBg: "bg-gradient-to-br from-emerald-950 to-emerald-900",
     },
     {
-      name: "Slouch",
-      url: "https://slouch.pro",
-      logo: "/images/clients/slouch-logo-round.png",
-      logoBg: "bg-[#1a2332]",
-      tagline: isNL
-        ? "AI-houdingscorrectie via je webcam"
-        : "AI posture correction via your webcam",
-      description: isNL
-        ? "Slouch.pro detecteert je houding in real-time via de webcam en geeft subtiele nudges wanneer je slecht zit — volledig privé, alles draait lokaal in de browser."
-        : "Slouch.pro detects your posture in real-time via webcam and gives gentle nudges when you slouch — fully private, everything runs locally in the browser.",
-      challenge: isNL
-        ? "Remote workers zitten 10+ uur per dag achter een scherm. Bestaande oplossingen zoals wearables kosten €80+, zijn onhandig en vereisen opladen."
-        : "Remote workers sit 10+ hours a day behind a screen. Existing solutions like wearables cost €80+, are clunky, and require charging.",
-      solution: isNL
-        ? "We bouwden een AI-app die Google MediaPipe gebruikt om via je bestaande webcam je houding te analyseren. Geen hardware, geen data die je apparaat verlaat — 100% privacy-first."
-        : "We built an AI app using Google MediaPipe to analyze your posture via your existing webcam. No hardware, no data leaving your device — 100% privacy-first.",
-      results: isNL
-        ? [
-            { label: "Actieve gebruikers", value: "2.800+" },
-            { label: "Verbetering", value: "2 weken" },
-            { label: "Privacygarantie", value: "100%" },
-            { label: "Setup-tijd", value: "10 sec" },
-          ]
-        : [
-            { label: "Active users", value: "2,800+" },
-            { label: "Improvement", value: "2 weeks" },
-            { label: "Privacy guarantee", value: "100%" },
-            { label: "Setup time", value: "10 sec" },
-          ],
-      tech: ["MediaPipe", "TensorFlow.js", "React", "Supabase"],
-      color: "text-teal-500",
-      gradient: "from-teal-500/10 to-teal-500/5",
-      icon: Activity,
-      screenshotBg: "bg-gradient-to-br from-slate-950 to-slate-900",
-    },
-    {
-      name: "ContentOS",
+      name: "Impulso Studio",
       url: "",
       logo: "",
       logoBg: "bg-gradient-to-br from-orange-500 to-pink-500",
@@ -125,8 +89,8 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? "AI-marketingteam dat content maakt terwijl jij slaapt"
         : "AI marketing team that creates content while you sleep",
       description: isNL
-        ? "Een team van AI-agents dat samen social media posts schrijft, e-mailcampagnes verstuurt, blogs produceert en advertentieteksten optimaliseert — allemaal in jouw tone-of-voice."
-        : "A team of AI agents that collaboratively writes social media posts, sends email campaigns, produces blogs and optimizes ad copy — all in your tone of voice.",
+        ? "Een team van AI-agents dat samen social media posts schrijft, e-mailcampagnes verstuurt, blogs produceert en advertentieteksten optimaliseert, allemaal in jouw tone-of-voice."
+        : "A team of AI agents that collaboratively writes social media posts, sends email campaigns, produces blogs and optimizes ad copy, all in your tone of voice.",
       challenge: isNL
         ? "Een groeiend e-commerce merk produceerde 3 posts per week en had geen budget voor een volledig marketingteam. Content was inconsistent en campagnes werden te laat gelanceerd."
         : "A growing e-commerce brand was producing 3 posts per week with no budget for a full marketing team. Content was inconsistent and campaigns launched too late.",
@@ -158,180 +122,151 @@ const getCaseStudies = (language: string): CaseStudy[] => {
 // Fake browser preview for ZapBot
 function ZapBotPreview({ language }: { language: string }) {
   const isNL = language === "nl";
+  const bubbleIn = {
+    initial: { opacity: 0, y: 6 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+  };
+
+  const slots = [
+    { label: isNL ? "Ma 10:00" : "Mon 10:00", chosen: false },
+    { label: isNL ? "Di 14:00" : "Tue 14:00", chosen: true },
+    { label: isNL ? "Wo 09:30" : "Wed 09:30", chosen: false },
+  ];
+
   return (
-    <div className="space-y-2">
-      {/* WhatsApp-style chat bubbles */}
-      <div className="flex justify-end">
-        <div className="bg-emerald-500/20 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[75%]">
-          <p className="text-[11px] text-foreground/70">
-            {isNL
-              ? "Hoi, ik wil graag een afspraak inplannen voor volgende week"
-              : "Hi, I'd like to schedule an appointment for next week"}
-          </p>
-          <span className="text-[8px] text-muted-foreground/40 float-right mt-0.5">
-            14:32
-          </span>
+    <div>
+      {/* WhatsApp chat header */}
+      <div className="mb-3 flex items-center gap-2 border-b border-foreground/10 pb-2">
+        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#25D366]">
+          <MessageCircle className="h-3.5 w-3.5 text-white" fill="white" strokeWidth={0} />
         </div>
-      </div>
-      <div className="flex justify-start">
-        <div className="bg-muted/60 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[75%]">
-          <div className="flex items-center gap-1 mb-1">
-            <Bot className="w-2.5 h-2.5 text-emerald-500" />
-            <span className="text-[9px] font-semibold text-emerald-500">
-              ZapBot
-            </span>
-          </div>
-          <p className="text-[11px] text-foreground/70">
-            {isNL
-              ? "Natuurlijk! Ik heb deze slots beschikbaar: Ma 10:00, Di 14:00, Wo 09:30. Welke past het beste? 📅"
-              : "Of course! I have these slots available: Mon 10:00, Tue 14:00, Wed 09:30. Which works best? 📅"}
-          </p>
-          <span className="text-[8px] text-muted-foreground/40 float-right mt-0.5">
-            14:32
-          </span>
-        </div>
-      </div>
-      <div className="flex justify-end">
-        <div className="bg-emerald-500/20 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[75%]">
-          <p className="text-[11px] text-foreground/70">
-            {isNL ? "Dinsdag 14:00 graag!" : "Tuesday 14:00 please!"}
-          </p>
-          <span className="text-[8px] text-muted-foreground/40 float-right mt-0.5">
-            14:33
-          </span>
-        </div>
-      </div>
-      <div className="flex justify-start">
-        <div className="bg-muted/60 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[75%]">
-          <div className="flex items-center gap-1 mb-1">
-            <Bot className="w-2.5 h-2.5 text-emerald-500" />
-            <span className="text-[9px] font-semibold text-emerald-500">
-              ZapBot
-            </span>
-          </div>
-          <p className="text-[11px] text-foreground/70">
-            {isNL
-              ? "Gepland! ✅ Je ontvangt een bevestiging per e-mail. Nog vragen? Ik sta 24/7 klaar!"
-              : "Booked! ✅ You'll receive a confirmation by email. Any questions? I'm here 24/7!"}
-          </p>
-          <span className="text-[8px] text-muted-foreground/40 float-right mt-0.5">
-            14:33
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Fake browser preview for Slouch.pro
-function SlouchPreview({ language }: { language: string }) {
-  const isNL = language === "nl";
-  return (
-    <div className="space-y-2.5">
-      {/* Status header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <motion.div
-            className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <Eye className="w-3 h-3 text-emerald-400" />
-          </motion.div>
-          <div>
-            <div className="text-[10px] font-semibold text-foreground/80">
-              {isNL ? "Houding: Goed" : "Posture: Good"}
-            </div>
-            <div className="text-[8px] text-emerald-400">
-              {isNL ? "Camera actief" : "Camera active"}
-            </div>
+        <div className="leading-tight">
+          <div className="text-[10px] font-semibold text-foreground/80">Impulso Assist</div>
+          <div className="flex items-center gap-1 text-[8px] text-emerald-600">
+            <span className="h-1 w-1 rounded-full bg-emerald-500" />
+            {isNL ? "online" : "online"}
           </div>
         </div>
-        <div className="flex items-center gap-1">
-          <Shield className="w-3 h-3 text-teal-400/60" />
-          <span className="text-[8px] text-teal-400/60">
-            {isNL ? "Lokaal" : "Local"}
-          </span>
-        </div>
+        <span className="ml-auto inline-flex items-center gap-0.5 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[7px] font-medium text-emerald-600">
+          <Sparkles className="h-2 w-2" />
+          AI-agent
+        </span>
       </div>
 
-      {/* Posture score chart */}
-      <div className="rounded-lg bg-muted/30 p-2">
-        <div className="text-[8px] text-muted-foreground/50 mb-1.5">
-          {isNL ? "Houdingsscore vandaag" : "Posture score today"}
-        </div>
-        <div className="flex items-end gap-[3px] h-10">
-          {[60, 72, 68, 85, 78, 90, 88, 92, 86, 94, 91, 96].map((h, i) => (
-            <motion.div
-              key={i}
-              className={`flex-1 rounded-sm ${h > 80 ? "bg-teal-500/60" : "bg-amber-400/40"}`}
-              initial={{ height: 0 }}
-              whileInView={{ height: `${h}%` }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 + i * 0.05, duration: 0.4 }}
-            />
-          ))}
-        </div>
-        <div className="flex justify-between mt-1">
-          <span className="text-[7px] text-muted-foreground/30">09:00</span>
-          <span className="text-[7px] text-muted-foreground/30">12:00</span>
-          <span className="text-[7px] text-muted-foreground/30">15:00</span>
-          <span className="text-[7px] text-muted-foreground/30">
-            {isNL ? "Nu" : "Now"}
-          </span>
-        </div>
-      </div>
-
-      {/* Stats row */}
-      <div className="grid grid-cols-3 gap-1.5">
-        {[
-          {
-            label: isNL ? "Sessie" : "Session",
-            value: "2u 14m",
-          },
-          {
-            label: isNL ? "Nudges" : "Nudges",
-            value: "3",
-          },
-          {
-            label: "Score",
-            value: "92%",
-          },
-        ].map((s, i) => (
-          <div
-            key={i}
-            className="rounded-md bg-muted/30 p-1.5 text-center"
-          >
-            <div className="text-[10px] font-bold text-foreground/70">
-              {s.value}
-            </div>
-            <div className="text-[7px] text-muted-foreground/50">
-              {s.label}
-            </div>
+      <div className="space-y-2">
+        {/* 1 — user request */}
+        <motion.div className="flex justify-end" {...bubbleIn} transition={{ delay: 0 }}>
+          <div className="max-w-[78%] rounded-2xl rounded-tr-sm bg-emerald-500/20 px-3 py-2">
+            <p className="text-[11px] text-foreground/70">
+              {isNL
+                ? "Hoi, ik wil graag een afspraak inplannen voor volgende week"
+                : "Hi, I'd like to schedule an appointment for next week"}
+            </p>
+            <span className="float-right mt-0.5 text-[8px] text-muted-foreground/40">14:32</span>
           </div>
-        ))}
-      </div>
+        </motion.div>
 
-      {/* Nudge notification */}
-      <motion.div
-        className="rounded-lg bg-teal-500/10 border border-teal-500/20 p-2"
-        initial={{ opacity: 0, y: 4 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.8 }}
-      >
-        <div className="flex items-center gap-1 mb-1">
-          <Sparkles className="w-2.5 h-2.5 text-teal-400" />
-          <span className="text-[9px] font-semibold text-teal-400">
-            {isNL ? "Laatste nudge" : "Latest nudge"}
+        {/* tool step — checking availability */}
+        <motion.div className="flex justify-center" {...bubbleIn} transition={{ delay: 0.15 }}>
+          <span className="inline-flex items-center gap-1 rounded-full bg-foreground/5 px-2 py-0.5 text-[8px] text-muted-foreground/70">
+            <Calendar className="h-2 w-2 text-blue-500" />
+            {isNL ? "Beschikbaarheid gecheckt in Google Calendar" : "Checked availability in Google Calendar"}
+            <Check className="h-2 w-2 text-emerald-600" strokeWidth={3} />
           </span>
-        </div>
-        <p className="text-[10px] text-foreground/60 leading-relaxed">
-          {isNL
-            ? "Zit recht! Je schouders zakken naar voren. Even stretchen? 🧘"
-            : "Sit up! Your shoulders are dropping forward. Time for a stretch? 🧘"}
-        </p>
-      </motion.div>
+        </motion.div>
+
+        {/* 2 — agent offers slots with quick-reply buttons */}
+        <motion.div className="flex justify-start" {...bubbleIn} transition={{ delay: 0.3 }}>
+          <div className="max-w-[82%] rounded-2xl rounded-tl-sm bg-muted/60 px-3 py-2">
+            <div className="mb-1 flex items-center gap-1">
+              <Bot className="h-2.5 w-2.5 text-emerald-500" />
+              <span className="text-[9px] font-semibold text-emerald-500">Impulso Assist</span>
+            </div>
+            <p className="text-[11px] text-foreground/70">
+              {isNL
+                ? "Deze tijden zijn nog vrij volgende week. Welke past het beste?"
+                : "These times are still free next week. Which works best?"}
+            </p>
+            <div className="mt-1.5 flex flex-wrap gap-1">
+              {slots.map((s, i) => (
+                <span
+                  key={i}
+                  className={`rounded-full border px-1.5 py-0.5 text-[8px] font-medium ${
+                    s.chosen
+                      ? "border-emerald-500 bg-emerald-500/10 text-emerald-700"
+                      : "border-foreground/15 text-foreground/55"
+                  }`}
+                >
+                  {s.label}
+                </span>
+              ))}
+            </div>
+            <span className="float-right mt-0.5 text-[8px] text-muted-foreground/40">14:32</span>
+          </div>
+        </motion.div>
+
+        {/* 3 — user picks */}
+        <motion.div className="flex justify-end" {...bubbleIn} transition={{ delay: 0.45 }}>
+          <div className="max-w-[78%] rounded-2xl rounded-tr-sm bg-emerald-500/20 px-3 py-2">
+            <p className="text-[11px] text-foreground/70">
+              {isNL ? "Dinsdag 14:00 graag!" : "Tuesday 14:00 please!"}
+            </p>
+            <span className="float-right mt-0.5 text-[8px] text-muted-foreground/40">14:33</span>
+          </div>
+        </motion.div>
+
+        {/* tool step — booking */}
+        <motion.div className="flex justify-center" {...bubbleIn} transition={{ delay: 0.6 }}>
+          <span className="inline-flex items-center gap-1 rounded-full bg-foreground/5 px-2 py-0.5 text-[8px] text-muted-foreground/70">
+            <Calendar className="h-2 w-2 text-blue-500" />
+            {isNL ? "Afspraak aangemaakt · uitnodiging verstuurd" : "Event created · invite sent"}
+            <Check className="h-2 w-2 text-emerald-600" strokeWidth={3} />
+          </span>
+        </motion.div>
+
+        {/* 4 — confirmation with Google Calendar card */}
+        <motion.div className="flex justify-start" {...bubbleIn} transition={{ delay: 0.75 }}>
+          <div className="max-w-[82%] rounded-2xl rounded-tl-sm bg-muted/60 px-3 py-2">
+            <div className="mb-1 flex items-center gap-1">
+              <Bot className="h-2.5 w-2.5 text-emerald-500" />
+              <span className="text-[9px] font-semibold text-emerald-500">Impulso Assist</span>
+            </div>
+            <p className="text-[11px] text-foreground/70">
+              {isNL ? "Top, ik heb het ingepland ✅" : "Great, I've booked it ✅"}
+            </p>
+
+            {/* Google Calendar event card */}
+            <div className="mt-1.5 overflow-hidden rounded-lg border border-foreground/10 bg-white">
+              <div className="flex items-stretch">
+                <div className="w-1 bg-blue-500" />
+                <div className="flex-1 p-2">
+                  <div className="mb-0.5 flex items-center gap-1">
+                    <Calendar className="h-2.5 w-2.5 text-blue-500" />
+                    <span className="text-[9px] font-semibold text-foreground/80">
+                      {isNL ? "Intake-gesprek" : "Intro call"}
+                    </span>
+                  </div>
+                  <div className="text-[8px] text-muted-foreground/60">
+                    {isNL ? "Dinsdag · 14:00 – 14:30" : "Tuesday · 14:00 – 14:30"}
+                  </div>
+                  <span className="mt-1 inline-flex items-center gap-1 text-[8px] font-semibold text-blue-600">
+                    <Plus className="h-2 w-2" strokeWidth={3} />
+                    {isNL ? "Toevoegen aan Google Agenda" : "Add to Google Calendar"}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-1.5 text-[11px] text-foreground/70">
+              {isNL
+                ? "Bevestiging per e-mail onderweg. Tot dan! 👋"
+                : "Confirmation email on its way. See you then! 👋"}
+            </p>
+            <span className="float-right mt-0.5 text-[8px] text-muted-foreground/40">14:33</span>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
@@ -344,119 +279,260 @@ function ContentOSPreview({ language }: { language: string }) {
     {
       name: isNL ? "Strateeg" : "Strategist",
       icon: Target,
-      color: "text-orange-400",
+      color: "text-orange-500",
       bg: "bg-orange-500/10",
       status: isNL ? "Contentkalender bijgewerkt" : "Content calendar updated",
+      time: "2m",
+      state: "done",
     },
     {
       name: isNL ? "Schrijver" : "Writer",
       icon: PenTool,
-      color: "text-pink-400",
+      color: "text-pink-500",
       bg: "bg-pink-500/10",
-      status: isNL ? "3 posts geschreven" : "3 posts written",
+      status: isNL ? "Blogpost schrijven… (2/3)" : "Writing blog post… (2/3)",
+      time: isNL ? "nu" : "now",
+      state: "working",
     },
     {
       name: isNL ? "E-mail" : "Email",
       icon: Mail,
-      color: "text-blue-400",
+      color: "text-blue-500",
       bg: "bg-blue-500/10",
       status: isNL ? "Campagne verstuurd" : "Campaign sent",
+      time: "1u",
+      state: "done",
     },
     {
       name: isNL ? "Analist" : "Analyst",
       icon: BarChart3,
-      color: "text-emerald-400",
+      color: "text-emerald-500",
       bg: "bg-emerald-500/10",
-      status: isNL ? "Rapport klaar" : "Report ready",
+      status: isNL ? "Budget voor ads verhogen?" : "Increase ad budget?",
+      time: "5m",
+      state: "question",
     },
   ];
 
+  const team = [
+    { initials: "St", bg: "bg-orange-400" },
+    { initials: "Sc", bg: "bg-pink-400" },
+    { initials: "An", bg: "bg-emerald-400" },
+  ];
+
+  const week = [
+    { day: isNL ? "ma" : "mon", num: 5, chips: ["bg-orange-400/80", "bg-pink-400/80"] },
+    { day: isNL ? "di" : "tue", num: 6, chips: ["bg-orange-400/80", "bg-pink-400/80", "bg-blue-400/80"] },
+    { day: isNL ? "wo" : "wed", num: 4, today: true, chips: ["bg-orange-400/80", "bg-blue-400/80"] },
+    { day: isNL ? "do" : "thu", num: 5, chips: ["bg-pink-400/80", "bg-blue-400/80"] },
+    { day: isNL ? "vr" : "fri", num: 5, chips: ["bg-orange-400/80", "bg-pink-400/80"] },
+  ];
+
+  const cardShadow = "shadow-[0_1px_3px_rgba(0,0,0,0.04)]";
+
   return (
-    <div className="space-y-2.5">
-      {/* Content calendar header */}
+    <div className="space-y-3">
+      {/* App header: brand, team, action */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Calendar className="w-3.5 h-3.5 text-orange-400" />
-          <span className="text-[10px] font-semibold text-foreground/80">
-            {isNL ? "Deze week" : "This week"}
-          </span>
-        </div>
-        <span className="text-[9px] text-emerald-400 font-medium">
-          25 {isNL ? "items gepland" : "items scheduled"}
-        </span>
-      </div>
-
-      {/* Mini calendar grid */}
-      <div className="grid grid-cols-5 gap-1">
-        {[
-          { day: isNL ? "Ma" : "Mon", items: 5 },
-          { day: isNL ? "Di" : "Tue", items: 6 },
-          { day: isNL ? "Wo" : "Wed", items: 4 },
-          { day: isNL ? "Do" : "Thu", items: 5 },
-          { day: isNL ? "Vr" : "Fri", items: 5 },
-        ].map((d, i) => (
-          <div
-            key={i}
-            className="rounded-md bg-muted/30 p-1.5 text-center"
-          >
-            <div className="text-[8px] text-muted-foreground/50 mb-0.5">
-              {d.day}
-            </div>
-            <div className="text-[10px] font-bold text-foreground/70">
-              {d.items}
-            </div>
-            <div className="flex justify-center gap-[2px] mt-0.5">
-              <div className="w-1 h-1 rounded-full bg-orange-400/60" />
-              <div className="w-1 h-1 rounded-full bg-pink-400/60" />
-              <div className="w-1 h-1 rounded-full bg-blue-400/60" />
+          <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center">
+            <TrendingUp className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
+          </div>
+          <div className="leading-tight">
+            <div className="text-[11px] font-semibold text-foreground">Impulso Studio</div>
+            <div className="text-[8px] text-muted-foreground/60">
+              {isNL ? "Marketing-werkruimte" : "Marketing workspace"}
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Agent status list */}
-      <div className="space-y-1.5">
-        {agents.map((agent, i) => {
-          const AgentIcon = agent.icon;
-          return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -6 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 + i * 0.1 }}
-              className="flex items-center gap-2 rounded-lg bg-muted/20 px-2 py-1.5"
-            >
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="flex -space-x-1.5">
+            {team.map((t, i) => (
               <div
-                className={`w-5 h-5 rounded flex items-center justify-center ${agent.bg}`}
+                key={i}
+                className={`w-4 h-4 rounded-full ring-2 ring-white flex items-center justify-center text-[6px] font-bold text-white ${t.bg}`}
               >
-                <AgentIcon className={`w-2.5 h-2.5 ${agent.color}`} />
+                {t.initials}
               </div>
-              <span className="text-[10px] font-semibold text-foreground/70 w-[60px]">
-                {agent.name}
-              </span>
-              <span className="text-[9px] text-muted-foreground/60 flex-1 truncate">
-                {agent.status}
-              </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            </motion.div>
-          );
-        })}
+            ))}
+            <div className="w-4 h-4 rounded-full ring-2 ring-white bg-muted flex items-center justify-center text-[6px] font-bold text-muted-foreground">
+              +2
+            </div>
+          </div>
+          <button className="inline-flex items-center gap-0.5 rounded-md bg-foreground px-1.5 py-1 text-[8px] font-medium text-background">
+            <Plus className="w-2.5 h-2.5" strokeWidth={2.5} />
+            {isNL ? "Nieuw" : "New"}
+          </button>
+        </div>
       </div>
 
-      {/* Performance snippet */}
-      <div className="rounded-lg bg-orange-500/5 border border-orange-500/15 p-2">
-        <div className="flex items-center justify-between mb-1">
-          <span className="text-[9px] font-semibold text-orange-400">
+      {/* This-week card */}
+      <div className={`rounded-lg border border-foreground/10 bg-white p-2.5 ${cardShadow}`}>
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-1.5">
+            <Calendar className="w-3 h-3 text-orange-500" />
+            <span className="text-[10px] font-semibold text-foreground/80">
+              {isNL ? "Deze week" : "This week"}
+            </span>
+          </div>
+          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[8px] font-medium text-emerald-600">
+            <span className="w-1 h-1 rounded-full bg-emerald-500" />
+            25 {isNL ? "items gepland" : "items scheduled"}
+          </span>
+        </div>
+        <div className="grid grid-cols-5 gap-1">
+          {week.map((d, i) => (
+            <div
+              key={i}
+              className={`rounded-md p-1.5 text-center border ${
+                d.today
+                  ? "border-terracotta/40 bg-terracotta/[0.06]"
+                  : "border-foreground/10 bg-white"
+              }`}
+            >
+              <div className="text-[7px] uppercase tracking-wide text-muted-foreground/50 mb-0.5">
+                {d.day}
+              </div>
+              <div
+                className={`text-[12px] font-bold leading-none mb-1 ${
+                  d.today ? "text-terracotta" : "text-foreground/80"
+                }`}
+              >
+                {d.num}
+              </div>
+              <div className="space-y-[2px]">
+                {d.chips.map((c, ci) => (
+                  <div key={ci} className={`h-[3px] rounded-full ${c}`} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Agent activity card — live ops feed with mixed agent states */}
+      <div className={`rounded-lg border border-foreground/10 bg-white p-2.5 ${cardShadow}`}>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-muted-foreground/60">
+            {isNL ? "Agents" : "Agents"}
+          </span>
+          <div className="flex items-center gap-1.5">
+            <motion.span
+              className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 px-1.5 py-0.5 text-[8px] font-medium text-amber-600"
+              animate={{ opacity: [1, 0.55, 1] }}
+              transition={{ duration: 1.8, repeat: Infinity }}
+            >
+              <HelpCircle className="h-2 w-2" />
+              {isNL ? "1 wacht op je" : "1 needs you"}
+            </motion.span>
+            <span className="inline-flex items-center gap-1 text-[8px] text-muted-foreground/50">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              </span>
+              live
+            </span>
+          </div>
+        </div>
+        <div className="space-y-1">
+          {agents.map((agent, i) => {
+            const AgentIcon = agent.icon;
+            const isQuestion = agent.state === "question";
+            const isWorking = agent.state === "working";
+            const dotColor =
+              agent.state === "done"
+                ? "bg-emerald-500"
+                : isWorking
+                ? "bg-blue-500"
+                : "bg-amber-500";
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -6 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+                className={`flex items-center gap-2 rounded-lg px-1.5 py-1.5 ${
+                  isQuestion ? "border border-amber-500/25 bg-amber-500/[0.06]" : ""
+                }`}
+              >
+                <div
+                  className={`relative w-6 h-6 rounded-md flex items-center justify-center ${agent.bg}`}
+                >
+                  <AgentIcon className={`w-3 h-3 ${agent.color}`} />
+                  <span
+                    className={`absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full ring-2 ring-white ${dotColor}`}
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] font-semibold text-foreground/80 leading-tight">
+                    {agent.name}
+                  </div>
+                  <div
+                    className={`text-[9px] truncate ${
+                      isQuestion ? "text-amber-700 font-medium" : "text-muted-foreground/60"
+                    }`}
+                  >
+                    {agent.status}
+                  </div>
+                  {isQuestion && (
+                    <div className="mt-1 flex gap-1">
+                      <span className="rounded-full border border-emerald-500/40 bg-emerald-500/5 px-1.5 py-0.5 text-[8px] font-medium text-emerald-700">
+                        {isNL ? "Ja" : "Yes"}
+                      </span>
+                      <span className="rounded-full border border-foreground/15 px-1.5 py-0.5 text-[8px] font-medium text-foreground/55">
+                        {isNL ? "Nee" : "No"}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <span className="text-[8px] text-muted-foreground/40 self-start mt-0.5">
+                  {agent.time}
+                </span>
+                {agent.state === "done" && (
+                  <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[8px] font-medium text-emerald-600 self-start">
+                    <Check className="h-2 w-2" strokeWidth={3} />
+                    {isNL ? "Klaar" : "Done"}
+                  </span>
+                )}
+                {isWorking && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/10 px-1.5 py-0.5 text-[8px] font-medium text-blue-600 self-start">
+                    <motion.span
+                      className="h-2 w-2 rounded-full border border-blue-500 border-t-transparent"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                    />
+                    {isNL ? "Bezig" : "Working"}
+                  </span>
+                )}
+                {isQuestion && (
+                  <span className="inline-flex items-center gap-0.5 rounded-full bg-amber-500/15 px-1.5 py-0.5 text-[8px] font-medium text-amber-600 self-start">
+                    <HelpCircle className="h-2 w-2" />
+                    {isNL ? "Vraag" : "Asks"}
+                  </span>
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Results card */}
+      <div className="rounded-lg border border-orange-500/20 bg-gradient-to-br from-orange-500/[0.06] to-pink-500/[0.04] p-2.5">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[9px] font-semibold text-orange-600">
             {isNL ? "Resultaat deze week" : "This week's results"}
           </span>
-          <span className="text-[9px] text-emerald-400">+180%</span>
+          <span className="inline-flex items-center gap-0.5 text-[9px] font-semibold text-emerald-600">
+            <TrendingUp className="w-2.5 h-2.5" strokeWidth={2.5} />
+            +180%
+          </span>
         </div>
-        <div className="flex items-end gap-[3px] h-6">
+        <div className="flex items-end gap-[3px] h-8 border-b border-foreground/10">
           {[30, 42, 38, 55, 62, 58, 78, 72, 85, 90].map((h, i) => (
             <motion.div
               key={i}
-              className="flex-1 rounded-sm bg-gradient-to-t from-orange-500/50 to-pink-500/50"
+              className="flex-1 rounded-t-sm bg-gradient-to-t from-orange-500/70 to-pink-500/60"
               initial={{ height: 0 }}
               whileInView={{ height: `${h}%` }}
               viewport={{ once: true }}
@@ -536,7 +612,7 @@ function CaseStudyCard({
             </div>
           </div>
 
-          {/* Results grid — hairline cells */}
+          {/* Results grid, hairline cells */}
           <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-l border-foreground/15">
             {study.results.map((r, i) => (
               <motion.div
@@ -547,7 +623,7 @@ function CaseStudyCard({
                 transition={{ delay: 0.3 + i * 0.08 }}
                 className="p-3 sm:p-4 border-r border-b border-foreground/15"
               >
-                <div className="text-base sm:text-lg font-medium text-foreground">
+                <div className="text-base sm:text-lg font-medium text-terracotta">
                   {r.value}
                 </div>
                 <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">
@@ -587,7 +663,7 @@ function CaseStudyCard({
 
         {/* Preview side */}
         <div className={`${isReversed ? "lg:order-1" : ""}`}>
-          <div className="border border-foreground/15 bg-background overflow-hidden">
+          <div className="border border-foreground/20 bg-white overflow-hidden">
             {/* Browser bar */}
             <div className="flex items-center gap-2 px-4 py-2.5 border-b border-foreground/15 bg-muted/30">
               <div className="flex gap-1.5">
@@ -603,8 +679,6 @@ function CaseStudyCard({
             <div className="p-5">
               {index === 0 ? (
                 <ZapBotPreview language={language} />
-              ) : index === 1 ? (
-                <SlouchPreview language={language} />
               ) : (
                 <ContentOSPreview language={language} />
               )}
@@ -622,7 +696,7 @@ export default function CaseStudies() {
   const studies = getCaseStudies(language);
 
   return (
-    <section id="case-studies" className="py-24 sm:py-32 border-t border-foreground/10">
+    <section id="case-studies" className="py-24 sm:py-32 border-t border-foreground/10 bg-background">
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
@@ -651,8 +725,8 @@ export default function CaseStudies() {
             className="text-muted-foreground text-lg sm:text-xl font-light leading-relaxed"
           >
             {isNL
-              ? "Bekijk hoe we AI-oplossingen bouwen die écht werken — van concept tot product."
-              : "See how we build AI solutions that actually work — from concept to product."}
+              ? "Bekijk hoe we AI-oplossingen bouwen die écht werken, van concept tot product."
+              : "See how we build AI solutions that actually work, from concept to product."}
           </motion.p>
         </div>
 

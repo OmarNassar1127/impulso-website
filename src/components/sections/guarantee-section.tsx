@@ -11,7 +11,7 @@ export default function GuaranteeSection() {
     const guarantees = [
         language === 'nl'
             ? 'Geen verborgen kosten, we houden van transparantie'
-            : 'No hidden costs — we love transparency',
+            : 'No hidden costs, we love transparency',
         language === 'nl'
             ? 'Dezelfde dag nog een reactie'
             : 'A response the same day',
@@ -21,7 +21,7 @@ export default function GuaranteeSection() {
     ];
 
     return (
-        <section className="py-24 sm:py-32 bg-background border-t border-foreground/10" id="guarantee">
+        <section className="py-24 sm:py-32 surface-warm border-t border-foreground/10" id="guarantee">
             <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left: main value proposition + CTAs (moved from the hero) */}
@@ -32,7 +32,7 @@ export default function GuaranteeSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            {language === 'nl' ? 'AI-bureau — Amsterdam' : 'AI agency — Amsterdam'}
+                            {language === 'nl' ? 'AI-bureau, Amsterdam' : 'AI agency, Amsterdam'}
                         </motion.p>
 
                         <motion.h2
@@ -80,7 +80,7 @@ export default function GuaranteeSection() {
                         </motion.div>
                     </div>
 
-                    {/* Right: guarantees — hairline-separated list */}
+                    {/* Right: guarantees, hairline-separated list */}
                     <div>
                         <motion.p
                             className="text-base sm:text-lg font-semibold text-foreground uppercase tracking-[0.2em] mb-6"
@@ -100,7 +100,7 @@ export default function GuaranteeSection() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.15 + index * 0.08 }}
                             >
-                                <Check className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                                <Check className="h-5 w-5 text-terracotta flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                                 <p className="text-base sm:text-lg text-foreground/80 font-light leading-relaxed">
                                     {guarantee}
                                 </p>

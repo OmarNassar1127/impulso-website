@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <div className="h-6 w-6 sm:h-7 sm:w-7 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold text-white">
-                  V
+                  {post.author.charAt(0)}
                 </div>
                 {post.author}
               </span>
@@ -156,14 +156,14 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="container mx-auto px-6 sm:px-8 max-w-3xl pb-10 sm:pb-16">
           <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5 rounded-2xl bg-muted/30 border border-border/50 p-5 sm:p-8">
             <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-primary text-base sm:text-lg font-bold text-white">
-              V
+              {post.author.charAt(0)}
             </div>
             <div>
               <p className="font-bold text-foreground text-base sm:text-lg">{post.author}</p>
               <p className="mt-1 sm:mt-1.5 text-sm leading-relaxed text-muted-foreground">
                 Impulso Co. is een AI agent development bureau in Amsterdam. We
                 bouwen maatwerk AI-oplossingen voor het Nederlandse MKB en
-                enterprise — live in 2 weken.
+                enterprise, live in 2 weken.
               </p>
               <Link
                 href="/"

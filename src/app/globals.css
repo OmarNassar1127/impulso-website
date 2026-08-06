@@ -315,7 +315,7 @@ a:hover {
 
 @layer base {
   :root {
-    /* Light theme - Premium Indigo */
+    /* Light theme, white base with warm off-white accent sections */
     --background: 0 0% 100%;
     --foreground: 240 10% 6%;
 
@@ -325,8 +325,8 @@ a:hover {
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 6%;
 
-    --primary: 245 58% 51%;
-    /* Deep Indigo #4F46E5 */
+    --primary: 11 62% 44%;
+    /* Brand terracotta #B4442A */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 96%;
@@ -343,7 +343,7 @@ a:hover {
 
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 245 58% 51%;
+    --ring: 11 62% 44%;
 
     --radius: 0.75rem;
 
@@ -365,8 +365,8 @@ a:hover {
     --popover: 240 8% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 245 82% 73%;
-    /* Soft indigo #818CF8 */
+    --primary: 11 70% 68%;
+    /* Lighter terracotta for dark surfaces */
     --primary-foreground: 240 10% 6%;
 
     --secondary: 240 4% 12%;
@@ -383,7 +383,7 @@ a:hover {
 
     --border: 240 4% 14%;
     --input: 240 4% 14%;
-    --ring: 245 82% 73%;
+    --ring: 11 70% 68%;
   }
 }
 
@@ -415,6 +415,26 @@ a:hover {
       min-width: 44px;
     }
   }
+}
+
+/* ── Tonal section surface ───────────────────────────────────────────────
+   ONE warm off-white tone. The page alternates white -> warm -> white -> warm
+   section by section (a strict metronome), so the rhythm is predictable and
+   never reads as random. Warm hue (~25deg) so it reads as family with the
+   terracotta accent, never cold. */
+.surface-warm {
+  background-color: #f6f1ec;
+}
+
+/* ── Card depth helper ───────────────────────────────────────────────────
+   Subtle elevation via a faint warm shadow; keeps the editorial
+   sharp-corner aesthetic but adds perceived depth on hover. */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 4px 20px 0 rgba(180, 68, 42, 0.06), 0 1px 4px 0 rgba(0,0,0,0.05);
+  transform: translateY(-2px);
 }
 
 .animate-slide-up {

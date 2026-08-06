@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, FileText, Rocket, ArrowRight, ChevronRight, Phone, Mail, MessageCircle, Check } from "lucide-react";
+import { Calendar, FileText, Rocket, ArrowRight, ChevronRight, Phone, Mail, Check } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import DemoRequestModal from "@/components/demo-request-modal";
 
@@ -39,7 +39,7 @@ export default function IntakeExplanationSection() {
     ];
 
     return (
-        <section className="py-24 sm:py-32 bg-background border-t border-foreground/10" id="intake">
+        <section className="py-24 sm:py-32 surface-warm border-t border-foreground/10" id="intake">
             <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
                 {/* Header */}
                 <div className="mb-16 sm:mb-20 max-w-3xl">
@@ -75,8 +75,8 @@ export default function IntakeExplanationSection() {
                     </motion.p>
                 </div>
 
-                {/* Steps — hairline cells, numbered */}
-                <div className="grid md:grid-cols-3 border-t border-l border-foreground/15 mb-20 sm:mb-24">
+                {/* Steps, hairline cells, numbered */}
+                <div className="grid md:grid-cols-3 border-t border-l border-foreground/15 mb-20 sm:mb-24 bg-white/60">
                     {steps.map((step, index) => {
                         const Icon = step.icon;
                         return (
@@ -89,7 +89,7 @@ export default function IntakeExplanationSection() {
                                 className="p-8 sm:p-10 border-r border-b border-foreground/15"
                             >
                                 <div className="flex items-center justify-between mb-6">
-                                    <Icon className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                                    <Icon className="h-6 w-6 text-terracotta" strokeWidth={1.5} />
                                     <span className="text-sm text-muted-foreground tracking-[0.2em]">
                                         {step.number}
                                     </span>
@@ -109,7 +109,7 @@ export default function IntakeExplanationSection() {
                 {/* CTA Section */}
                 <motion.div
                     id="ready-to-start"
-                    className="border border-foreground/15 bg-muted/30 dark:bg-muted/10 p-8 sm:p-12 md:p-20 text-center"
+                    className="border border-terracotta/20 bg-white p-8 sm:p-12 md:p-20 text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -146,7 +146,7 @@ export default function IntakeExplanationSection() {
                             language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee',
                         ].map((text, idx) => (
                             <div key={idx} className="flex items-center gap-2">
-                                <Check className="h-4 w-4 text-foreground" strokeWidth={1.5} />
+                                <Check className="h-4 w-4 text-terracotta" strokeWidth={1.5} />
                                 <span>{text}</span>
                                 </div>
                             ))}
@@ -178,10 +178,6 @@ export default function IntakeExplanationSection() {
                                 <a href="mailto:info@impulsoco.nl" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
                                     <Mail className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
                                     <span className="text-foreground font-medium text-sm">info@impulsoco.nl</span>
-                                </a>
-                                <a href="https://wa.me/31640495527" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
-                                    <MessageCircle className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                                    <span className="text-foreground font-medium text-sm">WhatsApp</span>
                                 </a>
                             </motion.div>
                         )}

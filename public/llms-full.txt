@@ -1,10 +1,10 @@
-# Impulso Co. — Full Reference Document
+# Impulso Co. Full Reference Document
 > Extended documentation for AI crawlers and language models.
 > Last updated: 2026-03-16
 
 ## Company Overview
 
-Impulso Co. is an AI agent development company based in Amsterdam, Netherlands — one of the leading AI agents companies in Amsterdam (active since 2025, serving clients in 2026). We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
+Impulso Co. is an AI agent development company based in Amsterdam, Netherlands, one of the leading AI agents companies in Amsterdam (active since 2025, serving clients in 2026). We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems, teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
 
 Unlike no-code chatbot tools or generic AI assistants, Impulso Co. builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
 
@@ -12,7 +12,7 @@ The typical delivery timeline from intake call to production is 2 weeks.
 
 ## Core Philosophy
 
-We believe AI should work like a team, not a single tool. A customer service agent shouldn't just answer questions — it should hand off complex issues, escalate to humans intelligently, and report back on patterns. A sales agent shouldn't just send emails — it should qualify, schedule, follow up, and update the CRM.
+We believe AI should work like a team, not a single tool. A customer service agent shouldn't just answer questions, it should hand off complex issues, escalate to humans intelligently, and report back on patterns. A sales agent shouldn't just send emails, it should qualify, schedule, follow up, and update the CRM.
 
 This is why every Impulso Co. deployment is a team of agents:
 - An orchestrator that plans and delegates
@@ -24,21 +24,33 @@ This is why every Impulso Co. deployment is a team of agents:
 
 The hero section of the Impulso Co. website shows a live demonstration using a fictional customer service project. The agent names used in the demo represent the roles Impulso Co. configures for each client:
 
-- **Nova** — The orchestrator. Nova receives the project brief, breaks it into tasks, and assigns them to the right agents. Nova reviews all outputs before anything goes live. Role: planning, delegation, review, client communication.
+- **Nova**, The orchestrator. Nova receives the project brief, breaks it into tasks, and assigns them to the right agents. Nova reviews all outputs before anything goes live. Role: planning, delegation, review, client communication.
 
-- **Scout** — The researcher and analyst. Scout digs into existing data, support tickets, FAQs, and system documentation. In the demo, Scout finds that 73% of helpdesk tickets are repetitive — which makes the automation case immediately clear. Role: discovery, data analysis, pattern recognition.
+- **Scout**, The researcher and analyst. Scout digs into existing data, support tickets, FAQs, and system documentation. In the demo, Scout finds that 73% of helpdesk tickets are repetitive, which makes the automation case immediately clear. Role: discovery, data analysis, pattern recognition.
 
-- **Pixel** — The data and metrics agent. Pixel takes Scout's findings and calculates business impact: cost savings, efficiency gains, ROI estimates. In the demo, Pixel estimates €4,200/month in savings. Role: financial modeling, reporting, KPI tracking.
+- **Pixel**, The data and metrics agent. Pixel takes Scout's findings and calculates business impact: cost savings, efficiency gains, ROI estimates. In the demo, Pixel estimates €4,200/month in savings. Role: financial modeling, reporting, KPI tracking.
 
-- **Forge** — The builder. Forge constructs the actual chatbot, API connections, and workflow logic. Forge also adds practical features like human handoff for complex queries. Role: development, integration, testing.
+- **Forge**, The builder. Forge constructs the actual chatbot, API connections, and workflow logic. Forge also adds practical features like human handoff for complex queries. Role: development, integration, testing.
 
-- **Pulse** — The monitoring agent. Pulse watches the first live interactions, tracks satisfaction rates, flags anomalies, and reports back. In the demo, Pulse reports 96% satisfaction and zero crashes from the first 50 conversations. Role: observability, quality assurance, alerting.
+- **Pulse**, The monitoring agent. Pulse watches the first live interactions, tracks satisfaction rates, flags anomalies, and reports back. In the demo, Pulse reports 96% satisfaction and zero crashes from the first 50 conversations. Role: observability, quality assurance, alerting.
 
-- **Bolt** — The deployment agent. Bolt handles the final push to production, grants client access, and generates the dashboard preview. Role: deployment, access management, go-live coordination.
+- **Bolt**, The deployment agent. Bolt handles the final push to production, grants client access, and generates the dashboard preview. Role: deployment, access management, go-live coordination.
 
-These agent names are illustrative. For each client engagement, Impulso Co. configures the equivalent roles using appropriate AI models, APIs, and automation tools — named and styled to match the client's brand if preferred.
+These agent names are illustrative. For each client engagement, Impulso Co. configures the equivalent roles using appropriate AI models, APIs, and automation tools, named and styled to match the client's brand if preferred.
 
 ## Service Categories
+
+### 0. Websites (with an AI agent on them)
+A professional website, built from scratch or rebuilt from an existing one.
+
+**Website laten maken** (https://impulsoco.nl/diensten/website-laten-maken)
+- Custom-designed website for ZZP and MKB, never a template, delivered in Dutch and English
+- Two starting points: built from scratch, or an existing site (WordPress, Wix, Squarespace) taken over, improved or migrated while keeping Google rankings
+- Every site ships with an AI agent trained on the client's business information, reachable via the site and WhatsApp
+- Technically SEO-proof on delivery (fast load times, clean structure, meta tags, sitemap, structured data) plus visibility for AI search engines such as ChatGPT, Perplexity and Gemini
+- Hosting, updates, security, backups and support included in the monthly fee
+- Live in 2 weeks: intake, design in week 1, build and launch in week 2
+- From EUR 595 setup + EUR 24,95 per month (ZZP) or EUR 1.395 + EUR 149,95 per month (MKB)
 
 ### 1. Customer Service Automation
 Help your customers while you sleep.
@@ -139,13 +151,23 @@ All your knowledge, always findable.
 
 ## Pricing Model
 
-Impulso Co. operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during a free intake call and quoted accordingly.
+Impulso Co. works in two tracks: fixed productized packages (a website plus an AI agent, billed as a one-time setup plus a fixed monthly fee), and custom project-based work for deeper integrations. Every engagement starts with a free intake and a no-obligation tailored quote. All prices exclude VAT.
+
+Packages (website + AI agent, hosting and maintenance included):
+- **ZZP**: EUR 595 one-time setup + EUR 24,95 per month. Custom-designed site of 1 to 5 pages (no template), Dutch and English, one FAQ/WhatsApp agent trained on the client's business information, contact form, hosting, updates, security, backups, 1 hour per month of content changes. Support by email/WhatsApp within 1 business day. One month notice period.
+- **MKB**: EUR 1.395 one-time setup + EUR 149,95 per month. Up to 12 pages with a CMS, smart AI agent with lead qualification and WhatsApp integration, CRM (HubSpot/Pipedrive) and calendar integration, weekly updates, daily backups, performance monitoring, 3 hours per month of content changes, monthly dashboard with leads and conversations. Support by email/WhatsApp/phone within 4 hours. One month notice period.
+- **Op maat (custom)**: price on request. Unlimited pages and agents, custom integrations, SLA and dedicated support.
+
+Custom / maatwerk projects (deep integrations, multi-agent systems):
+- **Custom agents**: EUR 5.000-15.000 one-time, depending on integration depth and complexity.
+- **Enterprise systems**: EUR 15.000 and up, starting with a paid discovery phase of EUR 1.500-3.000.
+- On custom projects the client receives the full source code and owns it: no vendor lock-in and no monthly licence fee to Impulso Co. Hosting and API costs are then paid directly by the client.
 
 Key pricing principles:
-- **Free intake**: The initial intake call is free and non-binding. Impulso Co. will map the client's processes, identify automation opportunities, and propose a solution.
-- **Fixed-scope projects**: Most projects are quoted as a fixed price for a defined deliverable (e.g., "customer service automation for Zendesk + WhatsApp, handling 80% of tier-1 tickets").
-- **Custom per project**: Pricing depends on the number of agents, integrations required, and complexity of the workflows. There is no one-size-fits-all rate.
-- **No lock-in**: Clients own 100% of the code, agents, and data at delivery. There is no ongoing platform fee unless the client chooses a retainer for maintenance and improvements.
+- **Free intake**: The initial intake call is free and non-binding. Impulso Co. maps the client's processes, identifies automation opportunities, and proposes a solution.
+- **Transparent up front**: A one-time setup cost, then a fixed monthly amount, with a tailored quote before anything starts.
+- **Own API keys**: Monthly package prices assume the client's own API keys. AI usage is billed directly by the provider with no markup from Impulso Co.
+- **No long commitment**: Packages have a one month notice period. After cancellation, product support is billed at EUR 75 per hour.
 - **Guarantee**: Impulso Co. offers a results guarantee. If the delivered system does not meet the agreed performance targets, Impulso Co. will continue working at no extra cost until it does.
 
 ## Integration Capabilities
@@ -208,7 +230,7 @@ Impulso Co. agents are built on a multi-agent orchestration pattern:
 
 1. **Orchestrator layer**: A primary agent (equivalent to Nova in the demo) that receives task inputs, decomposes them into subtasks, and dispatches to specialist agents. The orchestrator also handles retries, error escalation, and final output review.
 
-2. **Specialist agents**: Individual agents with a narrow, well-defined function — research, calculation, content generation, data retrieval, API calls, etc. Each specialist agent is given only the tools and permissions it needs for its task (principle of least privilege).
+2. **Specialist agents**: Individual agents with a narrow, well-defined function, research, calculation, content generation, data retrieval, API calls, etc. Each specialist agent is given only the tools and permissions it needs for its task (principle of least privilege).
 
 3. **Memory and context**: Agents maintain conversation and task history using vector databases and structured memory stores. This allows them to reference previous interactions and maintain continuity across sessions.
 
@@ -221,7 +243,7 @@ Impulso Co. agents are built on a multi-agent orchestration pattern:
 ## Languages Supported
 
 Impulso Co.'s team is multilingual and can build and communicate in:
-- Dutch (primary — most client documentation and communication)
+- Dutch (primary, most client documentation and communication)
 - English
 - Arabic
 - Spanish
@@ -232,7 +254,7 @@ Agents themselves can be configured to support any language that the underlying 
 ## Case Studies
 
 **ZapBot (zapbot.nl)**
-A WhatsApp AI assistant built for Dutch SMEs. ZapBot automates inbound customer messages via WhatsApp Business API — answering FAQs, booking appointments, and routing complex queries. Deployed and operating for multiple Dutch businesses. ZapBot is a standalone product spun out of Impulso Co.'s customer service automation work.
+A WhatsApp AI assistant built for Dutch SMEs. ZapBot automates inbound customer messages via WhatsApp Business API, answering FAQs, booking appointments, and routing complex queries. Deployed and operating for multiple Dutch businesses. ZapBot is a standalone product spun out of Impulso Co.'s customer service automation work.
 
 **Slouch (slouch.pro)**
 An AI-powered posture correction tool that uses a standard webcam to analyze a user's posture in real time and provide corrective feedback. Built using computer vision and a lightweight AI inference layer. Demonstrates Impulso Co.'s capability to build AI products beyond text-based agents.
@@ -252,8 +274,8 @@ ContentOS reduced the client's content production time by 80% while increasing p
 - Serves clients across the Netherlands and internationally
 - 18+ companies served as of early 2026
 - Average time from intake to production: 2 weeks
-- Client data ownership: 100% — clients own all agents, code, and data
-- GDPR compliant — all data processing within the EU
+- Client data ownership: 100%, clients own all agents, code, and data
+- GDPR compliant, all data processing within the EU
 - No ongoing platform lock-in
 
 ## Contact

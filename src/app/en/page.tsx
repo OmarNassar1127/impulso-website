@@ -10,7 +10,6 @@ import Services from "@/components/sections/services";
 import Pricing from "@/components/sections/pricing";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
-import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
 import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
@@ -81,15 +80,15 @@ const testimonialsData = {
 };
 
 export const metadata: Metadata = generateMetadata({
-  title: "Custom AI Agents — Your Digital Team",
+  title: "Custom AI Agents, Your Digital Team",
   description:
-    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
+    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Impulso Co., Amsterdam, Netherlands, Europe",
+    "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Impulso Co. Amsterdam, Netherlands, Europe",
   pathname: "/en",
   locale: "en",
   imageUrl: "/og-image.png",
-  imageAlt: "Impulso Co. — Custom AI Agents for Businesses",
+  imageAlt: "Impulso Co. Custom AI Agents for Businesses",
 });
 
 export default function EnglishHome() {
@@ -102,6 +101,18 @@ export default function EnglishHome() {
       <JsonLd data={certificationsSchema()} />
 
       <main className="min-h-screen">
+        {/* Crawlable H1 + summary. The hero is a particle canvas with no real
+            text, so this carries the page's primary keywords for Google and AI
+            crawlers. Visually hidden, fully read by screen readers and bots. */}
+        <section className="sr-only">
+          <h1>Custom AI Agents &amp; Digital Employees for Businesses</h1>
+          <p>
+            Impulso Co. is an AI agent development company in Amsterdam building
+            custom AI agents for customer service, sales and operations, from
+            WhatsApp and voice agents to RAG knowledge bases and automations.
+            Live in 2 weeks, fully GDPR-compliant, and your data stays yours.
+          </p>
+        </section>
         <Navbar />
         <Hero />
         <CompanySlider />
@@ -121,7 +132,6 @@ export default function EnglishHome() {
 
 
         <Footer />
-        <FloatingWhatsAppButton />
       </main>
     </>
   );

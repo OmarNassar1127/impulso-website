@@ -29,15 +29,16 @@ export default function Footer() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <span className="flex items-center gap-2.5 text-xl font-medium tracking-tight">
-                  <img src="/impulso-mark.png" alt="Impulso Co. logo" className="h-7 w-auto object-contain" />
-                  Impulso Co.
-                </span>
+                <img
+                  src="/impulso-logo.png"
+                  alt="Impulso Co. Automate. Optimize. Grow."
+                  className="w-40 h-auto object-contain"
+                />
               </a>
               <p className="text-sm text-muted-foreground font-light max-w-full sm:max-w-md leading-relaxed">
                 {language === "nl"
-                  ? "AI-oplossingen op maat. Kennisbanken, AI Agents en Automatiseringen. Van idee tot live in 2 weken."
-                  : "Custom AI solutions. Knowledge bases, AI Agents, and Automations. From idea to live in 2 weeks."}
+                  ? "AI-oplossingen op maat. Websites, AI Agents en Automatiseringen. Van idee tot live in 2 weken."
+                  : "Custom AI solutions. Websites, AI Agents, and Automations. From idea to live in 2 weeks."}
               </p>
             </motion.div>
           </div>
@@ -89,6 +90,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
+                { name: language === "nl" ? "Website Bouwen" : "Build Your Website", href: "/diensten/website-laten-maken" },
                 { name: language === "nl" ? "AI Agent Bouwen" : "Build AI Agent", href: "/diensten/ai-agent-bouwen" },
                 { name: language === "nl" ? "Digitale Medewerker" : "Digital Employee", href: "/diensten/digitale-medewerker" },
                 { name: language === "nl" ? "AI voor MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb" },

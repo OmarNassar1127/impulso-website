@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/config";
 import dynamic from 'next/dynamic';
 import GoogleAnalytics from "@/components/seo/google-analytics";
 
-// Inter — body / UI text
+// Inter, body / UI text
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -19,14 +19,18 @@ const inter = Inter({
   display: "swap",
 });
 
-// Bodoni Moda — display serif used for all headings (h1–h6).
-// Note: Bodoni Moda only ships weights 400–900 (no light weights).
+// Bodoni Moda, display serif used for all headings (h1, h6).
+// Note: Bodoni Moda only ships weights 400-900 (no light weights).
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   display: "swap",
+  // next/font can't compute fallback metric overrides for Bodoni Moda (a
+  // variable optical-size serif), which spams "Failed to find font override
+  // values". Disable the auto fallback-adjust to silence it.
+  adjustFontFallback: false,
 });
 
 // Import client components with no SSR
@@ -57,9 +61,9 @@ export const metadata: Metadata = {
     template: "%s | Impulso Co."
   },
   description:
-    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
+    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "Impulso Co., AI agents companies Amsterdam, AI agent company Amsterdam 2026, best AI agents Amsterdam, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
+    "Impulso Co. AI agents companies Amsterdam, AI agent company Amsterdam 2026, best AI agents Amsterdam, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
   authors: [{ name: "Impulso Co. Team" }],
   creator: "Impulso Co.",
   publisher: "Impulso Co.",
@@ -84,7 +88,7 @@ export const metadata: Metadata = {
     siteName: "Impulso Co.",
     title: "Impulso Co. | Digitale Medewerkers & AI Agents voor bedrijven",
     description:
-      "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken.",
+      "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken.",
     images: [
       {
         url: `${siteConfig.url}/og-image.png`,

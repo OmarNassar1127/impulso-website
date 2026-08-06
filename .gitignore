@@ -38,3 +38,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# jarvis preview secret (never commit)
+.preview-auth
+deploy/.preview-auth
