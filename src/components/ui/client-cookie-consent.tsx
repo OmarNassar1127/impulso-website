@@ -2,32 +2,24 @@
 
 import { CookieConsent } from "./cookie-consent";
 import { useCookieConsent, CookiePreferences } from "@/lib/hooks/use-cookie-consent";
+import { updateAnalyticsConsent } from "@/lib/analytics";
 
 export function ClientCookieConsent() {
   const { updatePreferences } = useCookieConsent();
-  
+
+  // The banner's choice drives Google Consent Mode. Until the visitor accepts,
+  // analytics_storage stays denied and nothing is stored on their device.
   const handleAccept = (preferences: CookiePreferences) => {
     updatePreferences(preferences);
-    
-    // Here you can initialize analytics or other scripts based on preferences
-    if (preferences.analytics) {
-      // Initialize analytics
-      console.log("Analytics cookies accepted");
-    }
-    
-    if (preferences.marketing) {
-      // Initialize marketing tools
-      console.log("Marketing cookies accepted");
-    }
+    updateAnalyticsConsent(preferences);
   };
-  
+
   const handleDecline = () => {
-    // Handle decline - typically only necessary cookies will be enabled
-    console.log("All optional cookies declined");
+    updateAnalyticsConsent({ analytics: false, marketing: false });
   };
-  
+
   return (
-    <CookieConsent 
+    <CookieConsent
       onAccept={handleAccept}
       onDecline={handleDecline}
     />
