@@ -5,7 +5,7 @@ import { LanguageProvider } from "@/lib/i18n/language-context";
 export const metadata: Metadata = {
   title: "Impulso Co. Custom AI Agents for Businesses",
   description:
-    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Based in Amsterdam.",
+    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 5 days. Based in Amsterdam.",
   keywords:
     "custom AI agents, AI agent development, digital employees, AI automation agency, RAG development, LLM integration, on-premise AI, customer service automation, sales automation, AI chatbot, WhatsApp bot, knowledge base AI, business process automation, Impulso Co. Amsterdam, Netherlands, Europe",
   metadataBase: new URL(siteConfig.url),
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Impulso Co.",
     title: "Impulso Co. Custom AI Agents for Businesses",
     description:
-      "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks.",
+      "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 5 days.",
     images: [
       {
         url: `${siteConfig.url}/og-image.png`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Impulso Co. Custom AI Agents",
-    description: "AI agents that collaborate, delegate and execute, live in 2 weeks.",
+    description: "AI agents that collaborate, delegate and execute, live in 5 days.",
     site: "@impulsoco",
     creator: "@impulsoco",
   },

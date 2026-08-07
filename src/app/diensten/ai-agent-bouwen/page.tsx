@@ -9,7 +9,7 @@ import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, 
 export const metadata = genMeta({
   title: "AI Agent Laten Bouwen, Maatwerk AI Agents",
   description:
-    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Vanaf €595 setup + €24,95/maand. GDPR-compliant, Amsterdam.",
+    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents binnen 5 dagen. Vanaf €595 setup + €24,95/maand. GDPR-compliant, Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -25,7 +25,7 @@ const faqItems = [
   {
     question: "Hoe lang duurt het om een AI agent te bouwen?",
     answer:
-      "Wij leveren een werkende prototype binnen 1 week na de intake. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3-4 weken in beslag nemen.",
+      "Wij leveren een werkende prototype binnen 2 dagen na de intake. De volledige productieversie staat live binnen 5 dagen. Complexere multi-agent systemen kunnen 3-4 weken in beslag nemen.",
   },
   {
     question: "Wat is het verschil tussen een AI agent en een chatbot?",
@@ -116,7 +116,7 @@ const pricingTiers = [
       "1 AI agent, getraind op jouw bedrijfsinfo",
       "1 integratie (bijv. WhatsApp of e-mail)",
       "Standaard LLM (GPT-4o of Claude)",
-      "Live binnen 2 weken",
+      "Live binnen 5 dagen",
     ],
     highlighted: true,
   },
@@ -164,7 +164,7 @@ export default function AIAgentBouwenPage() {
   const serviceSchemaData = serviceSchema({
     name: "AI Agent Laten Bouwen",
     description:
-      "Maatwerk AI agents voor klantenservice, sales, operations en kennisbanken. Prototype in 1 week, live in 2 weken.",
+      "Maatwerk AI agents voor klantenservice, sales, operations en kennisbanken. Prototype in 2 dagen, live binnen 5 dagen.",
     serviceType: "AI Agent Development",
     url: `${siteConfig.url}/diensten/ai-agent-bouwen`,
   });
@@ -207,7 +207,7 @@ export default function AIAgentBouwenPage() {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Impulso Co. bouwt maatwerk AI agents die zelfstandig taken uitvoeren,
               beslissingen nemen en integreren met uw bestaande software.
-              Prototype in 1 week. Live in 2 weken. Vanaf{" "}
+              Prototype in 2 dagen. Live binnen 5 dagen. Vanaf{" "}
               <strong className="font-semibold text-foreground">€24,95 per maand</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -247,7 +247,7 @@ export default function AIAgentBouwenPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                Live in 2 weken
+                Live binnen 5 dagen
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
@@ -377,7 +377,7 @@ export default function AIAgentBouwenPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Van intake naar live in 2 weken
+                Van intake naar live binnen 5 dagen
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Ons proces is snel, transparant en gericht op resultaat, niet

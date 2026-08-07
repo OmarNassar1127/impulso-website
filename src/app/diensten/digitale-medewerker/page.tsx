@@ -128,7 +128,7 @@ const roiItems = [
   {
     label: "Opstarttijd",
     human: "3-6 maanden",
-    digital: "2 weken",
+    digital: "5 dagen",
     highlight: true,
   },
   {

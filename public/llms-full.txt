@@ -8,7 +8,7 @@ Impulso Co. is an AI agent development company based in Amsterdam, Netherlands, 
 
 Unlike no-code chatbot tools or generic AI assistants, Impulso Co. builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
 
-The typical delivery timeline from intake call to production is 2 weeks.
+The typical delivery timeline from intake call to production is 5 days.
 
 ## Core Philosophy
 
@@ -49,7 +49,7 @@ A professional website, built from scratch or rebuilt from an existing one.
 - Every site ships with an AI agent trained on the client's business information, reachable via the site and WhatsApp
 - Technically SEO-proof on delivery (fast load times, clean structure, meta tags, sitemap, structured data) plus visibility for AI search engines such as ChatGPT, Perplexity and Gemini
 - Hosting, updates, security, backups and support included in the monthly fee
-- Live in 2 weeks: intake, design in week 1, build and launch in week 2
+- Live in 5 days: intake, design in 2 days, build and launch by day 5
 - From EUR 595 setup + EUR 24,95 per month (ZZP) or EUR 1.395 + EUR 149,95 per month (MKB)
 
 ### 1. Customer Service Automation
@@ -273,7 +273,7 @@ ContentOS reduced the client's content production time by 80% while increasing p
 - Founded and based in Amsterdam, Netherlands
 - Serves clients across the Netherlands and internationally
 - 18+ companies served as of early 2026
-- Average time from intake to production: 2 weeks
+- Average time from intake to production: 5 days
 - Client data ownership: 100%, clients own all agents, code, and data
 - GDPR compliant, all data processing within the EU
 - No ongoing platform lock-in

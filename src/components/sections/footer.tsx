@@ -37,8 +37,8 @@ export default function Footer() {
               </a>
               <p className="text-sm text-muted-foreground font-light max-w-full sm:max-w-md leading-relaxed">
                 {language === "nl"
-                  ? "AI-oplossingen op maat. Websites, AI Agents en Automatiseringen. Van idee tot live in 2 weken."
-                  : "Custom AI solutions. Websites, AI Agents, and Automations. From idea to live in 2 weeks."}
+                  ? "AI-oplossingen op maat. Websites, AI Agents en Automatiseringen. Van idee tot live binnen 5 dagen."
+                  : "Custom AI solutions. Websites, AI Agents, and Automations. From idea to live in 5 days."}
               </p>
             </motion.div>
           </div>

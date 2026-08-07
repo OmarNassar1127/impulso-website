@@ -31,10 +31,10 @@ export default function IntakeExplanationSection() {
         {
             icon: Rocket,
             number: "03",
-            title: language === 'nl' ? 'Live in 2 weken' : 'Live in 2 weeks',
+            title: language === 'nl' ? 'Live binnen 5 dagen' : 'Live in 5 days',
             description: language === 'nl'
-                ? 'Akkoord? We beginnen direct. Binnen 2 weken heb je een werkende oplossing.'
-                : 'Approved? We start immediately. Within 2 weeks you have a working solution.'
+                ? 'Akkoord? We beginnen direct. Binnen 5 dagen heb je een werkende oplossing.'
+                : 'Approved? We start immediately. Within 5 days you have a working solution.'
         }
     ];
 

@@ -28,7 +28,7 @@ const faqData = {
     {
       question: "How fast can you deliver?",
       answer:
-        "Most custom AI agents are live within 2 weeks. We work in short sprints: free intake, prototype, feedback, launch. No month-long timelines.",
+        "Most custom AI agents are live within 5 days. We work in short sprints: free intake, prototype, feedback, launch. No month-long timelines.",
     },
     {
       question: "Do you offer on-premise AI solutions?",
@@ -82,7 +82,7 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Custom AI Agents, Your Digital Team",
   description:
-    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Based in Amsterdam.",
+    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 5 days. Based in Amsterdam.",
   keywords:
     "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Impulso Co. Amsterdam, Netherlands, Europe",
   pathname: "/en",
@@ -110,7 +110,7 @@ export default function EnglishHome() {
             Impulso Co. is an AI agent development company in Amsterdam building
             custom AI agents for customer service, sales and operations, from
             WhatsApp and voice agents to RAG knowledge bases and automations.
-            Live in 2 weeks, fully GDPR-compliant, and your data stays yours.
+            Live in 5 days, fully GDPR-compliant, and your data stays yours.
           </p>
         </section>
         <Navbar />

@@ -41,10 +41,10 @@ const getReasons = (language: string) => {
     },
     {
       icon: Rocket,
-      title: isNL ? "Live in 2 weken" : "Live in 2 weeks",
+      title: isNL ? "Live binnen 5 dagen" : "Live in 5 days",
       description: isNL
-        ? "Geen maandenlange trajecten. We werken in korte sprints: intake, prototype, feedback, live. Je ziet binnen dagen de eerste resultaten en bent binnen 2 weken operationeel."
-        : "No month-long timelines. We work in short sprints: intake, prototype, feedback, live. You see first results within days and are operational within 2 weeks.",
+        ? "Geen maandenlange trajecten. We werken in korte sprints: intake, prototype, feedback, live. Je ziet binnen dagen de eerste resultaten en bent binnen 5 dagen operationeel."
+        : "No month-long timelines. We work in short sprints: intake, prototype, feedback, live. You see first results within days and are operational within 5 days.",
       highlight: isNL ? "Sprint-based · snel resultaat" : "Sprint-based · fast results",
     },
     {

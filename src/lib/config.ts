@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Impulso Co.",
-  description: "AI agent development company in Amsterdam. We build custom AI agents for businesses, from klantenservice to sales automation. Live in 2 weeks.",
+  description: "AI agent development company in Amsterdam. We build custom AI agents for businesses, from klantenservice to sales automation. Live in 5 days.",
   url: "https://impulsoco.nl",
   metadataBase: "https://impulsoco.nl",
   logoUrl: "/impulso-logo.png",

@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     template: "%s | Impulso Co."
   },
   description:
-    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Gevestigd in Amsterdam.",
+    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live binnen 5 dagen. Gevestigd in Amsterdam.",
   keywords:
     "Impulso Co. AI agents companies Amsterdam, AI agent company Amsterdam 2026, best AI agents Amsterdam, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
   authors: [{ name: "Impulso Co. Team" }],
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     siteName: "Impulso Co.",
     title: "Impulso Co. | Digitale Medewerkers & AI Agents voor bedrijven",
     description:
-      "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken.",
+      "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live binnen 5 dagen.",
     images: [
       {
         url: `${siteConfig.url}/og-image.png`,

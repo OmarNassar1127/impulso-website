@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
   <li>Een lead-kwalificatie agent die inbound aanvragen verwerkt</li>
   <li>Afsprakenbeheer en herinneringen via WhatsApp</li>
 </ul>
-<p>Concreet: <strong>ZZP vanaf €595 setup + €24,95/maand</strong>, <strong>MKB vanaf €1.395 setup + €149,95/maand</strong>. Je bent live binnen 2 weken en zit nergens lang aan vast (1 maand opzegtermijn). Bekijk de <a href="/diensten/ai-agent-bouwen">volledige pakketten</a>.</p>
+<p>Concreet: <strong>ZZP vanaf €595 setup + €24,95/maand</strong>, <strong>MKB vanaf €1.395 setup + €149,95/maand</strong>. Je bent live binnen 5 dagen en zit nergens lang aan vast (1 maand opzegtermijn). Bekijk de <a href="/diensten/ai-agent-bouwen">volledige pakketten</a>.</p>
 
 <h3>Maatwerk-agents: €5.000-€15.000</h3>
 
@@ -558,7 +558,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Start klein. Kies één databron (je FAQ-documentatie, één SharePoint-bibliotheek, je producthandleidingen) en bouw daar een eerste RAG-agent omheen. Frameworks zoals <a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a> versnellen de ontwikkeling aanzienlijk. Meet de kwaliteit, verzamel feedback, en breid daarna uit naar meer bronnen.</p>
 
-<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, het zit in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 2 weken een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
+<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, het zit in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 5 dagen een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
   },
 
   {

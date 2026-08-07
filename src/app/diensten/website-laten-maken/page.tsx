@@ -24,7 +24,7 @@ import {
 export const metadata = genMeta({
   title: "Website Laten Maken, Nieuw of Bestaande Site Vernieuwen",
   description:
-    "Website laten maken door Impulso Co. in Amsterdam. Nieuw vanaf nul of je bestaande site vernieuwen, op maat ontworpen, met AI-agent erop. Live in 2 weken, vanaf €595 setup + €24,95 per maand.",
+    "Website laten maken door Impulso Co. in Amsterdam. Nieuw vanaf nul of je bestaande site vernieuwen, op maat ontworpen, met AI-agent erop. Live binnen 5 dagen, vanaf €595 setup + €24,95 per maand.",
   keywords:
     "website laten maken, website laten bouwen, website laten maken kosten, nieuwe website, website vernieuwen, website redesign, webdesign Amsterdam, website ZZP, website MKB, website met AI chatbot, website onderhoud, responsive website laten maken",
   pathname: "/diensten/website-laten-maken",
@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "Hoe lang duurt het voordat mijn website live staat?",
     answer:
-      "Na de intake heb je binnen 1 week een eerste ontwerp om op te reageren. Gemiddeld staat je site binnen 2 weken live. Grotere sites met CMS en koppelingen duren 3 tot 4 weken.",
+      "Na de intake heb je binnen 2 dagen een eerste ontwerp om op te reageren. Gemiddeld staat je site binnen 5 dagen live. Grotere sites met CMS en koppelingen duren 2 tot 3 weken.",
   },
   {
     question: "Gebruiken jullie een template?",
@@ -115,7 +115,7 @@ const steps = [
   },
   {
     number: "02",
-    title: "Ontwerp in week 1",
+    title: "Ontwerp in 2 dagen",
     text: "Je krijgt een eerste ontwerp te zien van je echte site, niet een schets. Feedback verwerken we direct.",
   },
   {
@@ -125,7 +125,7 @@ const steps = [
   },
   {
     number: "04",
-    title: "Live in week 2",
+    title: "Live binnen 5 dagen",
     text: "Domein koppelen, meten inrichten en online. Daarna houden wij de site bij en ben je vrij om maandelijks op te zeggen.",
   },
 ];
@@ -189,7 +189,7 @@ export default function WebsiteLatenMakenPage() {
   const serviceSchemaData = serviceSchema({
     name: "Website Laten Maken",
     description:
-      "Websites op maat voor ZZP en MKB, nieuw gebouwd of een bestaande site vernieuwd, inclusief AI-agent, hosting en onderhoud. Live in 2 weken, vanaf €595 setup plus €24,95 per maand.",
+      "Websites op maat voor ZZP en MKB, nieuw gebouwd of een bestaande site vernieuwd, inclusief AI-agent, hosting en onderhoud. Live binnen 5 dagen, vanaf €595 setup plus €24,95 per maand.",
     serviceType: "Web Design and Development",
     url: `${siteConfig.url}/diensten/website-laten-maken`,
   });
@@ -236,7 +236,7 @@ export default function WebsiteLatenMakenPage() {
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
                   Nieuw vanaf nul, of je bestaande site vernieuwen. Op maat ontworpen,
                   snel, vindbaar in Google, en met een AI-agent die vragen van
-                  bezoekers beantwoordt. Live in 2 weken, vanaf{" "}
+                  bezoekers beantwoordt. Live binnen 5 dagen, vanaf{" "}
                   <strong className="font-semibold text-foreground">€24,95 per maand</strong>.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -263,7 +263,7 @@ export default function WebsiteLatenMakenPage() {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    Live in 2 weken
+                    Live binnen 5 dagen
                   </span>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-primary" />
@@ -386,7 +386,7 @@ export default function WebsiteLatenMakenPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
             <div className="max-w-2xl mb-10 sm:mb-14">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Van idee tot live in 2 weken
+                Van idee tot live binnen 5 dagen
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Geen traject van maanden. Je weet elke week waar we staan en wat er van

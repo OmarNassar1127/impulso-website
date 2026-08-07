@@ -19,7 +19,7 @@ import {
 export const metadata = genMeta({
   title: "AI Automatisering voor MKB, Betaalbaar & Schaalbaar",
   description:
-    "AI automatisering speciaal voor het Nederlandse MKB. Vanaf €1.395 setup + €149,95/maand, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co. Amsterdam.",
+    "AI automatisering speciaal voor het Nederlandse MKB. Vanaf €1.395 setup + €149,95/maand, live binnen 5 dagen, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co. Amsterdam.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: "Hoe snel zien we resultaat?",
     answer:
-      "De eerste resultaten zijn zichtbaar zodra de agent live gaat, doorgaans 2 weken na de intake. Wij meten samen met u de impact: minder handmatig werk, snellere responstijden, hogere klanttevredenheid. In de eerste maand rapporteren wij de besparingen zodat u zwart op wit ziet wat de investering oplevert.",
+      "De eerste resultaten zijn zichtbaar zodra de agent live gaat, doorgaans 5 dagen na de intake. Wij meten samen met u de impact: minder handmatig werk, snellere responstijden, hogere klanttevredenheid. In de eerste maand rapporteren wij de besparingen zodat u zwart op wit ziet wat de investering oplevert.",
   },
 ];
 
@@ -99,7 +99,7 @@ const whyMKB = [
   },
   {
     icon: Zap,
-    title: "Live in 2 weken",
+    title: "Live binnen 5 dagen",
     description:
       "Geen maandenlange implementatietrajecten. Prototype in week 1, productie in week 2.",
   },
@@ -216,7 +216,7 @@ export default function AIAutomatiseringMKBPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                Live in 2 weken
+                Live binnen 5 dagen
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
