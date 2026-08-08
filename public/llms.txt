@@ -64,6 +64,8 @@ Team certified by leading AI companies:
 
 ## Diensten
 - https://impulsoco.nl/diensten/website-laten-maken, Website Laten Maken: websites op maat voor ZZP en MKB, nieuw gebouwd of een bestaande site (WordPress/Wix/Squarespace) vernieuwd of overgenomen, inclusief AI-agent op de site, hosting, updates en onderhoud, live binnen 5 dagen, vanaf €595 setup + €24,95/maand
+- https://impulsoco.nl/diensten/whatsapp-ai-agent, WhatsApp AI Agent & Chat Agent: WhatsApp- en chat-agents voor bedrijven in heel Nederland, beantwoordt klantvragen, plant afspraken in de agenda, stuurt herinneringen, 24/7, officiele WhatsApp Business API, live binnen 5 dagen, vanaf EUR 595 setup + EUR 24,95/maand
+- https://impulsoco.nl/diensten/software-op-maat, Software op Maat: maatwerk webapplicaties, dashboards, API's, backend-systemen en frontends, koppelingen met Exact Online/HubSpot/Shopify/Zendesk, React/Next.js/Node.js/Laravel/Python, vaste prijs vooraf, broncode in eigen beheer, EUR 5.000-15.000 per project
 - https://impulsoco.nl/diensten/ai-agent-bouwen, AI Agent Laten Bouwen: maatwerk AI agent development, types agents (klantenservice, sales, operations, kennisbank), proces (prototype in 2 dagen, live binnen 5 dagen), pakketten vanaf €595 setup + €24,95/maand, maatwerk €5.000-€15.000+
 - https://impulsoco.nl/diensten/digitale-medewerker, Digitale Medewerker: multi-agent AI systeem dat een volledige rol vervult in HR, finance, operations of klantenservice, 24/7 beschikbaar, ROI-vergelijking vs. menselijke FTE
 - https://impulsoco.nl/diensten/ai-automatisering-mkb, AI Automatisering voor MKB: betaalbare AI automatisering voor het Nederlandse midden- en kleinbedrijf, WBSO-subsidie (35%), integraties met Exact Online/HubSpot/Shopify/Zendesk, vanaf €1.395 setup + €149,95/maand
@@ -84,4 +86,5 @@ Practical Dutch-language articles on AI agents, automation, and AI implementatio
 - Phone: +31640495527
 - WhatsApp: https://wa.me/31640495527
 - Calendly: https://calendly.com/omarnassar1127/30min
+- LinkedIn: https://www.linkedin.com/company/impulso-co-nl/
 - Location: Amsterdam, Netherlands

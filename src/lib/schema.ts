@@ -208,11 +208,9 @@ export function organizationSchema({
   url = siteConfig.url,
   logo = `${siteConfig.url}${siteConfig.logoUrl}`,
   description = siteConfig.description,
-  sameAs = [
-    siteConfig.socials.twitter,
-    siteConfig.socials.linkedin,
-    siteConfig.socials.github,
-  ],
+  // sameAs must only list profiles that actually exist: pointing Google at a
+  // dead URL weakens the entity match instead of strengthening it.
+  sameAs = [siteConfig.socials.linkedin],
 }: OrganizationProps = {}) {
   return {
     "@context": "https://schema.org",

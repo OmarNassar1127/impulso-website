@@ -18,7 +18,7 @@ export const siteConfig = {
   socials: {
     twitter: "https://twitter.com/impulsoco",
     github: "https://github.com/impulsoco",
-    linkedin: "https://linkedin.com/company/impulsoco",
+    linkedin: "https://www.linkedin.com/company/impulso-co-nl/",
   },
   contact: {
     email: "info@impulsoco.nl",

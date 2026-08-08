@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 import StickyIntakeCTA from "@/components/sticky-intake-cta";
+import FaqAccordion from "@/components/faq-accordion";
 import {
   NewWebsiteIllustration,
   RedesignIllustration,
@@ -221,7 +222,7 @@ export default function WebsiteLatenMakenPage() {
         />
 
         {/* Hero */}
-        <section className="pt-24 sm:pt-32 md:pt-40 pb-10 sm:pb-14">
+        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-14">
           <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div>
@@ -534,21 +535,7 @@ export default function WebsiteLatenMakenPage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
               Veelgestelde vragen
             </h2>
-            <div className="space-y-3 sm:space-y-4">
-              {faqItems.map((item) => (
-                <div
-                  key={item.question}
-                  className="rounded-2xl surface-warm border border-foreground/15 border-l-[3px] border-l-terracotta p-5 sm:p-6"
-                >
-                  <h3 className="font-bold text-foreground text-sm sm:text-base mb-2 sm:mb-3">
-                    {item.question}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <FaqAccordion items={faqItems} />
           </div>
         </section>
 
