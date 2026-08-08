@@ -257,6 +257,17 @@ export function organizationSchema({
       addressRegion: "Noord-Holland",
       addressCountry: "NL",
     },
+    // Coordinates and a top-level phone give Google a hard geographic signal.
+    // There is an unrelated "Impulso Co." in Tijuana, Mexico; the more precise
+    // and consistent our NL location data is, the easier it is for Google to
+    // treat the two as separate entities.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 52.3676,
+      longitude: 4.9041,
+    },
+    telephone: "+31640495527",
+    email: "info@impulsoco.nl",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+31640495527",
