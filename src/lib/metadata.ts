@@ -13,6 +13,16 @@ type MetadataProps = {
   noIndex?: boolean;
 };
 
+/**
+ * True only for pages that have a counterpart in the other language. Today
+ * that is just the homepage: everything under /diensten and /blog is
+ * Dutch-only, so those must not advertise an /en alternate.
+ */
+function isTranslatedPage(pathname: string) {
+  const p = pathname.replace(/\/+$/, "");
+  return p === "" || p === "/" || p === "/en";
+}
+
 export function generateMetadata({
   title,
   description,
@@ -41,10 +51,18 @@ export function generateMetadata({
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
-      languages: {
-        en: pathname.startsWith('/en') ? url : `${siteConfig.url}/en${pathname || '/'}`,
-        nl: pathname.startsWith('/en') ? `${siteConfig.url}${pathname.replace('/en', '') || '/'}` : url,
-      },
+      // hreflang is only emitted where a translation actually exists. Only the
+      // homepage is translated (/ and /en); the service pages and the blog are
+      // Dutch-only. Declaring an /en/... alternate for those pointed Google at
+      // URLs that 404, which invalidates the whole language cluster.
+      ...(isTranslatedPage(pathname)
+        ? {
+            languages: {
+              nl: siteConfig.url,
+              en: `${siteConfig.url}/en`,
+            },
+          }
+        : {}),
     },
     openGraph: {
       type,
