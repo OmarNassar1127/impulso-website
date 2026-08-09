@@ -98,10 +98,13 @@ export default function ChatWidget() {
     if (loadSessionId()) return;
     const seen = sessionStorage.getItem("impulso_chat_nudged");
     if (seen) return;
+    // 9s: long enough that it doesn't interrupt someone who just landed, short
+    // enough to still catch them on the first section rather than after they've
+    // decided to leave.
     const t = setTimeout(() => {
       setNudge(true);
       sessionStorage.setItem("impulso_chat_nudged", "1");
-    }, 14000);
+    }, 9000);
     return () => clearTimeout(t);
   }, []);
 
@@ -305,11 +308,18 @@ export default function ChatWidget() {
             onClick={toggle}
             className="absolute bottom-full right-0 mb-3 w-max max-w-[240px] rounded-2xl rounded-br-sm bg-card border border-foreground/15 px-3.5 py-2.5 text-left shadow-xl animate-in fade-in slide-in-from-bottom-2"
           >
+            {/* The pitch, not a greeting. This widget IS the product, so the
+                nudge invites them to try the thing they'd be buying rather than
+                asking whether they have questions. */}
             <span className="block text-[13px] font-semibold text-foreground">
-              {isNL ? "Vragen? Ik help je graag." : "Questions? Happy to help."}
+              {isNL
+                ? "Benieuwd wat een agent voor jou doet?"
+                : "Curious what an agent could do for you?"}
             </span>
-            <span className="mt-0.5 block text-[11px] text-muted-foreground">
-              {isNL ? "Meestal binnen een paar seconden antwoord" : "Usually replies in seconds"}
+            <span className="mt-0.5 block text-[11px] leading-snug text-muted-foreground">
+              {isNL
+                ? "Praat gerust even met deze. Hij plant zelfs je afspraak in."
+                : "Have a chat with this one. It'll even book your meeting."}
             </span>
           </button>
         )}
