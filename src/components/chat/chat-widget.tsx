@@ -98,13 +98,13 @@ export default function ChatWidget() {
     if (loadSessionId()) return;
     const seen = sessionStorage.getItem("impulso_chat_nudged");
     if (seen) return;
-    // 9s: long enough that it doesn't interrupt someone who just landed, short
-    // enough to still catch them on the first section rather than after they've
-    // decided to leave.
+    // 4s: early enough to catch someone while they are still reading the hero,
+    // which is where the curiosity is. Still once per browser session, and
+    // never shown to anyone who has already chatted.
     const t = setTimeout(() => {
       setNudge(true);
       sessionStorage.setItem("impulso_chat_nudged", "1");
-    }, 9000);
+    }, 4000);
     return () => clearTimeout(t);
   }, []);
 
@@ -302,7 +302,9 @@ export default function ChatWidget() {
   return (
     <>
       {/* Bubble */}
-      <div className={`fixed right-4 sm:right-6 z-[60] transition-all duration-300 ${bubbleBottom} ${open ? "pointer-events-none scale-90 opacity-0 sm:pointer-events-auto sm:scale-100 sm:opacity-100" : ""}`}>
+      {/* The bubble stays visible while the panel is open, at every size: the
+          panel no longer covers the page, so the bubble is the close button. */}
+      <div className={`fixed right-4 sm:right-6 z-[60] transition-all duration-300 ${bubbleBottom}`}>
         {nudge && !open && (
           <button
             onClick={toggle}
@@ -339,12 +341,13 @@ export default function ChatWidget() {
       </div>
 
       {/* Panel */}
-      {/* Panel: full-screen sheet on mobile. On desktop it sits ABOVE the
-          bubble rather than on top of it, so the bubble stays visible and
-          doubles as the close button, the way every chat widget people already
-          know behaves. */}
+      {/* Panel: a floating card at every size, never a full-screen takeover.
+          Covering the whole page on mobile made a small question feel like
+          leaving the site, and hid the very content someone was about to ask
+          about. Sitting above the bubble also keeps the bubble visible, so it
+          doubles as the close button the way people already expect. */}
       {open && (
-        <div className="fixed inset-0 z-[70] flex flex-col bg-card sm:inset-auto sm:bottom-24 sm:right-6 sm:h-[560px] sm:max-h-[calc(100vh-8rem)] sm:w-[380px] sm:rounded-2xl sm:border sm:border-foreground/15 sm:shadow-2xl overflow-hidden">
+        <div className="fixed bottom-24 left-4 right-4 z-[70] flex h-[68vh] max-h-[520px] flex-col overflow-hidden rounded-2xl border border-foreground/15 bg-card shadow-2xl sm:left-auto sm:right-6 sm:h-[560px] sm:max-h-[calc(100vh-8rem)] sm:w-[380px]">
           {/* Header */}
           <div className="flex items-center gap-3 bg-terracotta px-4 py-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/95 text-[12px] font-bold text-terracotta">
