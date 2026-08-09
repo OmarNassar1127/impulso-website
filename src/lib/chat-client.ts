@@ -25,10 +25,24 @@ export type ChatMessage = {
   booking?: boolean;
   /** A confirmed appointment, rendered as a card under the reply. */
   booked?: { when: string; meet: string } | null;
+  /** Result of a calendar lookup, rendered as a card under the reply. */
+  availability?: Availability | null;
   /** Written by a real person after a takeover, not by the agent. */
   human?: boolean;
   /** Server-side id, so polling knows what it has already shown. */
   id?: number;
+};
+
+/** The outcome of a real freebusy lookup, straight from the calendar.
+ *
+ *  Sent alongside the reply so the widget can show what the day actually holds
+ *  instead of relying on the model to describe it correctly — describing it is
+ *  the step that has been getting it wrong. */
+export type Availability = {
+  day: string;
+  label: string;
+  free: boolean;
+  slots: string[];
 };
 
 export type ChatHealth = {
@@ -49,6 +63,8 @@ export type SendResult = {
   /** Set only when an appointment was actually written to the calendar. The
    *  server never sets this optimistically, so the widget can state it flatly. */
   booked?: { when: string; meet: string } | null;
+  /** Set when this turn triggered a real calendar lookup. */
+  availability?: Availability | null;
   /** Id of the assistant message the server just stored. The widget renders
    *  this reply locally, so it must advance its cursor past it or polling will
    *  hand the same message back and it appears twice. */
@@ -307,6 +323,7 @@ export async function sendMessage(
       handoff: Boolean(data.handoff),
       human: Boolean(data.human),
       booked: data.booked ?? null,
+      availability: data.availability ?? null,
       message_id: Number(data.message_id || 0),
       expired: Boolean(data.expired),
       error: r.ok ? undefined : data.error || "http_error",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { MessageCircle, X, Send, CalendarCheck, RotateCcw } from "lucide-react";
+import { MessageCircle, X, Send, CalendarCheck, CalendarSearch, Check, RotateCcw } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import {
   getFloatingServerState,
@@ -28,6 +28,11 @@ import {
 
 const CALENDLY = "https://calendly.com/omar-impulsoco/30min";
 
+/** Does this message name a day or a time? Used only to decide whether the
+ *  waiting indicator says "checking the calendar" instead of showing dots. */
+const SCHEDULE_RE =
+  /\b(maandag|dinsdag|woensdag|donderdag|vrijdag|morgen|overmorgen|vanmiddag|vanochtend|volgende week|monday|tuesday|wednesday|thursday|friday|tomorrow|next week|januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december)\b|\b\d{1,2}[:.]\d{2}\b|\bom\s?\d{1,2}\b|\b\d{1,2}\s?uur\b/i;
+
 /**
  * Floating chat agent.
  *
@@ -51,6 +56,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [keyboard, setKeyboard] = useState(0);
+  const [checking, setChecking] = useState(false);
   const [typing, setTyping] = useState(false);
   const [health, setHealth] = useState<ChatHealth | null>(null);
   const [nudge, setNudge] = useState(false);
@@ -149,9 +155,15 @@ export default function ChatWidget() {
   }, []);
 
   const scrollDown = useCallback(() => {
+    // Two frames, not one. The panel resizes through an inline style when the
+    // keyboard opens, and a single frame runs before that new height has been
+    // laid out — so the scroll lands on the old scrollHeight and stops short,
+    // leaving the newest message just above the fold.
     requestAnimationFrame(() => {
-      const el = threadRef.current;
-      if (el) el.scrollTop = el.scrollHeight;
+      requestAnimationFrame(() => {
+        const el = threadRef.current;
+        if (el) el.scrollTop = el.scrollHeight;
+      });
     });
   }, []);
 
@@ -263,9 +275,11 @@ export default function ChatWidget() {
     });
   }
 
-  async function submit(e?: React.FormEvent) {
+  async function submit(e?: React.FormEvent, preset?: string) {
     e?.preventDefault();
-    const text = input.trim();
+    // `preset` is a slot chip. Sending the time as a normal message keeps one
+    // path through the agent instead of a second, silent booking route.
+    const text = (preset ?? input).trim();
     if (!text || typing) return;
     if (!sessionRef.current) {
       await boot();
@@ -278,7 +292,18 @@ export default function ChatWidget() {
     setInput("");
     setTyping(true);
 
+    // Held back 900ms on purpose. A calendar lookup costs a second model call,
+    // so it is always the slow path — if the answer comes back quickly nothing
+    // was looked up and the visitor never sees a label that wasn't true.
+    let lookupTimer: ReturnType<typeof setTimeout> | undefined;
+    if (SCHEDULE_RE.test(text)) lookupTimer = setTimeout(() => setChecking(true), 900);
+    // Only stops the label from appearing after the fact. Turning it off is
+    // left to whoever ends the wait, so it doesn't flicker to dots for the
+    // last second before the reply is rendered.
+    const stopLookupLabel = () => lookupTimer && clearTimeout(lookupTimer);
+
     let res = await sendMessage(sessionRef.current, text, page);
+    stopLookupLabel();
     // Advance the cursor the moment the reply lands, not after the typing
     // delay: a poll firing inside that window would otherwise hand the same
     // message back and it would render twice.
@@ -310,6 +335,7 @@ export default function ChatWidget() {
     if (res.human) {
       setHumanMode(true);
       setTyping(false);
+      setChecking(false);
       return;
     }
 
@@ -317,6 +343,7 @@ export default function ChatWidget() {
     // request already took, so a fast reply still feels considered.
     setTimeout(() => {
       setTyping(false);
+      setChecking(false);
       const next: ChatMessage[] = [
         ...withUser,
         {
@@ -327,6 +354,7 @@ export default function ChatWidget() {
           booking: res.suggest_booking || Boolean(res.error),
           content: res.reply,
           booked: res.booked,
+          availability: res.availability,
         },
       ];
       setMessages(next);
@@ -339,6 +367,7 @@ export default function ChatWidget() {
     sessionRef.current = null;
     setMessages([]);
     setTyping(false);
+    setChecking(false);
     boot();
   }
 
@@ -472,6 +501,45 @@ export default function ChatWidget() {
                   </div>
                 )}
 
+                {/* What the calendar actually said. The agent's sentence about
+                    it sits above; this is the part that cannot be wrong. */}
+                {m.availability && !m.booked && (
+                  <div className="mt-2 overflow-hidden rounded-xl border border-foreground/10 bg-card shadow-sm">
+                    <div
+                      className={`flex items-center gap-2 px-3 py-1.5 ${
+                        m.availability.free ? "bg-emerald-600" : "bg-foreground/70"
+                      }`}
+                    >
+                      {m.availability.free ? (
+                        <Check className="h-3.5 w-3.5 shrink-0 text-white" />
+                      ) : (
+                        <X className="h-3.5 w-3.5 shrink-0 text-white" />
+                      )}
+                      <span className="truncate text-[10px] font-semibold uppercase tracking-wide text-white">
+                        {m.availability.label}
+                        {m.availability.free
+                          ? isNL ? " · vrij" : " · free"
+                          : isNL ? " · vol" : " · full"}
+                      </span>
+                    </div>
+                    {m.availability.slots.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 px-3 py-2.5">
+                        {m.availability.slots.map((s) => (
+                          <button
+                            key={s}
+                            type="button"
+                            disabled={typing}
+                            onClick={() => submit(undefined, s)}
+                            className="rounded-lg border border-terracotta/30 bg-terracotta/5 px-2.5 py-1 text-[12px] font-semibold text-terracotta transition-colors hover:bg-terracotta hover:text-white disabled:opacity-40"
+                          >
+                            {s}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {m.booked && (
                   <div className="mt-2 overflow-hidden rounded-xl border border-emerald-500/30 bg-card shadow-sm">
                     <div className="flex items-center gap-2 bg-emerald-600 px-3 py-1.5">
@@ -524,14 +592,23 @@ export default function ChatWidget() {
 
             {typing && (
               <div className="flex justify-start">
-                <div className="flex items-center gap-1 rounded-2xl rounded-bl-sm border border-foreground/10 bg-card px-3.5 py-3 shadow-sm">
-                  {[0, 150, 300].map((d) => (
-                    <span
-                      key={d}
-                      className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground/60"
-                      style={{ animationDelay: `${d}ms` }}
-                    />
-                  ))}
+                <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-foreground/10 bg-card px-3.5 py-3 shadow-sm">
+                  {checking ? (
+                    <>
+                      <CalendarSearch className="h-3.5 w-3.5 animate-pulse text-terracotta" />
+                      <span className="text-[12px] text-muted-foreground">
+                        {isNL ? "Agenda checken…" : "Checking the calendar…"}
+                      </span>
+                    </>
+                  ) : (
+                    [0, 150, 300].map((d) => (
+                      <span
+                        key={d}
+                        className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground/60"
+                        style={{ animationDelay: `${d}ms` }}
+                      />
+                    ))
+                  )}
                 </div>
               </div>
             )}
@@ -543,6 +620,10 @@ export default function ChatWidget() {
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              /* The keyboard animates open over ~300ms and visualViewport can
+                 settle a beat after that, so tapping the field scrolls down
+                 too rather than waiting on the resize alone. */
+              onFocus={scrollDown}
               maxLength={1000}
               placeholder={isNL ? "Typ een bericht…" : "Type a message…"}
               /* 16px on mobile is not a style choice. iOS Safari zooms the
