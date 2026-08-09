@@ -384,6 +384,20 @@ export default function ChatWidget() {
   // that CTA is centred at the bottom. On desktop the CTA moves aside instead.
   const bubbleBottom = floating.stickyCtaVisible ? "bottom-24 sm:bottom-6" : "bottom-4 sm:bottom-6";
 
+  // One card per day, on the message that first offered it.
+  //
+  // Picking a time triggers a second lookup for the same day — the agent
+  // confirms the slot is genuinely free before asking for a name — so the same
+  // eight chips came back and rendered again, this time under "mag ik je naam
+  // en e-mailadres?", where they read as a question that was already answered.
+  const seenDays = new Set<string>();
+  const showAvailability = messages.map((m) => {
+    const day = m.availability?.day;
+    if (!day || m.booked || seenDays.has(day)) return false;
+    seenDays.add(day);
+    return true;
+  });
+
   return (
     <>
       {/* Bubble */}
@@ -512,7 +526,7 @@ export default function ChatWidget() {
 
                 {/* What the calendar actually said. The agent's sentence about
                     it sits above; this is the part that cannot be wrong. */}
-                {m.availability && !m.booked && (
+                {m.availability && showAvailability[i] && (
                   <div className="mt-2 overflow-hidden rounded-xl border border-foreground/10 bg-card shadow-sm">
                     <div
                       className={`flex items-center gap-2 px-3 py-1.5 ${
