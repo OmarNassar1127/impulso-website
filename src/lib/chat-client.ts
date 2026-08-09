@@ -195,14 +195,40 @@ async function getTurnstileToken(siteKey: string): Promise<string | null> {
 
 /* ── API ────────────────────────────────────────────────────────────────── */
 
+let healthPromise: Promise<ChatHealth | null> | null = null;
+
 export async function fetchHealth(): Promise<ChatHealth | null> {
-  try {
-    const r = await fetch(`${CHAT_API}/health`, { cache: "no-store" });
-    if (!r.ok) return null;
-    return (await r.json()) as ChatHealth;
-  } catch {
-    return null;
-  }
+  // Deduped, not cached-forever: warmUp() fires this on page load so the answer
+  // is already in hand by the time someone opens the widget, which is the
+  // slowest hop out of the boot sequence.
+  if (healthPromise) return healthPromise;
+  healthPromise = (async () => {
+    try {
+      const r = await fetch(`${CHAT_API}/health`, { cache: "no-store" });
+      if (!r.ok) return null;
+      return (await r.json()) as ChatHealth;
+    } catch {
+      return null;
+    }
+  })();
+  const h = await healthPromise;
+  // A failed probe must not stick, or the widget is dead until a reload.
+  if (!h) healthPromise = null;
+  return h;
+}
+
+/** Do the waiting before the visitor asks for anything.
+ *
+ *  Opening the chat used to run four things back to back: health, download
+ *  Turnstile, solve Turnstile, create the session. Health and the script are
+ *  the same for every visitor and cost nothing to do early, so they happen on
+ *  page load instead. What is deliberately NOT done here is minting a token —
+ *  those are single-use and expire in five minutes, so a pre-minted one would
+ *  just be stale for anyone who reads the page before clicking. */
+export function warmUp(): void {
+  if (typeof window === "undefined") return;
+  void fetchHealth();
+  void loadTurnstileScript().catch(() => {});
 }
 
 export async function startSession(

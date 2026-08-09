@@ -21,6 +21,7 @@ import {
   saveSessionId,
   sendMessage,
   startSession,
+  warmUp,
   type ChatHealth,
   type ChatMessage,
 } from "@/lib/chat-client";
@@ -107,6 +108,15 @@ export default function ChatWidget() {
     // 4s: early enough to catch someone while they are still reading the hero,
     // which is where the curiosity is.
     const t = setTimeout(() => setNudge(true), 4000);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Health probe and the Turnstile script, fetched while the visitor is still
+  // reading. Both are visitor-independent, so doing them on open only added
+  // dead time before the greeting. Held back 1.2s so it never competes with the
+  // page's own rendering.
+  useEffect(() => {
+    const t = setTimeout(() => warmUp(), 1200);
     return () => clearTimeout(t);
   }, []);
 
@@ -203,7 +213,12 @@ export default function ChatWidget() {
       setMessages(first);
       saveHistory(first);
       setBooting(false);
-    }, Math.min(started.typing_ms, 1200));
+      // 450ms, not the server's length-derived typing_ms. That number is for
+      // real answers, where a pause reads as thinking. The greeting is a fixed
+      // string nobody is composing, and the visitor is staring at an empty
+      // panel until it lands — long enough to feel alive, short enough that
+      // opening the chat feels instant.
+    }, Math.min(started.typing_ms, 450));
   }
 
   function toggle() {
