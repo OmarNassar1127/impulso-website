@@ -110,12 +110,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: language === "nl" ? "Website Bouwen" : "Build Your Website", href: "/diensten/website-laten-maken" },
-                { name: language === "nl" ? "WhatsApp AI Agent" : "WhatsApp AI Agent", href: "/diensten/whatsapp-ai-agent" },
-                { name: language === "nl" ? "Software op Maat" : "Custom Software", href: "/diensten/software-op-maat" },
-                { name: language === "nl" ? "AI Agent Bouwen" : "Build AI Agent", href: "/diensten/ai-agent-bouwen" },
-                { name: language === "nl" ? "Digitale Medewerker" : "Digital Employee", href: "/diensten/digitale-medewerker" },
-                { name: language === "nl" ? "AI voor MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb" },
+                { name: language === "nl" ? "Website Bouwen" : "Build Your Website", href: "/diensten/website-laten-maken/" },
+                { name: language === "nl" ? "WhatsApp AI Agent" : "WhatsApp AI Agent", href: "/diensten/whatsapp-ai-agent/" },
+                { name: language === "nl" ? "Software op Maat" : "Custom Software", href: "/diensten/software-op-maat/" },
+                { name: language === "nl" ? "AI Agent Bouwen" : "Build AI Agent", href: "/diensten/ai-agent-bouwen/" },
+                { name: language === "nl" ? "Digitale Medewerker" : "Digital Employee", href: "/diensten/digitale-medewerker/" },
+                { name: language === "nl" ? "AI voor MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb/" },
+                { name: language === "nl" ? "Alle diensten" : "All services", href: "/diensten/" },
               ].map((link) => (
                 <li key={link.name}>
                   <a
@@ -136,7 +137,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "Blog", href: "/blog" },
+                { name: "Blog", href: "/blog/" },
               ].map((link) => (
                 <li key={link.name}>
                   <a
@@ -157,9 +158,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: t.footer.privacyPolicy, href: "/privacy-policy" },
-                { name: t.footer.termsOfService, href: "/terms-of-service" },
-                { name: t.footer.cookiePolicy, href: "/cookie-policy" },
+                { name: t.footer.privacyPolicy, href: "/privacy-policy/" },
+                { name: t.footer.termsOfService, href: "/terms-of-service/" },
+                { name: t.footer.cookiePolicy, href: "/cookie-policy/" },
                 { name: t.footer.sitemap, href: "/sitemap.xml" },
               ].map((link) => (
                 <li key={link.name}>

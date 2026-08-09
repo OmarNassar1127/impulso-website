@@ -57,10 +57,10 @@ export default function CookiePolicyPage() {
           </p>
           <p>
             The chat is protected against automated abuse by Cloudflare Turnstile, which runs invisibly and may set a strictly necessary token to confirm you are a real visitor. It is not used to track you across websites. See the{" "}
-            <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile Privacy Addendum</a> and our <a href="/privacy-policy">privacy policy</a> for details.
+            <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile Privacy Addendum</a> and our <a href="/privacy-policy/">privacy policy</a> for details.
           </p>
           <p>
-            What we store on our own servers when you chat is covered in our <a href="/privacy-policy">privacy policy</a>.
+            What we store on our own servers when you chat is covered in our <a href="/privacy-policy/">privacy policy</a>.
           </p>
 
           <h2>Third-Party Cookies</h2>

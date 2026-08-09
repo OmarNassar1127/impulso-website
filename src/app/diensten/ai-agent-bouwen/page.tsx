@@ -10,7 +10,7 @@ import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, 
 export const metadata = genMeta({
   title: "AI Agent Laten Bouwen, Maatwerk AI Agents",
   description:
-    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents binnen 5 dagen. Vanaf €595 setup + €24,95/maand. GDPR-compliant, Amsterdam.",
+    "Maatwerk AI agent laten bouwen, van klantenservice tot sales. Live binnen 5 dagen, vanaf €595 setup + €24,95 per maand. GDPR-proof, uit Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -152,12 +152,12 @@ export default function AIAgentBouwenPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "AI Agent Laten Bouwen",
-        item: `${siteConfig.url}/diensten/ai-agent-bouwen`,
+        item: `${siteConfig.url}/diensten/ai-agent-bouwen/`,
       },
     ],
   });
@@ -232,7 +232,7 @@ export default function AIAgentBouwenPage() {
             <p className="mt-6 text-xs sm:text-sm text-muted-foreground">
               Zoek je vooral een nieuwe of vernieuwde website?{" "}
               <a
-                href="/diensten/website-laten-maken"
+                href="/diensten/website-laten-maken/"
                 className="font-semibold text-primary hover:underline"
               >
                 Bekijk website laten maken

@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wat-kost-ai-agent",
     title: "Wat kost een AI agent? Eerlijk kostenoverzicht 2026",
     description:
-      "Transparante prijzen voor AI agents in 2026. Van vaste pakketten (vanaf €595 setup + €24,95/maand) tot maatwerk en enterprise (€15.000+). Inclusief maandelijkse kosten, ROI-berekeningen en WBSO-subsidie.",
+      "Wat kost een AI agent in 2026? Vaste pakketten vanaf €595 setup + €24,95 per maand, maatwerk €5.000 tot €15.000. Inclusief ROI-rekenvoorbeeld en WBSO.",
     publishedAt: "2026-02-10",
     author: "Impulso Co. Team",
     readingTime: 7,
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
   <li>Een lead-kwalificatie agent die inbound aanvragen verwerkt</li>
   <li>Afsprakenbeheer en herinneringen via WhatsApp</li>
 </ul>
-<p>Concreet: <strong>ZZP vanaf €595 setup + €24,95/maand</strong>, <strong>MKB vanaf €1.395 setup + €149,95/maand</strong>. Je bent live binnen 5 dagen en zit nergens lang aan vast (1 maand opzegtermijn). Bekijk de <a href="/diensten/ai-agent-bouwen">volledige pakketten</a>.</p>
+<p>Concreet: <strong>ZZP vanaf €595 setup + €24,95/maand</strong>, <strong>MKB vanaf €1.395 setup + €149,95/maand</strong>. Je bent live binnen 5 dagen en zit nergens lang aan vast (1 maand opzegtermijn). Bekijk de <a href="/diensten/ai-agent-bouwen/">volledige pakketten</a>.</p>
 
 <h3>Maatwerk-agents: €5.000-€15.000</h3>
 
@@ -152,11 +152,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Veelgestelde vragen over kosten</h2>
 
-<p><strong>Kan ik beginnen met een klein budget?</strong> Ja. We raden aan om te starten met één agent op één specifiek pijnpunt. Zodra de ROI bewezen is, schaal je uit. Met een vast pakket ben je al live vanaf €595 setup + €24,95/maand; voor maatwerk reken je vanaf zo'n €5.000. Meer weten over welke oplossing past? Lees ons artikel over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>.</p>
+<p><strong>Kan ik beginnen met een klein budget?</strong> Ja. We raden aan om te starten met één agent op één specifiek pijnpunt. Zodra de ROI bewezen is, schaal je uit. Met een vast pakket ben je al live vanaf €595 setup + €24,95/maand; voor maatwerk reken je vanaf zo'n €5.000. Meer weten over welke oplossing past? Lees ons artikel over het <a href="/blog/ai-agent-vs-chatbot/">verschil tussen een AI agent en chatbot</a>.</p>
 
 <p><strong>Zijn er verborgen kosten?</strong> Nee. We werken altijd met een vaste offerte. Scopewijzigingen facturen we als meerwerk en communiceren we van tevoren.</p>
 
-<p><strong>Wat als de agent niet presteert zoals verwacht?</strong> We definiëren succes metrics voor livegang. Als die niet gehaald worden, blijven we werken totdat ze gehaald zijn, zonder extra kosten. Bekijk ook onze pagina over <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a> of lees hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>.</p>`,
+<p><strong>Wat als de agent niet presteert zoals verwacht?</strong> We definiëren succes metrics voor livegang. Als die niet gehaald worden, blijven we werken totdat ze gehaald zijn, zonder extra kosten. Bekijk ook onze pagina over <a href="/diensten/ai-agent-bouwen/">AI agent bouwen</a> of lees hoe we <a href="/blog/klantenservice-automatiseren-ai/">klantenservice automatiseren met AI</a>.</p>`,
   },
 
   {
@@ -300,7 +300,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Een chatbot praat. Een AI agent handelt. Als jouw doel is om echt operationele last te verminderen en processen te automatiseren, heb je vrijwel altijd een AI agent nodig. De investering is hoger, maar de terugverdientijd ook aanzienlijk sneller, omdat de impact op je bedrijfsvoering fundamenteel anders is.</p>
 
-<p>Twijfel je welke aanpak past bij jouw situatie? Plan een gratis intake via onze website en we denken mee. Bekijk ook <a href="/blog/wat-kost-ai-agent">wat een AI agent kost</a>, hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren</a>, of ontdek onze <a href="/diensten/digitale-medewerker">digitale medewerker dienst</a>.</p>`,
+<p>Twijfel je welke aanpak past bij jouw situatie? Plan een gratis intake via onze website en we denken mee. Bekijk ook <a href="/blog/wat-kost-ai-agent/">wat een AI agent kost</a>, hoe we <a href="/blog/klantenservice-automatiseren-ai/">klantenservice automatiseren</a>, of ontdek onze <a href="/diensten/digitale-medewerker/">digitale medewerker dienst</a>.</p>`,
   },
 
   {
@@ -436,12 +436,12 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>"Onze producten zijn te complex voor een AI."</strong> Wij bouwen agents specifiek voor jouw kennisdomein, gekoppeld aan jouw documentatie. Een agent die in jouw Notion, SharePoint of PDF-bibliotheek zoekt, weet meer over je producten dan de meeste junior medewerkers. Onderzoek van <a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner</a> toont aan dat AI klantenservice de gemiddelde afhandelingstijd met 40% kan verlagen.</p>
 
-<p>Nieuwsgierig of dit voor jouw klantenservice werkt? Neem contact op voor een gratis analyse van jouw huidige ticketvolume. Lees ook over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, hoe een <a href="/blog/whatsapp-ai-agent-bedrijven">WhatsApp AI agent werkt voor bedrijven</a>, of bekijk onze <a href="/diensten/ai-automatisering-mkb">AI automatisering voor MKB</a>.</p>`,
+<p>Nieuwsgierig of dit voor jouw klantenservice werkt? Neem contact op voor een gratis analyse van jouw huidige ticketvolume. Lees ook over het <a href="/blog/ai-agent-vs-chatbot/">verschil tussen een AI agent en chatbot</a>, hoe een <a href="/blog/whatsapp-ai-agent-bedrijven/">WhatsApp AI agent werkt voor bedrijven</a>, of bekijk onze <a href="/diensten/ai-automatisering-mkb/">AI automatisering voor MKB</a>.</p>`,
   },
 
   {
     slug: "rag-systeem-bouwen",
-    title: "RAG systeem bouwen: zo maak je je bedrijfskennis doorzoekbaar",
+    title: "RAG systeem bouwen voor je eigen bedrijfskennis",
     description:
       "Wat is RAG, hoe werkt het en wanneer heb je het nodig? Praktische uitleg over vector databases, embeddings en use cases voor kennisbank, compliance en onboarding.",
     publishedAt: "2026-03-05",
@@ -558,7 +558,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Start klein. Kies één databron (je FAQ-documentatie, één SharePoint-bibliotheek, je producthandleidingen) en bouw daar een eerste RAG-agent omheen. Frameworks zoals <a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a> versnellen de ontwikkeling aanzienlijk. Meet de kwaliteit, verzamel feedback, en breid daarna uit naar meer bronnen.</p>
 
-<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, het zit in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 5 dagen een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
+<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, het zit in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 5 dagen een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai/">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb/">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen/">AI agent bouwen</a>.</p>`,
   },
 
   {
@@ -618,7 +618,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>5. Is het budget realistisch gepland?</h3>
 
-<p><strong>Ja:</strong> Je hebt budget gereserveerd, vanaf €595 setup + €24,95/maand voor een vast pakket of €5.000-€15.000 voor een maatwerk-traject, en je begrijpt dat dit een investering is met terugverdientijd. Zie ons <a href="/blog/wat-kost-ai-agent">eerlijk kostenoverzicht</a> voor concrete cijfers.</p>
+<p><strong>Ja:</strong> Je hebt budget gereserveerd, vanaf €595 setup + €24,95/maand voor een vast pakket of €5.000-€15.000 voor een maatwerk-traject, en je begrijpt dat dit een investering is met terugverdientijd. Zie ons <a href="/blog/wat-kost-ai-agent/">eerlijk kostenoverzicht</a> voor concrete cijfers.</p>
 
 <p><strong>Nee:</strong> Je verwacht dat een volwaardige maatwerk-agent gratis of voor een paar honderd euro te bouwen is, of je hebt geen budget gereserveerd.</p>
 
@@ -689,14 +689,14 @@ export const blogPosts: BlogPost[] = [
   <li>Schaal op basis van resultaten</li>
 </ol>
 
-<p>Dit is lager risico, sneller resultaat, en geeft je het interne bewijs om draagvlak te bouwen voor grotere investeringen. Wil je weten welke technologie er bij een pilot betrokken is? Lees dan ons artikel over <a href="/blog/rag-systeem-bouwen">RAG systemen bouwen</a> of verken onze <a href="/diensten/ai-automatisering-mkb">AI automatisering voor MKB</a>. <a href="https://www.cbs.nl/" target="_blank" rel="noopener">CBS</a>-cijfers laten zien dat Nederlandse MKB-bedrijven die digitaal innoveren gemiddeld 18% hogere omzetgroei realiseren.</p>`,
+<p>Dit is lager risico, sneller resultaat, en geeft je het interne bewijs om draagvlak te bouwen voor grotere investeringen. Wil je weten welke technologie er bij een pilot betrokken is? Lees dan ons artikel over <a href="/blog/rag-systeem-bouwen/">RAG systemen bouwen</a> of verken onze <a href="/diensten/ai-automatisering-mkb/">AI automatisering voor MKB</a>. <a href="https://www.cbs.nl/" target="_blank" rel="noopener">CBS</a>-cijfers laten zien dat Nederlandse MKB-bedrijven die digitaal innoveren gemiddeld 18% hogere omzetgroei realiseren.</p>`,
   },
 
   {
     slug: "whatsapp-ai-agent-bedrijven",
-    title: "WhatsApp AI agent voor bedrijven: alles wat je moet weten",
+    title: "WhatsApp AI agent voor bedrijven: complete gids",
     description:
-      "WhatsApp Business API + AI: hoe het werkt, wat het kost (vanaf €595 als pakket, maatwerk €5.000-€15.000) en wat het oplevert. Inclusief ZapBot case study: 40% minder no-shows, €2.800/maand bespaard.",
+      "WhatsApp Business API met AI: hoe het werkt, wat het kost en wat het oplevert. Met case study: 40% minder no-shows en €2.800 per maand bespaard.",
     publishedAt: "2026-03-14",
     author: "Impulso Co. Team",
     readingTime: 8,
@@ -835,7 +835,7 @@ export const blogPosts: BlogPost[] = [
   <li>Je wilt schalen zonder lineair meer personeel aan te nemen</li>
 </ul>
 
-<p>Voldoe je aan twee of meer criteria? Dan is de kans groot dat een WhatsApp AI agent zich binnen 3 maanden terugverdient. Plan een gratis intake en we berekenen jouw specifieke ROI. Lees ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice volledig automatiseren</a>, ontdek het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, of bekijk onze <a href="/diensten/digitale-medewerker">digitale medewerker oplossing</a>.</p>`,
+<p>Voldoe je aan twee of meer criteria? Dan is de kans groot dat een WhatsApp AI agent zich binnen 3 maanden terugverdient. Plan een gratis intake en we berekenen jouw specifieke ROI. Lees ook hoe we <a href="/blog/klantenservice-automatiseren-ai/">klantenservice volledig automatiseren</a>, ontdek het <a href="/blog/ai-agent-vs-chatbot/">verschil tussen een AI agent en chatbot</a>, of bekijk onze <a href="/diensten/digitale-medewerker/">digitale medewerker oplossing</a>.</p>`,
   },
 ];
 

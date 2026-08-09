@@ -22,7 +22,7 @@ import {
 export const metadata = genMeta({
   title: "Software op Maat, Webapplicaties, Backend en Frontend",
   description:
-    "Maatwerk software laten bouwen: webapplicaties, dashboards, API's, backend-systemen en frontends. Voor bedrijven in heel Nederland. Vaste prijs vooraf, code in je eigen beheer.",
+    "Maatwerk software: webapplicaties, dashboards, API's en backend-systemen. Vaste prijs vooraf en de code blijft in je eigen beheer.",
   keywords:
     "software op maat, maatwerk software laten maken, webapplicatie laten bouwen, backend ontwikkelaar inhuren, frontend development, API koppeling laten maken, dashboard laten bouwen, systeem koppelen, software ontwikkelaar Nederland, maatwerk applicatie",
   pathname: "/diensten/software-op-maat",
@@ -133,12 +133,12 @@ export default function SoftwareOpMaatPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/software-op-maat` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "Software op Maat",
-        item: `${siteConfig.url}/diensten/software-op-maat`,
+        item: `${siteConfig.url}/diensten/software-op-maat/`,
       },
     ],
   });
@@ -320,7 +320,7 @@ export default function SoftwareOpMaatPage() {
               Maatwerk rekenen we per project af, met een vaste prijs vooraf. Zoek je een
               website met een AI-agent erop, dan werken we met vaste pakketten vanaf €595
               setup plus €24,95 per maand. Bekijk{" "}
-              <a href="/diensten/website-laten-maken" className="font-semibold text-primary hover:underline">
+              <a href="/diensten/website-laten-maken/" className="font-semibold text-primary hover:underline">
                 website laten maken
               </a>
               .

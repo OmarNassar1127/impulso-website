@@ -29,7 +29,7 @@ import {
 export const metadata = genMeta({
   title: "WhatsApp AI Agent & Chat Agent voor Bedrijven",
   description:
-    "Een WhatsApp AI-agent of chat agent die klantvragen beantwoordt, afspraken inplant en herinneringen stuurt. 24/7 bereikbaar, in heel Nederland. Live binnen 5 dagen, vanaf €595 setup + €24,95 per maand.",
+    "Een WhatsApp- of chat-agent die klantvragen beantwoordt, afspraken inplant en herinneringen stuurt. 24/7, vanaf €595 setup + €24,95 per maand.",
   keywords:
     "WhatsApp AI agent, chat agent, WhatsApp chatbot bedrijf, AI chatbot WhatsApp, klantenservice WhatsApp automatiseren, afspraken inplannen WhatsApp, WhatsApp Business API, chatbot laten maken, AI chatbot bedrijven Nederland",
   pathname: "/diensten/whatsapp-ai-agent",
@@ -128,12 +128,12 @@ export default function WhatsAppAgentPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/whatsapp-ai-agent` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "WhatsApp AI Agent",
-        item: `${siteConfig.url}/diensten/whatsapp-ai-agent`,
+        item: `${siteConfig.url}/diensten/whatsapp-ai-agent/`,
       },
     ],
   });

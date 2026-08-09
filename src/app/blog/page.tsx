@@ -10,7 +10,7 @@ import Footer from "@/components/sections/footer";
 export const metadata = genMeta({
   title: "Blog, AI Agents & Automatisering voor Bedrijven",
   description:
-    "Praktische artikelen over AI agents, automatisering, RAG-systemen en WhatsApp-agents voor het Nederlandse MKB. Concrete adviezen, eerlijke prijzen en bewezen strategieën van Impulso Co.",
+    "Praktische artikelen over AI agents, automatisering, RAG en WhatsApp-agents voor het Nederlandse MKB. Concrete adviezen en eerlijke prijzen.",
   keywords:
     "AI blog Nederland, AI agents artikelen, automatisering MKB blog, RAG systeem gids, WhatsApp AI bedrijven, klantenservice automatisering gids",
   pathname: "/blog",
@@ -48,8 +48,8 @@ export default function BlogPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Blog", item: `${siteConfig.url}/blog/` },
     ],
   });
 
@@ -89,7 +89,7 @@ export default function BlogPage() {
         {/* Featured post */}
         <div className="mb-10 sm:mb-16">
           <Link
-            href={`/blog/${featured.slug}`}
+            href={`/blog/${featured.slug}/`}
             className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-8 md:p-10 transition-all duration-500 hover:border-primary/30 hover:shadow-lg"
           >
             <div className="flex flex-wrap items-center gap-2 mb-4 text-xs text-muted-foreground">
@@ -130,7 +130,7 @@ export default function BlogPage() {
             {rest.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/`}
                 className="group flex flex-col rounded-2xl bg-muted/40 border border-border/60 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-primary/30 hover:bg-muted/60"
               >
                 <div className="mb-3 sm:mb-4 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs text-muted-foreground">

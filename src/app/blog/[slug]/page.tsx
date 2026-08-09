@@ -59,12 +59,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Blog", item: `${siteConfig.url}/blog/` },
       {
         position: 3,
         name: post.title,
-        item: `${siteConfig.url}/blog/${post.slug}`,
+        item: `${siteConfig.url}/blog/${post.slug}/`,
       },
     ],
   });
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
             {/* Back link on mobile, breadcrumb on desktop */}
             <Link
-              href="/blog"
+              href="/blog/"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors mb-4 sm:mb-6"
             >
               <ArrowRight className="h-3 w-3 rotate-180" />
@@ -187,7 +187,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {relatedPosts.map((related) => (
                   <Link
                     key={related.slug}
-                    href={`/blog/${related.slug}`}
+                    href={`/blog/${related.slug}/`}
                     className="group flex flex-col rounded-2xl bg-muted/40 border border-border/60 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg"
                   >
                     <div className="mb-3 flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground">

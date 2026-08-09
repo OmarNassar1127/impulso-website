@@ -21,7 +21,7 @@ import {
 export const metadata = genMeta({
   title: "Digitale Medewerker, AI die Zelfstandig Werk Overneemt",
   description:
-    "Een digitale medewerker van Impulso Co. werkt 24/7, maakt geen fouten en kost een fractie van een menselijke FTE. Multi-agent AI die taken overneemt in HR, finance, operations en klantenservice. Amsterdam.",
+    "Een digitale medewerker werkt 24/7 en kost een fractie van een FTE. Meerdere agents die samen HR, finance, operations of klantenservice overnemen.",
   keywords:
     "digitale medewerker, AI medewerker, virtuele medewerker, AI automatisering bedrijf, digitale collega, AI agent HR, AI finance automatisering, klantenservice automatisering, operations AI, multi-agent systeem, AI bureau Amsterdam",
   pathname: "/diensten/digitale-medewerker",
@@ -172,12 +172,12 @@ export default function DigitaleMedewerkerPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "Digitale Medewerker",
-        item: `${siteConfig.url}/diensten/digitale-medewerker`,
+        item: `${siteConfig.url}/diensten/digitale-medewerker/`,
       },
     ],
   });

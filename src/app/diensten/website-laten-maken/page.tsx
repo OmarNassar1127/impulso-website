@@ -26,7 +26,7 @@ import {
 export const metadata = genMeta({
   title: "Website Laten Maken, Nieuw of Bestaande Site Vernieuwen",
   description:
-    "Website laten maken door Impulso Co. in Amsterdam. Nieuw vanaf nul of je bestaande site vernieuwen, op maat ontworpen, met AI-agent erop. Live binnen 5 dagen, vanaf €595 setup + €24,95 per maand.",
+    "Website laten maken in Amsterdam: nieuw of je bestaande site vernieuwd, op maat ontworpen. Live binnen 5 dagen, vanaf €595 setup + €24,95 p/m.",
   keywords:
     "website laten maken, website laten bouwen, website laten maken kosten, nieuwe website, website vernieuwen, website redesign, webdesign Amsterdam, website ZZP, website MKB, website met AI chatbot, website onderhoud, responsive website laten maken",
   pathname: "/diensten/website-laten-maken",
@@ -178,12 +178,12 @@ export default function WebsiteLatenMakenPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/website-laten-maken` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "Website Laten Maken",
-        item: `${siteConfig.url}/diensten/website-laten-maken`,
+        item: `${siteConfig.url}/diensten/website-laten-maken/`,
       },
     ],
   });
@@ -445,7 +445,7 @@ export default function WebsiteLatenMakenPage() {
                   ))}
                 </ul>
                 <a
-                  href="/diensten/ai-agent-bouwen"
+                  href="/diensten/ai-agent-bouwen/"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                 >
                   Meer over AI-agents laten bouwen

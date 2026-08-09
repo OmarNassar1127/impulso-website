@@ -20,7 +20,7 @@ import {
 export const metadata = genMeta({
   title: "AI Automatisering voor MKB, Betaalbaar & Schaalbaar",
   description:
-    "AI automatisering speciaal voor het Nederlandse MKB. Vanaf €1.395 setup + €149,95/maand, live binnen 5 dagen, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co. Amsterdam.",
+    "AI-automatisering voor het Nederlandse MKB. Vanaf €1.395 setup + €149,95 per maand, live binnen 5 dagen, geen IT-afdeling nodig. Vaak WBSO-subsidiabel.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
@@ -132,12 +132,12 @@ export default function AIAutomatiseringMKBPage() {
 
   const breadcrumbData = breadcrumbSchema({
     items: [
-      { position: 1, name: "Home", item: siteConfig.url },
-      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten` },
+      { position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten/` },
       {
         position: 3,
         name: "AI Automatisering voor MKB",
-        item: `${siteConfig.url}/diensten/ai-automatisering-mkb`,
+        item: `${siteConfig.url}/diensten/ai-automatisering-mkb/`,
       },
     ],
   });
