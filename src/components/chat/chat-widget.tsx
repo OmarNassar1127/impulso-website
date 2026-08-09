@@ -92,19 +92,21 @@ export default function ChatWidget() {
     }
   }, []);
 
-  // One gentle nudge per browser session, and only if the visitor has not
-  // already talked to us. Anything more insistent than this is a pop-up.
+  // Shown on every page load. Dismissing it with the X only hides it for that
+  // view — reload or move to another page and it comes back.
+  //
+  // It used to be remembered for the whole browser session, which made it
+  // effectively invisible: one early visit burned it and it never returned, so
+  // the pitch reached almost nobody.
+  //
+  // The single exception is someone who already has a conversation going. They
+  // have met the agent, and asking "benieuwd wat een agent voor jou doet?" a
+  // minute after they used one reads as not paying attention.
   useEffect(() => {
     if (loadSessionId()) return;
-    const seen = sessionStorage.getItem("impulso_chat_nudged");
-    if (seen) return;
     // 4s: early enough to catch someone while they are still reading the hero,
-    // which is where the curiosity is. Still once per browser session, and
-    // never shown to anyone who has already chatted.
-    const t = setTimeout(() => {
-      setNudge(true);
-      sessionStorage.setItem("impulso_chat_nudged", "1");
-    }, 4000);
+    // which is where the curiosity is.
+    const t = setTimeout(() => setNudge(true), 4000);
     return () => clearTimeout(t);
   }, []);
 
