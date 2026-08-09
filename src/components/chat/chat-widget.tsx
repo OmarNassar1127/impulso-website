@@ -390,11 +390,14 @@ export default function ChatWidget() {
   // confirms the slot is genuinely free before asking for a name — so the same
   // eight chips came back and rendered again, this time under "mag ik je naam
   // en e-mailadres?", where they read as a question that was already answered.
-  const seenDays = new Set<string>();
+  // Compared against the last card shown, not every card in the thread: ask
+  // about Monday, then Tuesday, then back to Monday and Monday's times are
+  // offered again. Only the immediate repeat is the useless one.
+  let lastCardDay = "";
   const showAvailability = messages.map((m) => {
     const day = m.availability?.day;
-    if (!day || m.booked || seenDays.has(day)) return false;
-    seenDays.add(day);
+    if (!day || m.booked || day === lastCardDay) return false;
+    lastCardDay = day;
     return true;
   });
 
