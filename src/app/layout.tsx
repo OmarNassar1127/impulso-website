@@ -45,6 +45,13 @@ const ClientCookieConsent = dynamic(
   { ssr: false }
 );
 
+// Chat agent. Lazy and client-only: it pulls in its own state and only talks to
+// the backend once someone actually opens it, so it costs the first paint nothing.
+const ChatWidget = dynamic(
+  () => import('@/components/chat/chat-widget'),
+  { ssr: false }
+);
+
 export const viewport: Viewport = {
   themeColor: "#ffffff",
   width: "device-width",
@@ -182,6 +189,9 @@ export default function RootLayout({
 
             {/* Cookie consent banner */}
             <ClientCookieConsent />
+
+            {/* Floating chat agent */}
+            <ChatWidget />
           </LanguageProvider>
         </ThemeProvider>
       </body>

@@ -282,6 +282,5 @@ ContentOS reduced the client's content production time by 80% while increasing p
 
 - Website: https://impulsoco.nl
 - Email: info@impulsoco.nl
-- Phone: +31640495527
-- WhatsApp: https://wa.me/31640495527
+- Chat: AI-assistent op https://impulsoco.nl, beantwoordt vragen en plant direct een afspraak in
 - English version of the site: https://impulsoco.nl/en

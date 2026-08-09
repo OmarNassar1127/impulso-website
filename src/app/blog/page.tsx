@@ -173,7 +173,7 @@ export default function BlogPage() {
               </p>
             </div>
             <a
-              href="https://calendly.com/omarnassar1127/30min"
+              href="https://calendly.com/omar-impulsoco/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"

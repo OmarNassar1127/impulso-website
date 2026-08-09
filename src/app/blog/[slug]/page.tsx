@@ -231,7 +231,7 @@ export default async function BlogPostPage({ params }: Props) {
               bedrijf.
             </p>
             <a
-              href="https://calendly.com/omarnassar1127/30min"
+              href="https://calendly.com/omar-impulsoco/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"

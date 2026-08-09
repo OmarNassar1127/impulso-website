@@ -35,7 +35,39 @@ export default function PrivacyPolicyPage() {
             <li><strong>Contact Data</strong> includes email address and telephone numbers.</li>
             <li><strong>Technical Data</strong> includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
             <li><strong>Usage Data</strong> includes information about how you use our website and services.</li>
+            <li><strong>Chat Data</strong> includes the messages you exchange with our AI chat assistant, and any contact details you choose to share in that conversation. See &quot;Our AI Chat Assistant&quot; below.</li>
           </ul>
+
+          <h2>Our AI Chat Assistant</h2>
+          <p>
+            Our website offers a chat assistant called Sam. It is powered by artificial intelligence, not a human, and we tell you so in the chat window itself. If you would rather speak to a person, just ask and we will take over the conversation.
+          </p>
+          <p><strong>What we store when you use the chat:</strong></p>
+          <ul>
+            <li>The full conversation, including every message you send and every reply you receive.</li>
+            <li>Any contact details you choose to share, such as your name, email address or phone number. These are never required, and the assistant will still help you if you prefer not to give them.</li>
+            <li>Technical context: the page you started the chat from, the page that referred you, your browser type and your language.</li>
+            <li>A one-way hashed version of your IP address. We do not store the address itself. The hash exists solely to prevent abuse and to keep the service available.</li>
+          </ul>
+          <p>
+            <strong>Why we store it:</strong> to answer your question, to follow up if you ask us to, to schedule a meeting when you request one, and to review and improve the quality of the assistant. Our legal basis is our legitimate interest in responding to enquiries about our services, and, where you ask us to arrange something, taking steps at your request prior to entering into a contract.
+          </p>
+          <p>
+            <strong>Who else sees it:</strong> your messages are sent to Google&apos;s Gemini API, which generates the replies. Google acts as a processor and does not use this content to train its models. The assistant has no access to our customer database or to any other visitor&apos;s conversation. If you ask us to schedule a meeting, we create a calendar entry in Google Calendar and send you a confirmation and a reminder by email through our email provider, Resend.
+          </p>
+          <p>
+            <strong>How long we keep it:</strong> conversations are retained for up to 12 months so we can follow up and handle any questions about work we discussed, after which they are deleted. You can ask us to delete your conversation sooner at any time by emailing info@impulsoco.nl.
+          </p>
+          <p>
+            The chat stores a session identifier in your browser&apos;s session storage so your conversation survives while you browse the site. It is not a tracking cookie, it is not shared with anyone, and it disappears when you close the tab.
+          </p>
+          <p>
+            Please do not share sensitive personal information, passwords or confidential business data in the chat. If you do so by accident, email us and we will remove it.
+          </p>
+          <p>
+            <strong>Bot protection.</strong> To keep the chat available and prevent automated abuse, it is protected by Cloudflare Turnstile. Turnstile runs invisibly in the background, so you will not see a puzzle or a checkbox. It checks signals from your browser to confirm you are a real visitor, and Cloudflare does not use this to track you across websites. Cloudflare&apos;s handling of that data is described in the{" "}
+            <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile Privacy Addendum</a>, which forms part of this policy.
+          </p>
 
           <h2>How We Use Your Personal Data</h2>
           <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>

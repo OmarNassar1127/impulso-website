@@ -5,8 +5,9 @@ import { LanguageToggle } from "@/components/ui/language-toggle";
 import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
+import { Menu, X, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { requestChatOpen } from "@/lib/floating-ui";
 
 interface NavLink {
   name: string;
@@ -193,7 +194,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
             </ul>
             <div className="flex items-center gap-5">
               <a
-                href="https://calendly.com/omarnassar1127/30min"
+                href="https://calendly.com/omar-impulsoco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-9 px-5 border border-foreground/40 text-sm font-medium text-foreground hover:border-terracotta hover:text-terracotta transition-colors duration-200"
@@ -296,7 +297,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
               >
                 {/* Main CTA */}
                 <a
-                  href="https://calendly.com/omarnassar1127/30min"
+                  href="https://calendly.com/omar-impulsoco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
@@ -308,13 +309,16 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
                 {/* Contact row */}
                 <div className="flex gap-3">
-                  <a
-                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31640495527'}`}
+                  {/* Was a tel: link to a private mobile. Prospects go through
+                      the chat agent instead, which reaches both of us. */}
+                  <button
+                    type="button"
+                    onClick={() => { setMobileMenuOpen(false); requestChatOpen(); }}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"
                   >
-                    <Phone className="h-4 w-4" />
-                    {language === "nl" ? "Bel ons" : "Call us"}
-                  </a>
+                    <MessageCircle className="h-4 w-4" />
+                    {language === "nl" ? "Chat met ons" : "Chat with us"}
+                  </button>
                   <a
                     href={`mailto:${t.contact?.emailAddress || 'info@impulsoco.nl'}`}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"

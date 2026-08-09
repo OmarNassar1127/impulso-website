@@ -22,7 +22,9 @@ export const siteConfig = {
   },
   contact: {
     email: "info@impulsoco.nl",
-    phone: "+31640495527",
+    // Deliberately empty: the only number was a private mobile.
+    // Inbound contact goes through the chat agent or email.
+    phone: "",
     address: "Amsterdam, Netherlands",
   },
   themeColor: "#ffffff",

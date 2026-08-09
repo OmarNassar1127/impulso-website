@@ -48,6 +48,21 @@ export default function CookiePolicyPage() {
             </li>
           </ul>
 
+          <h2>Chat Assistant Storage</h2>
+          <p>
+            Our AI chat assistant does not use cookies. It stores a session identifier and your current conversation in your browser&apos;s <strong>session storage</strong>, which is a separate mechanism from cookies. This is what lets your conversation carry over as you move between pages instead of restarting each time.
+          </p>
+          <p>
+            This storage is strictly necessary to provide a service you asked for by opening the chat, so it does not require consent. It is not used for tracking or advertising, it is never shared with third parties, and everything in it is cleared automatically when you close the tab. You can also clear it yourself using the reset button in the chat window.
+          </p>
+          <p>
+            The chat is protected against automated abuse by Cloudflare Turnstile, which runs invisibly and may set a strictly necessary token to confirm you are a real visitor. It is not used to track you across websites. See the{" "}
+            <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile Privacy Addendum</a> and our <a href="/privacy-policy">privacy policy</a> for details.
+          </p>
+          <p>
+            What we store on our own servers when you chat is covered in our <a href="/privacy-policy">privacy policy</a>.
+          </p>
+
           <h2>Third-Party Cookies</h2>
           <p>
             In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on.

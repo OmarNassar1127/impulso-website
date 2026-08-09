@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, FileText, Rocket, ArrowRight, ChevronRight, Phone, Mail, Check } from "lucide-react";
+import { Calendar, FileText, Rocket, ArrowRight, ChevronRight, Phone, Mail, Check, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import DemoRequestModal from "@/components/demo-request-modal";
+import { requestChatOpen } from "@/lib/floating-ui";
 
 export default function IntakeExplanationSection() {
     const { language } = useLanguage();
@@ -128,7 +129,7 @@ export default function IntakeExplanationSection() {
                     {/* Primary CTA */}
                     <div className="mb-10 flex justify-center">
                         <a
-                            href="https://calendly.com/omarnassar1127/30min"
+                            href="https://calendly.com/omar-impulsoco/30min"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-terracotta transition-colors"
@@ -171,10 +172,16 @@ export default function IntakeExplanationSection() {
                                 exit={{ opacity: 0, height: 0 }}
                                 className="bg-background p-4 space-y-1 border border-foreground/15"
                             >
-                                <a href="tel:+31640495527" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
-                                    <Phone className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                                    <span className="text-foreground font-medium text-sm">+31 6 40 49 55 27</span>
-                                </a>
+                                {/* Was a tel: link to a private mobile. The chat
+                                    agent is the front door now. */}
+                                <button
+                                    type="button"
+                                    onClick={requestChatOpen}
+                                    className="w-full flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors text-left"
+                                >
+                                    <MessageCircle className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
+                                    <span className="text-foreground font-medium text-sm">Chat direct met ons</span>
+                                </button>
                                 <a href="mailto:info@impulsoco.nl" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
                                     <Mail className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
                                     <span className="text-foreground font-medium text-sm">info@impulsoco.nl</span>

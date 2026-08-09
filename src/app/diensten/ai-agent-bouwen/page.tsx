@@ -1,4 +1,5 @@
 import { generateMetadata as genMeta } from "@/lib/metadata";
+import ChatLink from "@/components/chat/chat-link";
 import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
@@ -212,7 +213,7 @@ export default function AIAgentBouwenPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://calendly.com/omarnassar1127/30min"
+                href="https://calendly.com/omar-impulsoco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
@@ -360,7 +361,7 @@ export default function AIAgentBouwenPage() {
             <p className="mt-6 text-center text-sm text-muted-foreground">
               Heeft u een andere use case?{" "}
               <a
-                href="https://calendly.com/omarnassar1127/30min"
+                href="https://calendly.com/omar-impulsoco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline font-medium"
@@ -486,7 +487,7 @@ export default function AIAgentBouwenPage() {
                     ))}
                   </ul>
                   <a
-                    href="https://calendly.com/omarnassar1127/30min"
+                    href="https://calendly.com/omar-impulsoco/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all hover:opacity-90 active:scale-[0.98] ${
@@ -548,7 +549,7 @@ export default function AIAgentBouwenPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://calendly.com/omarnassar1127/30min"
+                href="https://calendly.com/omar-impulsoco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-8 py-4 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
@@ -565,12 +566,7 @@ export default function AIAgentBouwenPage() {
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
               Impulso Co. AI Agent Bureau · Amsterdam ·{" "}
-              <a
-                href="tel:+31640495527"
-                className="hover:text-foreground transition-colors"
-              >
-                +31 6 40 49 55 27
-              </a>
+              <ChatLink className="hover:text-foreground transition-colors underline underline-offset-2 decoration-dotted">chat direct met ons</ChatLink>
             </p>
           </div>
         </section>

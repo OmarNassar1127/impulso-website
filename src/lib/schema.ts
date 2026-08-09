@@ -266,11 +266,13 @@ export function organizationSchema({
       latitude: 52.3676,
       longitude: 4.9041,
     },
-    telephone: "+31640495527",
+    // No telephone on purpose: the only number we had was a private mobile and
+    // prospects go through the chat agent or email instead. GeoCoordinates plus
+    // the address still carry the local signal that disambiguates us from the
+    // unrelated "Impulso Co." in Tijuana.
     email: "info@impulsoco.nl",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+31640495527",
       email: "info@impulsoco.nl",
       contactType: "sales",
       areaServed: ["NL", "EU"],
