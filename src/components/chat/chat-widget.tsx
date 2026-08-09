@@ -306,24 +306,30 @@ export default function ChatWidget() {
           panel no longer covers the page, so the bubble is the close button. */}
       <div className={`fixed right-4 sm:right-6 z-[60] transition-all duration-300 ${bubbleBottom}`}>
         {nudge && !open && (
-          <button
-            onClick={toggle}
-            className="absolute bottom-full right-0 mb-3 w-max max-w-[240px] rounded-2xl rounded-br-sm bg-card border border-foreground/15 px-3.5 py-2.5 text-left shadow-xl animate-in fade-in slide-in-from-bottom-2"
-          >
-            {/* The pitch, not a greeting. This widget IS the product, so the
-                nudge invites them to try the thing they'd be buying rather than
-                asking whether they have questions. */}
-            <span className="block text-[13px] font-semibold text-foreground">
-              {isNL
-                ? "Benieuwd wat een agent voor jou doet?"
-                : "Curious what an agent could do for you?"}
-            </span>
-            <span className="mt-0.5 block text-[11px] leading-snug text-muted-foreground">
-              {isNL
-                ? "Praat gerust even met deze. Hij plant zelfs je afspraak in."
-                : "Have a chat with this one. It'll even book your meeting."}
-            </span>
-          </button>
+          <div className="chat-nudge-in absolute bottom-full right-0 mb-3 w-[248px] max-w-[calc(100vw-2rem)] rounded-2xl rounded-br-sm border border-foreground/15 bg-card shadow-2xl">
+            <button
+              onClick={(e) => { e.stopPropagation(); setNudge(false); }}
+              aria-label={isNL ? "Sluiten" : "Dismiss"}
+              className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-foreground/15 bg-card text-muted-foreground shadow-sm transition-colors hover:text-foreground"
+            >
+              <X className="h-3 w-3" />
+            </button>
+            <button onClick={toggle} className="block w-full px-3.5 py-3 text-left">
+              {/* The pitch, not a greeting. This widget IS the product, so the
+                  nudge invites them to try the thing they'd be buying rather
+                  than asking whether they have questions. */}
+              <span className="block text-[13px] font-semibold leading-snug text-foreground">
+                {isNL
+                  ? "Benieuwd wat een agent voor jou doet?"
+                  : "Curious what an agent could do for you?"}
+              </span>
+              <span className="mt-1 block text-[11px] leading-snug text-muted-foreground">
+                {isNL
+                  ? "Praat gerust even met deze. Hij plant zelfs je afspraak in."
+                  : "Have a chat with this one. It'll even book your meeting."}
+              </span>
+            </button>
+          </div>
         )}
         <button
           onClick={toggle}

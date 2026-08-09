@@ -495,3 +495,22 @@ a:hover {
   background: rgba(148, 163, 184, 0.12);
   border-color: rgba(148, 163, 184, 0.2);
 }
+/* Chat nudge pill.
+   The widget previously used `animate-in fade-in slide-in-from-bottom-2`, which
+   are tailwindcss-animate classes — and that plugin is not installed here, so
+   they resolved to nothing. The pill appeared with no motion at all, which on a
+   phone is easy to miss entirely. This is the same effect, hand-rolled. */
+@keyframes chatNudgeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chat-nudge-in {
+  animation: chatNudgeIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
