@@ -50,6 +50,7 @@ export default function ChatWidget() {
   const [booting, setBooting] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
+  const [keyboard, setKeyboard] = useState(0);
   const [typing, setTyping] = useState(false);
   const [health, setHealth] = useState<ChatHealth | null>(null);
   const [nudge, setNudge] = useState(false);
@@ -111,6 +112,33 @@ export default function ChatWidget() {
     return () => clearTimeout(t);
   }, []);
 
+  // How much of the screen the on-screen keyboard is covering.
+  //
+  // A `position: fixed` panel is anchored to the layout viewport, and iOS does
+  // not shrink that when the keyboard opens — it shrinks the *visual* viewport
+  // and leaves the panel's bottom half, input included, underneath the keys.
+  // visualViewport is the only thing that reports the difference.
+  useEffect(() => {
+    const vv = typeof window !== "undefined" ? window.visualViewport : undefined;
+    if (!vv) return;
+    if (!open) {
+      setKeyboard(0);
+      return;
+    }
+    const measure = () => {
+      const covered = window.innerHeight - vv.height - vv.offsetTop;
+      // Small values are browser chrome sliding around, not a keyboard.
+      setKeyboard(covered > 120 ? Math.round(covered) : 0);
+    };
+    measure();
+    vv.addEventListener("resize", measure);
+    vv.addEventListener("scroll", measure);
+    return () => {
+      vv.removeEventListener("resize", measure);
+      vv.removeEventListener("scroll", measure);
+    };
+  }, [open]);
+
   // Health probe and the Turnstile script, fetched while the visitor is still
   // reading. Both are visitor-independent, so doing them on open only added
   // dead time before the greeting. Held back 1.2s so it never competes with the
@@ -127,9 +155,11 @@ export default function ChatWidget() {
     });
   }, []);
 
+  // `keyboard` is in here because the panel shrinks when the keys come up, and
+  // without a re-scroll the message you were just reading slides out of view.
   useEffect(() => {
     if (open) scrollDown();
-  }, [open, messages, typing, scrollDown]);
+  }, [open, messages, typing, keyboard, scrollDown]);
 
   // Poll for anything the server has that we don't, but only while the panel is
   // actually open and the tab is in the foreground. This is what delivers a
@@ -370,7 +400,19 @@ export default function ChatWidget() {
           about. Sitting above the bubble also keeps the bubble visible, so it
           doubles as the close button the way people already expect. */}
       {open && (
-        <div className="fixed bottom-24 left-4 right-4 z-[70] flex h-[68vh] max-h-[520px] flex-col overflow-hidden rounded-2xl border border-foreground/15 bg-card shadow-2xl sm:left-auto sm:right-6 sm:h-[560px] sm:max-h-[calc(100vh-8rem)] sm:w-[380px]">
+        <div
+          className="fixed bottom-24 left-4 right-4 z-[70] flex h-[68dvh] max-h-[520px] flex-col overflow-hidden rounded-2xl border border-foreground/15 bg-card shadow-2xl sm:left-auto sm:right-6 sm:h-[560px] sm:max-h-[calc(100dvh-8rem)] sm:w-[380px]"
+          style={
+            keyboard
+              ? {
+                  // Sit on top of the keyboard rather than behind it, and give
+                  // up whatever height that costs.
+                  bottom: keyboard + 12,
+                  maxHeight: `calc(100dvh - ${keyboard + 88}px)`,
+                }
+              : undefined
+          }
+        >
           {/* Header */}
           <div className="flex items-center gap-3 bg-terracotta px-4 py-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/95 text-[12px] font-bold text-terracotta">
@@ -503,7 +545,11 @@ export default function ChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               maxLength={1000}
               placeholder={isNL ? "Typ een bericht…" : "Type a message…"}
-              className="min-w-0 flex-1 bg-transparent px-1 text-[14px] text-foreground placeholder:text-muted-foreground/70 focus:outline-none"
+              /* 16px on mobile is not a style choice. iOS Safari zooms the
+                 whole page in on any focused input under 16px, and it never
+                 zooms back out — which is what pushed the panel off-screen and
+                 clipped the send button the moment you started typing. */
+              className="min-w-0 flex-1 bg-transparent px-1 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:outline-none sm:text-[14px]"
             />
             <button
               type="submit"
