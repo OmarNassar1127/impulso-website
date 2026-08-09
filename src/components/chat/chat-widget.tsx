@@ -64,6 +64,9 @@ export default function ChatWidget() {
 
   const threadRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Lets the viewport listener call the latest scrollDown without having to be
+  // re-registered every render.
+  const scrollDownRef = useRef<() => void>(() => {});
   const sessionRef = useRef<string | null>(null);
   // Highest server-side message id already shown, so polling never duplicates.
   const lastSeenRef = useRef(0);
@@ -135,6 +138,12 @@ export default function ChatWidget() {
       const covered = window.innerHeight - vv.height - vv.offsetTop;
       // Small values are browser chrome sliding around, not a keyboard.
       setKeyboard(covered > 120 ? Math.round(covered) : 0);
+      // Scrolled from the event, NOT from a `keyboard` dependency. React skips
+      // the re-render when a resize computes the same number as the last one,
+      // and on the browsers that shrink the layout viewport too this lands on
+      // 0 every time — either way the effect never re-runs and the thread just
+      // sits wherever it was while the panel shrinks around it.
+      scrollDownRef.current();
     };
     measure();
     vv.addEventListener("resize", measure);
@@ -155,23 +164,23 @@ export default function ChatWidget() {
   }, []);
 
   const scrollDown = useCallback(() => {
-    // Two frames, not one. The panel resizes through an inline style when the
-    // keyboard opens, and a single frame runs before that new height has been
-    // laid out — so the scroll lands on the old scrollHeight and stops short,
-    // leaving the newest message just above the fold.
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const el = threadRef.current;
-        if (el) el.scrollTop = el.scrollHeight;
-      });
-    });
+    const pin = () => {
+      const el = threadRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    };
+    // Repeated on purpose. iOS animates the keyboard in over roughly 300ms and
+    // the panel is still being re-laid out the whole time, so a single pass
+    // measures a scrollHeight that is already out of date and stops short of
+    // the newest message. These fire across the animation and the last one
+    // wins; they cost nothing once the thread is already at the bottom.
+    requestAnimationFrame(pin);
+    [60, 180, 350].forEach((ms) => setTimeout(pin, ms));
   }, []);
+  scrollDownRef.current = scrollDown;
 
-  // `keyboard` is in here because the panel shrinks when the keys come up, and
-  // without a re-scroll the message you were just reading slides out of view.
   useEffect(() => {
     if (open) scrollDown();
-  }, [open, messages, typing, keyboard, scrollDown]);
+  }, [open, messages, typing, scrollDown]);
 
   // Poll for anything the server has that we don't, but only while the panel is
   // actually open and the tab is in the foreground. This is what delivers a
