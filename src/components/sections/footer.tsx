@@ -116,6 +116,7 @@ export default function Footer() {
                 { name: language === "nl" ? "AI Agent Bouwen" : "Build AI Agent", href: "/diensten/ai-agent-bouwen/" },
                 { name: language === "nl" ? "Digitale Medewerker" : "Digital Employee", href: "/diensten/digitale-medewerker/" },
                 { name: language === "nl" ? "AI voor MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb/" },
+                { name: language === "nl" ? "Voor autobedrijven" : "For garages", href: "/branches/autobedrijven/" },
                 { name: language === "nl" ? "Alle diensten" : "All services", href: "/diensten/" },
               ].map((link) => (
                 <li key={link.name}>
