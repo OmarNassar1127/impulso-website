@@ -69,13 +69,13 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? [
             { label: "Reactietijd", value: "<10 sec" },
             { label: "Minder no-shows", value: "60%" },
-            { label: "Bespaard", value: "€2.800/mnd" },
+            { label: "Bespaard", value: "€4.000/mnd" },
             { label: "Beschikbaar", value: "24/7" },
           ]
         : [
             { label: "Response time", value: "<10 sec" },
             { label: "Fewer no-shows", value: "60%" },
-            { label: "Cost saved", value: "€2,800/mo" },
+            { label: "Cost saved", value: "€4,000/mo" },
             { label: "Available", value: "24/7" },
           ],
       tech: ["WhatsApp API", "AI/NLP", "Node.js", "Multi-language"],

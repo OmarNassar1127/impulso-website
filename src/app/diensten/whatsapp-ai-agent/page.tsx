@@ -263,7 +263,7 @@ export default function WhatsAppAgentPage() {
                   {[
                     { value: "<10 sec", label: "Reactietijd" },
                     { value: "60%", label: "Minder no-shows" },
-                    { value: "€2.800", label: "Bespaard per maand" },
+                    { value: "€4.000", label: "Bespaard per maand" },
                     { value: "24/7", label: "Bereikbaar" },
                   ].map((s) => (
                     <div key={s.label} className="bg-card p-4 sm:p-5">

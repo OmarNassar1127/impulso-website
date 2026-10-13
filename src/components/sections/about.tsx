@@ -60,8 +60,8 @@ export default function About() {
       initials: "ON",
       image: "/images/team/omar-nassar.jpeg",
       role: isNL
-        ? "AI-developer, jouw alleskunner"
-        : "AI developer, your all-rounder",
+        ? "AI Engineer, jouw alleskunner"
+        : "AI Engineer, your all-rounder",
       bio: isNL
         ? "Bouwt de AI-oplossingen. Van prototype tot stabiel productiesysteem, nieuw idee vandaag, werkende demo binnen 2 dagen."
         : "Builds the AI solutions. From prototype to stable production system, new idea today, working demo within 2 days.",

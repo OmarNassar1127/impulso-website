@@ -318,7 +318,7 @@ function Shop({ language }: { language: string }) {
       <Bill x={104} y={40} z={108}><Chip tone="dark"><span style={{ color: P.signal }}>24/7</span> {nl ? "bereikbaar" : "available"}</Chip></Bill>
       <Bill x={330} y={196} z={190}><Chip tone="signal">{nl ? "antwoord <10 sec" : "<10 sec response"}</Chip></Bill>
       <Bill x={474} y={398} z={0}><Chip tone="light"><span style={{ color: P.signalDark }}>60%</span> {nl ? "minder no-shows" : "fewer no-shows"}</Chip></Bill>
-      <Bill x={300} y={330} z={0}><Chip tone="dark"><span style={{ color: P.signal }}>{nl ? "€2.800/mnd" : "€2,800/mo"}</span> {nl ? "bespaard" : "saved"}</Chip></Bill>
+      <Bill x={300} y={330} z={0}><Chip tone="dark"><span style={{ color: P.signal }}>{nl ? "€4.000/mnd" : "€4,000/mo"}</span> {nl ? "bespaard" : "saved"}</Chip></Bill>
     </>
   );
 }
