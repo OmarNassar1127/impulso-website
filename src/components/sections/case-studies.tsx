@@ -68,13 +68,13 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       results: isNL
         ? [
             { label: "Reactietijd", value: "<10 sec" },
-            { label: "Minder no-shows", value: "40%" },
+            { label: "Minder no-shows", value: "60%" },
             { label: "Bespaard", value: "€2.800/mnd" },
             { label: "Beschikbaar", value: "24/7" },
           ]
         : [
             { label: "Response time", value: "<10 sec" },
-            { label: "Fewer no-shows", value: "40%" },
+            { label: "Fewer no-shows", value: "60%" },
             { label: "Cost saved", value: "€2,800/mo" },
             { label: "Available", value: "24/7" },
           ],
