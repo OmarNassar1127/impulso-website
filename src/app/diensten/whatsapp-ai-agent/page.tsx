@@ -262,7 +262,7 @@ export default function WhatsAppAgentPage() {
                 <div className="grid grid-cols-2 gap-px bg-border/60 border border-border/60 rounded-xl overflow-hidden mb-6">
                   {[
                     { value: "<10 sec", label: "Reactietijd" },
-                    { value: "40%", label: "Minder no-shows" },
+                    { value: "60%", label: "Minder no-shows" },
                     { value: "€2.800", label: "Bespaard per maand" },
                     { value: "24/7", label: "Bereikbaar" },
                   ].map((s) => (

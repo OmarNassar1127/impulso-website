@@ -696,7 +696,7 @@ export const blogPosts: BlogPost[] = [
     slug: "whatsapp-ai-agent-bedrijven",
     title: "WhatsApp AI agent voor bedrijven: complete gids",
     description:
-      "WhatsApp Business API met AI: hoe het werkt, wat het kost en wat het oplevert. Met case study: 40% minder no-shows en €2.800 per maand bespaard.",
+      "WhatsApp Business API met AI: hoe het werkt, wat het kost en wat het oplevert. Met case study: 60% minder no-shows en ruim €4.000 per maand extra omzet.",
     publishedAt: "2026-03-14",
     author: "Impulso Co. Team",
     readingTime: 8,
@@ -802,13 +802,13 @@ export const blogPosts: BlogPost[] = [
 
 <h3>De resultaten na 3 maanden</h3>
 <ul>
-  <li><strong>No-show rate:</strong> gedaald van 22% naar 13%, een verbetering van 40%</li>
-  <li><strong>Omzetwinst per maand:</strong> €2.808</li>
-  <li><strong>Omzetwinst per jaar: €33.696</strong></li>
+  <li><strong>No-show rate:</strong> gedaald van 22% naar 9%, bijna 60% minder</li>
+  <li><strong>Omzetwinst per maand:</strong> €4.056</li>
+  <li><strong>Omzetwinst per jaar: €48.672</strong></li>
   <li><strong>Tijdbesparing receptie:</strong> van 1,5 uur naar 20 minuten per dag</li>
   <li><strong>Klanttevredenheid:</strong> NPS steeg van 38 naar 61</li>
   <li><strong>Investeringskosten:</strong> €1.395 setup + €149,95/maand (MKB-pakket, ca. €3.194 in jaar 1)</li>
-  <li><strong>Netto winst jaar 1: €30.500</strong></li>
+  <li><strong>Netto winst jaar 1: €45.500</strong></li>
   <li><strong>Terugverdientijd: binnen 4 weken</strong></li>
 </ul>
 

@@ -189,11 +189,11 @@ export function NoShowComparison({ className = "" }: { className?: string }) {
     { label: "wk 1", value: 22, after: false },
     { label: "wk 2", value: 21, after: false },
     { label: "wk 3", value: 23, after: false },
-    { label: "wk 4", value: 18, after: true },
-    { label: "wk 5", value: 15, after: true },
-    { label: "wk 6", value: 14, after: true },
-    { label: "wk 7", value: 13, after: true },
-    { label: "wk 8", value: 13, after: true },
+    { label: "wk 4", value: 16, after: true },
+    { label: "wk 5", value: 13, after: true },
+    { label: "wk 6", value: 11, after: true },
+    { label: "wk 7", value: 9, after: true },
+    { label: "wk 8", value: 9, after: true },
   ];
 
   return (
@@ -201,7 +201,7 @@ export function NoShowComparison({ className = "" }: { className?: string }) {
       <div className="mb-1 flex items-baseline justify-between">
         <h3 className="text-sm font-bold text-foreground">No-show rate</h3>
         <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">
-          &minus;40%
+          &minus;60%
         </span>
       </div>
       <p className="mb-5 text-xs text-muted-foreground">
